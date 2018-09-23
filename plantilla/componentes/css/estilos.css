@@ -1,0 +1,125 @@
+.divCentrado{
+	margin: 0 auto;
+	width: 80%;
+}
+.divColorVerde{
+	background: #acc90d;
+	border-radius: 10px;
+	height: 116px;
+	margin-top: 50px;
+	padding-top: 25px;
+}
+.divColorVerde h3	{
+	color: white;
+}
+.blanco
+{
+	color: #fff
+}
+#materiaPrimaExistente{
+	display: none;
+}
+ .oculta, #capitalSubrubro{
+
+    display: none;
+  }
+
+  .resaltar{
+   /*background-color: #d3dddd;*/
+  }
+.contenedorNegocios1{
+	background-image: url('../../images/Rubros/1_ali.jpg');
+	border: #fff;
+	border-width: 5px;
+	border-style: solid;
+	font-weight: bold;
+	height: 450px;
+}
+.contenedorNegocios2{
+	background-image: url('../../images/Rubros/2_tex.jpg');
+	border: #fff;
+	border-width: 5px;
+	border-style: solid;
+	font-weight: bold;
+	height: 450px;
+}
+.contenedorNegocios3{
+	background-image: url('../../images/Rubros/3_comercio.jpg');
+	border: #fff;
+	border-width: 5px;
+	border-style: solid;
+	font-weight: bold;
+	height: 450px;
+}
+.contenedorNegocios4{
+	background-image: url('../../images/Rubros/4_tecnologia.jpg');
+	border: #fff;
+	border-width: 5px;
+	border-style: solid;
+	font-weight: bold;
+	height: 450px;
+}
+.contenedorNegocios5{
+	background-image: url('../../images/Rubros/5_quimica.jpg');
+	border: #fff;
+	border-width: 5px;
+	border-style: solid;
+	font-weight: bold;
+	height: 450px;
+}
+.contenedorNegocios6{
+	background-image: url('../../images/Rubros/6_artesanias.jpg');
+	border: #fff;
+	border-width: 5px;
+	border-style: solid;
+	font-weight: bold;
+	height: 450px;
+}
+.contenedorNegocios7{
+	background-image: url('../../images/Rubros/7_construccion.jpg');
+	border: #fff;
+	border-width: 5px;
+	border-style: solid;
+	font-weight: bold;
+	height: 450px;
+}
+.contenedorNegocios8{
+	background-image: url('../../images/Rubros/8_servicios.jpg');
+	border: #fff;
+	border-width: 5px;
+	border-style: solid;
+	font-weight: bold;
+	height: 450px;
+}
+.contenedorNegocios9{
+	background-image: url('../../images/Rubros/2_tex.jpg');
+	border: #fff;
+	border-width: 5px;
+	border-style: solid;
+	font-weight: bold;
+	height: 450px;
+}
+.negociosT{
+	border: #acc90d;
+	border-width: 5px;
+}
+.negociosT th{
+	background: #acc90d;
+	margin: 0;
+	color: #000;
+	font-weight: bold;
+}
+.negociosT  td{
+	background-color: rgba(0, 255, 0, 0.2);
+	color: #000;
+	font-weight: bold;
+	border: #acc90d;
+	border-bottom-style: solid;
+}
+
+.negociosT  tr:hover{
+	background-color:  #bcc58c;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: bold;
+}

@@ -1,0 +1,156 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Controlie extends CI_Controller {
+	public function __construct()
+	{
+		parent::__construct();
+		if (!$this->session->userdata('login'))
+		{
+			echo '<script type="text/javascript">
+				alert("Debes iniciar sesion !!!");
+				self.location ="'.base_url().'"
+				</script>';
+		}
+	}
+
+	public function index()
+	{
+		$this->load->view('administrador/base/header');
+		$this->load->model('Controlie_Model');
+
+		$idUsuario = $this->session->userdata('id');
+		$ingresos = $this->Controlie_Model->obtenerIngreso2($idUsuario);
+		$egresos = $this->Controlie_Model->obtenerEgreso2($idUsuario);
+		$data = array('ingresos' => $ingresos, 'egresos' => $egresos);
+
+		$this->load->view('administrador/controlie/control_ie', $data);
+		$this->load->view('administrador/base/footer2');
+
+	}
+
+	public function guardarDatos()
+	{
+		$datos = $this->input->post();
+
+		// Buscando posiciones vacias en los ingresos
+		for ($i=0; $i < sizeof($datos['ingresosN']); $i++)
+		{ 
+			if ($datos['ingresosN'][$i]=="" || $datos['ingresosD'][$i]=="")
+			{
+				echo '<script type="text/javascript">
+				alert("Error: No ingresaste todos los datos !!!");
+				self.location ="'.base_url().'controlie/"
+				</script>';
+				break;
+			}
+		}
+
+
+		for ($i=0; $i < sizeof($datos['egresosN']); $i++)
+		{ 
+			if ($datos['egresosN'][$i]=="" || $datos['egresosD'][$i]=="")
+			{
+				echo '<script type="text/javascript">
+				alert("Error: No ingresaste todos los datos !!!");
+				self.location ="'.base_url().'controlie/"
+				</script>';
+				break;
+			}
+		}
+		//var_dump($datos['egresosN']);
+		
+		$idUsuario = $this->session->userdata('id');
+
+		$this->load->model('Controlie_Model');
+		$bool = $this->Controlie_Model->guardarIE($datos, $idUsuario);
+
+		if ($bool== false)
+		{
+			echo '<script type="text/javascript">
+				alert("Error al guardar los datos !!!");
+				self.location ="'.base_url().'controlie/"
+				</script>';
+
+		}
+		else
+		{
+			if ($bool)
+			{
+				$fecha = $datos['fechaIE'];
+				echo '<script type="text/javascript">
+				alert("Insumos guardados correctamente !!!");
+				self.location ="'.base_url().'controlie/validarEgresos?f='.$fecha.'"
+				</script>';
+
+			}
+		}
+
+	}
+
+	public function validarEgresos()
+	{
+		$fecha = $_GET['f'];
+		$this->load->model('Controlie_Model');
+		$idUsuario = $this->session->userdata('id');
+		$ingresos = $this->Controlie_Model->obtenerIngreso($fecha, $idUsuario);
+		$egresos = $this->Controlie_Model->obtenerEgreso($fecha, $idUsuario);
+
+		$data = array('ingresos' => $ingresos, 'egresos' => $egresos, 'fecha'=> $fecha );
+		$this->load->view('administrador/base/header');
+		$this->load->view('administrador/controlie/procesar_egresos', $data);
+		$this->load->view('administrador/base/footer2');
+	}
+
+	public function dEgreso()
+	{
+		$datos = $this->input->post();
+		
+		$this->load->model('Controlie_Model');
+		$bool = $this->Controlie_Model->procesarEgresos($datos);
+
+		if ($bool== false)
+		{
+			echo '<script type="text/javascript">alert("Error al realizar la operacion")</script>';
+
+		}
+		else
+		{
+			if ($bool)
+			{
+				$fecha = $datos['fechaEgresos'];
+				echo '<script type="text/javascript">
+				alert("Operacion realizada exitosamente !!!");
+				self.location ="'.base_url().'controlie/validarEgresos?f='.$fecha.'"
+				</script>';
+
+			}
+		}
+	}
+
+	public function balances()
+	{
+		$this->load->model('Controlie_Model');
+		$idUsuario = $this->session->userdata('id');
+		$datos = $this->Controlie_Model->obtenerBalances($idUsuario);
+		$data = array('datos'=> $datos );
+
+		$this->load->view('administrador/base/header');
+		$this->load->view('administrador/controlie/balances', $data);
+		$this->load->view('administrador/base/footer2');
+	}
+
+	public function detalleBalance()
+	{
+		$this->load->model('Controlie_Model');
+		$fecha = $_GET['f'];
+		$datos = $this->Controlie_Model->detalleBalance($fecha);
+		$data = array('datos'=> $datos, 'fecha' => $fecha );
+
+		$this->load->view('administrador/base/header');
+		$this->load->view('administrador/controlie/detalle_balance', $data);
+		$this->load->view('administrador/base/footer2');
+	}
+
+
+}
