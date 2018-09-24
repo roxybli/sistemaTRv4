@@ -20,7 +20,9 @@
                                 <li><a href="<?=base_url()?>Emprendedoras/verUsuarias">Usuarios registrados</a></li> 
                             </ul>
                         </li>
-						<li> <a class="has-arrow  " href="<?=base_url() ?>Emprendedoras/"aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Bolsa de Emprendedoras</span></a>
+						<li> <a class="has-arrow  " href="<?=base_url() ?>Emprendedoras/" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Bolsa de Emprendedoras</span></a>
+                        </li>
+                        <li> <a class="has-arrow  " href="<?=base_url() ?>Rubros/" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Gestionar Rubros</span></a>
                         </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tags"></i><span class="hide-menu">Noticias</span></a>
                             <ul aria-expanded="false" class="collapse">
