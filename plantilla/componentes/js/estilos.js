@@ -146,7 +146,7 @@ $(function(){
 		        datos +=	 '<div class="col-md-6">';
 		        datos +=	    '<div class="form-group">';
 		        datos +=       		'<div class="input-group">';
-		        datos +=        	   '<input type="text" class="form-control" id="" name="egresosN[]" placeholder="Nombre del egreso número '+ (i+1) +' " required>';
+		        datos +=        	   '<input type="text" class="form-control" id="" name="egresosN[]" placeholder="Nombre del egreso numero '+ (i+1) +' " required>';
 		        datos +=        	   '<input type="hidden" value="1" class="form-control" id="" name="estadoE[]" placeholder="">';
 		        datos +=    	   '</div>';
 		        datos +=  		'</div>';
@@ -154,7 +154,7 @@ $(function(){
 		        datos +=	 '<div class="col-md-6">';
 		        datos +=	    '<div class="form-group">';
 		        datos +=       		'<div class="input-group">';
-		        datos +=        	   '<input type="number" min="0" class="form-control" id="" name="egresosD[]" placeholder="Precio del egreso número '+ (i+1) +' " onkeypress="return numeros(event, \'num\')" required>';
+		        datos +=        	   '<input type="number" min="0" class="form-control" id="" name="egresosD[]" placeholder="Precio del egreso numero '+ (i+1) +' " onkeypress="return numeros(event, \'num\')" required>';
 		        datos +=    	   '</div>';
 		        datos +=  		'</div>';
 		        datos +=	'</div>';
@@ -193,7 +193,7 @@ $(function(){
 		        datos +='<div class="col-md-3">';
 		        datos +=    '<div class="form-group">';
 		        datos +=        '<div class="input-group">';
-		        datos +=            '<input type="text" class="form-control" id="" name="cantidaInsumo[]" placeholder="Cantidad de insumos" onkeypress="return numeros(event, \'num\')" required>';
+		        datos +=            '<input type="text" class="form-control" id="" name="cantidaInsumo[]" placeholder="Cantidad del insumos" onkeypress="return numeros(event, \'num\')" required>';
 		        datos +=        '</div>';
 		        datos +=    '</div>';
 		        datos += '</div>';
@@ -201,7 +201,7 @@ $(function(){
 		        datos +='<div class="col-md-2">';
 		        datos +=    '<div class="form-group">';
 		        datos +=        '<div class="input-group">';
-		        datos +=            '<input type="text" class="form-control" id="" name="precioInsumo[]" placeholder="Precio total del insumo" onkeypress="return numeros(event, \'num\')" required>';
+		        datos +=            '<input type="text" class="form-control" id="" name="precioInsumo[]" placeholder="Precio del insumos" onkeypress="return numeros(event, \'num\')" required>';
 		        datos +=        '</div>';
 		        datos +=    '</div>';
 		        datos += '</div>';
@@ -216,7 +216,6 @@ $(function(){
 				datos +=                 	'<option value="Gramos">Gramos</option>';
 				datos +=                 	'<option value="Kilogramos">Kilogramos</option>';
 				datos +=                 	'<option value="Miligramos">Miligramos</option>';
-				datos +=                 	'<option value="unidad">Unidad</option>';			
 				datos +=                 '</optgroup>';
 				datos +=                 '<optgroup label="Unidades de medida de capacidad">';
 				datos +=                 	'<option value="Litros">Litros</option>';
@@ -389,7 +388,7 @@ $("#btnCapitalRubros").click(function() {
 
 				materiaPrimaC="";
 				materiaPrimaC += '<div class="col-md-12">';
-				materiaPrimaC += '<h2 class="text-success text-center"> Materia Prima<h2>';
+				materiaPrimaC += '<h2 class="text-success text-center"> Materia Comestible <h2>';
 				materiaPrimaC += '</div>';
 
 				$("#elementoSR").append(materiaPrimaC);

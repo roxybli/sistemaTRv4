@@ -62,7 +62,7 @@
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="number" class="form-control" id="materiaComestible" min="0" name="" placeholder="Número de materia prima" onkeypress="return numeros(event, 'num')" required>
+                                        <input type="number" class="form-control" id="materiaComestible" min="0" name="" placeholder="Número de materia comestible" onkeypress="return numeros(event, 'num')" required>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="number" class="form-control" id="maquinaria" name="" min="0" placeholder="Número de Maquinaria" onkeypress="return numeros(event, 'num')" required>
+                                        <input type="number" class="form-control" id="maquinaria" name="" min="0" placeholder="Número de no materia comestible" onkeypress="return numeros(event, 'num')" required>
                                         
                                     </div>
                                 </div>

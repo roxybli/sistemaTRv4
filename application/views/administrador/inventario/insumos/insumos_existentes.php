@@ -36,7 +36,8 @@
                     {
 
                 ?>
-                    <table class="table" id="insumosE">
+                <a target="_blank" href="<?= base_url() ?>insumos/reporteInsumos" class="btn btn-danger btn-sm"> Ver en PDF</a>
+                    <table class="table negociosD" id="insumosE">
                         <thead>
                             <tr>
                                 <th></th>

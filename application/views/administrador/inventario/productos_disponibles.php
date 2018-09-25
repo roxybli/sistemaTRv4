@@ -14,7 +14,8 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-title">
-                <p><h4 class="text-primary">Productos disponibles</h4>  <a href="<?= base_url() ?>/inventario/productosProceso" class="btn btn-info">Ver productos en proceso</a></p>
+                <p><a href="<?= base_url() ?>/inventario/productosProceso" class="btn btn-info">Ver productos en proceso</a>
+                <a href="<?= base_url() ?>/inventario/ventasRealizadas" class="btn btn-info">Ventas realizadas</a></p>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -27,7 +28,8 @@
                     else
                     {
                 ?>
-                    <table class="table">
+                <a target="_blank" href="<?= base_url() ?>inventario/reporteInventario" class="btn btn-danger btn-sm"> Ver en PDF</a>
+                    <table class="table negociosD">
                         <thead>
                             <tr>
                                 <th></th>
@@ -37,6 +39,8 @@
                                 <th>Lugar</th>
                                 <th>Estado</th>
                                 <th>Creado Por</th>
+                                <th>Opción</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,6 +59,8 @@
                                 <td><?= $filaProducto->Lugar_Existencia?></td>
                                 <td><?= $filaProducto->Estado?></td>
                                 <td><?= $filaProducto->Nombre. " ". $filaProducto->Apellido?></td>
+                                <td><a href="<?= base_url() ?>inventario/vender_producto/<?= $filaProducto->PK_Id_Inventario ?>" class="text-primary">Vender</a></td>
+                                <td></td>
                             </tr>
 
                         <?php 
@@ -69,3 +75,4 @@
     </div>
 </div>
 </div>
+

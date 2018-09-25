@@ -10,13 +10,13 @@
     </div>
 </div>
 <div class="container-fluid">
-<table class="table table-bordered negociosT">
+<table class="table table-bordered negociosD">
     <tr class="alert-primary">
     <?php 
         foreach ($datos->result() as $filaCabecera)
         {}
     ?>
-        <th class="text-center"><h4>Rubro: <strong> <?= $filaCabecera->Nombre_Rubro  ?></strong> </h4></th>
+        <th class="text-center">Rubro: <strong> <?= $filaCabecera->Nombre_Rubro  ?></strong> </th>
         <th colspan="2" class="text-center"> </h4>Negocio: <strong><?= $filaCabecera->Nombre_Subrubro  ?></strong></h4></th>
     </tr>
     <tr>
@@ -44,7 +44,7 @@
     </tr>
 
     <?php }} ?>
-     <tr  class="alert-success">
+     <tr  class="totalCapital">
         <td colspan="2" class="text-center"><h6><strong>Total inversión en equipamiento</strong> </h6></td>
         <td class="text-center"><h6><strong>$<?= $totalE; ?> </strong></h6></td>
     </tr>
@@ -69,20 +69,15 @@
     </tr>
 
     <?php }} ?>
-    <tr class="alert-success">
+    <tr class="totalCapital">
         <td colspan="2" class="text-center"><h6><strong>Total inversión en insumos </strong></h6></td>
         <td class="text-center"><h6><strong>$<?= $totalI ; ?> </strong></h6></td>
     </tr>
 
     <tr class="alert-primary">
-        <td colspan="2" class="text-center"><h6><strong>Inversión Total </strong></h6></td>
+        <td colspan="2" class="text-center"><h6><strong>Inversión Total</strong></h6></td>
         <td class="text-center"><h6><strong>$<?= $totalE + $totalI ; ?> </strong></h6></td>
     </tr>
-     <tr class="alert-primary">
-        <td colspan="2" class="text-center"><h6><strong>Precios y productos necesarios según estudios realizados por Ciudad Mujer en el 2018 </strong></h6></td>
-        <td colspan="2" class="text-center"></td>
-    </tr>
-
 
 </table>
 </div>

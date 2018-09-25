@@ -136,4 +136,164 @@ class Insumos extends CI_Controller {
 		}
 	}
 
+	public function reporteInsumos()
+	{
+		$this->load->model('Insumos_Model');
+		$id = $this->session->userdata('id');
+		$datos = $this->Insumos_Model->mostrarInsumos($id);
+
+	if (sizeof($datos->result())!=0) 
+	{
+		$this->load->library('M_pdf');
+
+        $data = [];
+
+        $hoy = date("dmyhis");
+		$html="
+		 <style>
+		table{
+		    border:1px solid #000;
+		    border-collapse:collapse;
+		    text-align:center;
+		    width:100%;
+		    
+		}
+		table th{
+		    border:1px solid #000;
+		    padding:10px;
+		    text-align:left;
+		    background-color:#000d5a;
+		    color:#fff;
+		    
+		}
+		table td{
+		    border:1px solid #000;
+		    padding:10px;
+		    text-align:left;  
+		}
+
+
+		p {
+		    text-align:center;
+		}
+
+
+		img {
+		    text-align:left;
+		    float:left;
+		    width: 100px;
+		    height: 110px;
+
+		}
+
+		#cabecera{
+			width: 1000px;
+		}
+		#img{
+			float:left;
+			margin-left: 30px;
+			width: 125px;
+
+		}
+		.textoCentral{
+			color: #000;
+			font-weight: bold;
+			float:right;
+			padding-left: 20px;
+			margin: 0 auto;
+			text-align: center;
+			line-height:: 50;
+			width: 475px;
+
+			line-height: 26px;
+		}
+
+		 </style>
+		 <div class='container'>
+
+		    <div id='cabecera'>
+			<div id='img'>
+				<img src='".base_url()."plantilla/images/LogoCM.jpg'>
+		    </div>
+		    <div class='textoCentral'>
+			    <p>CIUDAD MUJER, EL SALVADOR <br>
+			    REPORTE DE INSUMOS</p>   
+		    </div>
+		    </div>
+
+		<br>
+		    <strong style='font-weight: bold;'>Descripción de insumos</strong>
+
+		</div>
+		<br>
+		        
+		<div class='table-responsive container'>
+		      
+		        <table class='table table table-bordered'>
+		        <thead class='active' >
+		        <tr >
+			        <th>Nombre</th>
+			        <th>Cantidad</th>
+			        <th>Precio</th>
+			        <th>Monto</th>
+			        <th>Medida</th>
+			        <th>Tipo</th>
+		        </tr>
+		        </thead>
+		        <tbody>";
+
+
+
+	          $totalInsumos = 0;   
+	         foreach ($datos->result() as $fila)
+	        {
+
+	            
+	            $nombre = $fila->Nombre_Insumo ;
+				$cantidad = $fila->Existencia_Insumo;
+				$precio = $fila->Precio_Insumo;
+				$medida = $fila->Medida_Insumo;
+				$tipo = $fila->Nombre_Tipo;
+				$totalInsumos = $totalInsumos + 1; 
+	            $html.="<tr><td>" . $nombre . "</td><td>" . $cantidad. "</td><td>" . $precio. "</td><td>".$precio*$cantidad."</td><td>" . $medida. "</td><td>" . $tipo. "</td></tr>";
+	        }
+	        $html .= "<tr>
+					<th colspan='5'>Total de insumos existentes </th>
+					<th>$totalInsumos</th>
+					</tr>";
+
+			$html .= "</table></div>";
+
+	 
+
+	         $pdfFilePath = "resumen de insumos.pdf";
+	         //load mPDF library
+	        $this->load->library('M_pdf');
+	         $mpdf = new mPDF('c', 'A4'); 
+
+	         $estilos=file_get_contents(base_url()."plantilla/css/bootstrap.min.css");
+	         //echo $estilos;
+	         $mpdf->SetDisplayMode('fullpage');
+	         $mpdf->WriteHTML($estilos,1);
+	 
+	        $mpdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+	       // $mpdf->SetFont('','',40); 
+	         $mpdf->shrink_tables_to_fit = 1;
+	       
+	        $mpdf->WriteHTML($html);
+
+
+	        $mpdf->Output($pdfFilePath, "I");
+
+			}
+			else
+			{
+				echo '<script type="text/javascript">
+					alert("No hay datos que mostrar para este rango de tiempo!!!");
+					window.close();
+					self.location ="'.base_url().'reportes/trabajosRealizados"
+					</script>';
+			}
+	}
+
 }

@@ -191,4 +191,532 @@ class Inventario extends CI_Controller {
 	}
 
 
+	public function vender_producto($p)
+	{
+		$id = $this->session->userdata('id');
+		$this->load->model('Inventario_Model');
+		$datos = $this->Inventario_Model->mostrarProductoTerminado($id, $p);
+		$data = array('datos' => $datos);
+
+		$this->load->view('administrador/base/header');
+		$this->load->view('administrador/inventario/venta_producto', $data);
+		$this->load->view('administrador/base/footer2');
+
+	}
+
+	public function venderProducto()
+	{
+		$datos = $this->input->post();
+		$this->load->model('Inventario_Model');
+		$bool = $this->Inventario_Model->efectuarVenta($datos);
+
+	}
+
+	public function ventasRealizadas()
+	{
+		$id = $this->session->userdata('id');
+		$this->load->model('Inventario_Model');
+		$datos = $this->Inventario_Model->obtenerVentas($id);
+		$data = array('datos' => $datos);
+
+
+		$this->load->view('administrador/base/header');
+		$this->load->view('administrador/inventario/ventas_realizadas', $data);
+		$this->load->view('administrador/base/footer2');
+	}
+
+	public function reporteInventario()
+	{
+		$id = $this->session->userdata('id');
+		$this->load->model('Inventario_Model');
+		$datos = $this->Inventario_Model->mostrarProductosTerminados($id);
+		if (sizeof($datos->result())!=0) 
+		{
+			$this->load->library('M_pdf');
+
+	        $data = [];
+
+	        $hoy = date("dmyhis");
+			$html="
+			 <style>
+			table{
+			    border:1px solid #000;
+			    border-collapse:collapse;
+			    text-align:center;
+			    width:100%;
+			    
+			}
+			table th{
+			    border:1px solid #000;
+			    padding:10px;
+			    text-align:left;
+			    background-color:#000d5a;
+			    color:#fff;
+			    
+			}
+			table td{
+			    border:1px solid #000;
+			    padding:10px;
+			    text-align:left;  
+			}
+
+
+			p {
+			    text-align:center;
+			}
+
+
+			img {
+			    text-align:left;
+			    float:left;
+			    width: 100px;
+			    height: 110px;
+
+			}
+
+			#cabecera{
+				width: 1000px;
+			}
+			#img{
+				float:left;
+				margin-left: 30px;
+				width: 125px;
+
+			}
+			.textoCentral{
+				color: #000;
+				font-weight: bold;
+				float:right;
+				padding-left: 20px;
+				margin: 0 auto;
+				text-align: center;
+				line-height:: 50;
+				width: 475px;
+
+				line-height: 26px;
+			}
+
+			 </style>
+			 <div class='container'>
+
+			    <div id='cabecera'>
+				<div id='img'>
+					<img src='".base_url()."plantilla/images/LogoCM.jpg'>
+			    </div>
+			    <div class='textoCentral'>
+				    <p>CIUDAD MUJER, EL SALVADOR <br>
+				    REPORTE DE INSUMOS</p>   
+			    </div>
+			    </div>
+
+			<br>
+			    <strong style='font-weight: bold;'>Resumen de inventario</strong>
+
+			</div>
+			<br>
+			        
+			<div class='table-responsive container'>
+			      
+			        <table class='table table table-bordered'>
+			        <thead class='active' >
+			        <tr >
+				        <th>Producto</th>
+				        <th>Cantidad</th>
+				        <th>Precio</th>
+				        <th>Monto</th>
+			        </tr>
+			        </thead>
+			        <tbody>";
+
+
+
+		          $totalVendido = 0;
+		          $dinero =0; 
+		         foreach ($datos->result() as $fila)
+		        {
+
+		            
+		            $nombre = $fila->Nombre_Producto ;
+					$cantidad = $fila->Existencia_Producto;
+					$precio = $fila->Precio_Producto;
+					$monto = $fila->Precio_Producto;
+
+					$totalVendido = $totalVendido + $cantidad;
+					$dinero = $dinero + ($monto*$cantidad);
+
+		            $html.="<tr><td>" . $nombre . "</td><td>" . $cantidad. "</td><td>" . $precio. "</td><td>$" . $monto*$cantidad. "</td></tr>";
+		        }
+		        $html .= "<tr>
+						<th colspan='3'>Total de productos terminados </th>
+						<th>$totalVendido</th>
+						</tr>";
+				$html .= "<tr>
+						<th colspan='3'>Total de dinero </th>
+						<th>$$dinero</th>
+						</tr>";
+
+				$html .= "</table></div>";
+
+		 
+
+		         $pdfFilePath = "resumen de inventario.pdf";
+		         //load mPDF library
+		        $this->load->library('M_pdf');
+		         $mpdf = new mPDF('c', 'A4'); 
+
+		         $estilos=file_get_contents(base_url()."plantilla/css/bootstrap.min.css");
+		         //echo $estilos;
+		         $mpdf->SetDisplayMode('fullpage');
+		         $mpdf->WriteHTML($estilos,1);
+		 
+		        $mpdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+		       // $mpdf->SetFont('','',40); 
+		         $mpdf->shrink_tables_to_fit = 1;
+		       
+		        $mpdf->WriteHTML($html);
+
+
+		        $mpdf->Output($pdfFilePath, "I");
+
+				}
+			else
+			{
+				echo '<script type="text/javascript">
+					alert("No hay datos que mostrar !!!");
+					window.close();
+					self.location ="'.base_url().'reportes/trabajosRealizados"
+					</script>';
+			}
+
+	}
+
+	public function reporteVentas()
+	{
+		$id = $this->session->userdata('id');
+		$this->load->model('Inventario_Model');
+		$datos = $this->Inventario_Model->obtenerVentas($id);
+		if (sizeof($datos->result())!=0) 
+		{
+			$this->load->library('M_pdf');
+
+	        $data = [];
+
+	        $hoy = date("dmyhis");
+			$html="
+			 <style>
+			table{
+			    border:1px solid #000;
+			    border-collapse:collapse;
+			    text-align:center;
+			    width:100%;
+			    
+			}
+			table th{
+			    border:1px solid #000;
+			    padding:10px;
+			    text-align:left;
+			    background-color:#000d5a;
+			    color:#fff;
+			    
+			}
+			table td{
+			    border:1px solid #000;
+			    padding:10px;
+			    text-align:left;  
+			}
+
+
+			p {
+			    text-align:center;
+			}
+
+
+			img {
+			    text-align:left;
+			    float:left;
+			    width: 100px;
+			    height: 110px;
+
+			}
+
+			#cabecera{
+				width: 1000px;
+			}
+			#img{
+				float:left;
+				margin-left: 30px;
+				width: 125px;
+
+			}
+			.textoCentral{
+				color: #000;
+				font-weight: bold;
+				float:right;
+				padding-left: 20px;
+				margin: 0 auto;
+				text-align: center;
+				line-height:: 50;
+				width: 475px;
+
+				line-height: 26px;
+			}
+
+			 </style>
+			 <div class='container'>
+
+			    <div id='cabecera'>
+				<div id='img'>
+					<img src='".base_url()."plantilla/images/LogoCM.jpg'>
+			    </div>
+			    <div class='textoCentral'>
+				    <p>CIUDAD MUJER, EL SALVADOR <br>
+				    REPORTE DE INSUMOS</p>   
+			    </div>
+			    </div>
+
+			<br>
+			    <strong style='font-weight: bold;'>Resumen de ventas</strong>
+
+			</div>
+			<br>
+			        
+			<div class='table-responsive container'>
+			      
+			        <table class='table table table-bordered'>
+			        <thead class='active' >
+			        <tr >
+				        <th>Producto</th>
+				        <th>Cantidad</th>
+				        <th>Fecha</th>
+				        <th>Monto</th>
+			        </tr>
+			        </thead>
+			        <tbody>";
+
+
+
+		          $totalVendido = 0;
+		          $dinero =0; 
+		         foreach ($datos->result() as $fila)
+		        {
+
+		            
+		            $nombre = $fila->Nombre_Producto ;
+					$cantidad = $fila->Cantidad_Venta;
+					$precio = $fila->Fecha_Venta;
+					$monto = $fila->Precio_Producto;
+					$totalVendido = $totalVendido + $cantidad;
+					$dinero = $dinero + ($monto*$cantidad);
+
+		            $html.="<tr><td>" . $nombre . "</td><td>" . $cantidad. "</td><td>" . $precio. "</td><td>$" . $monto*$cantidad. "</td></tr>";
+		        }
+		        $html .= "<tr>
+						<th colspan='3'>Total de productos vendidos </th>
+						<th>$totalVendido</th>
+						</tr>";
+				$html .= "<tr>
+						<th colspan='3'>Total de dinero </th>
+						<th>$$dinero</th>
+						</tr>";
+
+				$html .= "</table></div>";
+
+		 
+
+		         $pdfFilePath = "resumen de insumos.pdf";
+		         //load mPDF library
+		        $this->load->library('M_pdf');
+		         $mpdf = new mPDF('c', 'A4'); 
+
+		         $estilos=file_get_contents(base_url()."plantilla/css/bootstrap.min.css");
+		         //echo $estilos;
+		         $mpdf->SetDisplayMode('fullpage');
+		         $mpdf->WriteHTML($estilos,1);
+		 
+		        $mpdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+		       // $mpdf->SetFont('','',40); 
+		         $mpdf->shrink_tables_to_fit = 1;
+		       
+		        $mpdf->WriteHTML($html);
+
+
+		        $mpdf->Output($pdfFilePath, "I");
+
+				}
+			else
+			{
+				echo '<script type="text/javascript">
+					alert("No hay datos que mostrar !!!");
+					window.close();
+					self.location ="'.base_url().'reportes/trabajosRealizados"
+					</script>';
+			}
+	}
+
+	public function reporteInventarioEnProceso()
+	{
+		$id = $this->session->userdata('id');
+
+		$this->load->model('Inventario_Model');
+		$datos = $this->Inventario_Model->mostrarProductosProceso($id);
+		if (sizeof($datos->result())!=0) 
+		{
+			$this->load->library('M_pdf');
+
+	        $data = [];
+
+	        $hoy = date("dmyhis");
+			$html="
+			 <style>
+			table{
+			    border:1px solid #000;
+			    border-collapse:collapse;
+			    text-align:center;
+			    width:100%;
+			    
+			}
+			table th{
+			    border:1px solid #000;
+			    padding:10px;
+			    text-align:left;
+			    background-color:#000d5a;
+			    color:#fff;
+			    
+			}
+			table td{
+			    border:1px solid #000;
+			    padding:10px;
+			    text-align:left;  
+			}
+
+
+			p {
+			    text-align:center;
+			}
+
+
+			img {
+			    text-align:left;
+			    float:left;
+			    width: 100px;
+			    height: 110px;
+
+			}
+
+			#cabecera{
+				width: 1000px;
+			}
+			#img{
+				float:left;
+				margin-left: 30px;
+				width: 125px;
+
+			}
+			.textoCentral{
+				color: #000;
+				font-weight: bold;
+				float:right;
+				padding-left: 20px;
+				margin: 0 auto;
+				text-align: center;
+				line-height:: 50;
+				width: 475px;
+
+				line-height: 26px;
+			}
+
+			 </style>
+			 <div class='container'>
+
+			    <div id='cabecera'>
+				<div id='img'>
+					<img src='".base_url()."plantilla/images/LogoCM.jpg'>
+			    </div>
+			    <div class='textoCentral'>
+				    <p>CIUDAD MUJER, EL SALVADOR <br>
+				    REPORTE DE INSUMOS</p>   
+			    </div>
+			    </div>
+
+			<br>
+			    <strong style='font-weight: bold;'>Resumen de productos en proceso</strong>
+
+			</div>
+			<br>
+			        
+			<div class='table-responsive container'>
+			      
+			        <table class='table table table-bordered'>
+			        <thead class='active' >
+			        <tr >
+				        <th>Producto</th>
+				        <th>Cantidad</th>
+				        <th>Precio</th>
+				        <th>Monto</th>
+			        </tr>
+			        </thead>
+			        <tbody>";
+
+
+
+		          $totalProceso = 0;
+		          $dinero =0; 
+		         foreach ($datos->result() as $fila)
+		        {
+
+		            
+		            $nombre = $fila->Nombre_Producto ;
+					$cantidad = $fila->Existencia_Producto;
+					$precio = $fila->Precio_Producto;
+					$monto = $fila->Precio_Producto * $cantidad;
+
+					$totalProceso = $totalProceso + $cantidad;
+					$dinero = $dinero + $monto;
+
+		            $html.="<tr><td>" . $nombre . "</td><td>" . $cantidad. "</td><td>" . $precio. "</td><td>$" . $monto. "</td></tr>";
+		        }
+		        $html .= "<tr>
+						<th colspan='3'>Total de productos en proceso </th>
+						<th>$totalProceso</th>
+						</tr>";
+				$html .= "<tr>
+						<th colspan='3'>Total de dinero </th>
+						<th>$$dinero</th>
+						</tr>";
+
+				$html .= "</table></div>";
+
+		 
+
+		         $pdfFilePath = "resumen de productos en proceso.pdf";
+		         //load mPDF library
+		        $this->load->library('M_pdf');
+		         $mpdf = new mPDF('c', 'A4'); 
+
+		         $estilos=file_get_contents(base_url()."plantilla/css/bootstrap.min.css");
+		         //echo $estilos;
+		         $mpdf->SetDisplayMode('fullpage');
+		         $mpdf->WriteHTML($estilos,1);
+		 
+		        $mpdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+		       // $mpdf->SetFont('','',40); 
+		         $mpdf->shrink_tables_to_fit = 1;
+		       
+		        $mpdf->WriteHTML($html);
+
+
+		        $mpdf->Output($pdfFilePath, "I");
+
+				}
+			else
+			{
+				echo '<script type="text/javascript">
+					alert("No hay datos que mostrar !!!");
+					window.close();
+					self.location ="'.base_url().'reportes/trabajosRealizados"
+					</script>';
+			}
+	}
+
+
 }

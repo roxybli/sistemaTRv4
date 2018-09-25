@@ -4,8 +4,8 @@
      </div>
     <div class="col-md-7 align-self-center">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="javascript:void(0)">Productos en proceso</a></li>
-            <li class="breadcrumb-item active">home</li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Inventario</a></li>
+            <li class="breadcrumb-item active">Ventas realizadas</li>
         </ol>
     </div>
 </div>
@@ -25,18 +25,15 @@
                     else
                     {
                 ?>
-                     <a target="_blank" href="<?= base_url() ?>inventario/reporteInventarioEnProceso" class="btn btn-danger btn-sm"> Ver en PDF</a>
-                    <table class="table negociosD">
+                     <a target="_blank" href="<?= base_url() ?>inventario/reporteVentas" class="btn btn-danger btn-sm"> Ver en PDF</a>
+                    <table class="table negociosD" style="width:800px; margin: 0 auto">
                         <thead>
                             <tr>
                                 <th></th>
                                 <th>Producto</th>
                                 <th>Cantidad</th>
-                                <th>Precio</th>
-                                <th>Lugar</th>
-                                <th>Estado</th>
-                                <th>Creado Por</th>
-                                <th>Acción</th>
+                                <th>Monto</th>
+                                <th>Fecha</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,20 +47,10 @@
                                     
                                 </td>
                                 <td><?= $filaProducto->Nombre_Producto ?></td>
-                                <td><?= $filaProducto->Existencia_Producto ?></td>
-                                <td>$<?= $filaProducto->Precio_Producto ?></td>
-                                <td><?= $filaProducto->Lugar_Existencia?></td>
-                                <td><?= $filaProducto->Estado?></td>
-                                <td><?= $filaProducto->Nombre. " ". $filaProducto->Apellido ?></td>
-                                <td>                                
-                                        <div class="dropdown" align="center">
-                                            <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown"><i class="fa fa-cogs fa-lg"></i><span class="caret"></span></button>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="<?= base_url() ?>inventario/actualizarProducto?e=<?= $filaProducto->PK_Id_Inventario ?>"><i class="fa fa-edit fa-lg"></i> Terminar</a></li>
-                                            </ul>
-                                        </div>
-                                    </td>
-
+                                <td><?= $filaProducto->Cantidad_Venta ?></td>
+                                <td>$<?= $filaProducto->Precio_Producto * $filaProducto->Cantidad_Venta?></td>
+                                <td><?= $filaProducto->Fecha_Venta ?></td>
+                                
                             </tr>
 
                         <?php 
