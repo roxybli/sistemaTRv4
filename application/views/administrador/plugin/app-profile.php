@@ -48,8 +48,8 @@ foreach ($user->result() as $fila2) {
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs profile-tab" role="tablist">
                                 <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Mi negocio</a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Informacion</a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Editar Informacion</a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Información</a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Editar Información</a> </li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
@@ -119,7 +119,7 @@ foreach ($user->result() as $fila2) {
                                                 <br>
                                                 <p class="text-muted"><?php echo $fila->Nombre?></p>
                                             </div>
-                                            <div class="col-md-3 col-xs-6 b-r"> <strong>WatsApp</strong>
+                                            <div class="col-md-3 col-xs-6 b-r"> <strong>WhatsApp</strong>
                                                 <br>
                                                 <p class="text-muted"><?php echo $fila->Telefono?></p>
                                             </div>
@@ -127,9 +127,9 @@ foreach ($user->result() as $fila2) {
                                                 <br>
                                                 <p class="text-muted"><?php echo $fila->Correo ?></p>
                                             </div>
-                                            <div class="col-md-3 col-xs-6"> <strong>Direccion</strong>
+                                            <div class="col-md-3 col-xs-6"> <strong>Dirección</strong>
                                                 <br>
-                                                <p class="text-muted"><?php echo $fila->Direccion_Negocio;  ?>p></p>
+                                                <p class="text-muted"><?php echo $fila->Direccion_Negocio;  ?></p>
                                             </div>
                                         </div>
                                         <hr>
@@ -141,7 +141,7 @@ foreach ($user->result() as $fila2) {
                                     <div class="col-sm-12">
                                         <div class="card">
                                                 <div class="card-title">
-                                                    <h4>Editar informacion personal</h4>
+                                                    <h4>Editar información personal</h4>
                                                 </div>
                                                 <div class="form-validation">
                                                         <!-- Bread crumb -->
@@ -192,7 +192,7 @@ foreach ($user->result() as $fila2) {
                                                                         <div class="row ">
                                                                             <div class="col-md-6">
                                                                                 <div class="form-group">
-                                                                                <span>Direccion </span>
+                                                                                <span>Dirección </span>
                                                                                     <div class="input-group">
                                                                                         <input type="text" class="form-control" id="val-phoneus " name="direccion" placeholder="Direccion" value="<?php echo $fila2->Direccion;?>">
                                                                                     </div>
@@ -202,7 +202,7 @@ foreach ($user->result() as $fila2) {
                                                                        
                                                                             <div class="col-md-6">
                                                                                 <div class="form-group">
-                                                                                <span>Telefono </span>
+                                                                                <span>Teléfono </span>
                                                                                     <div class="input-group">
                                                                                         <input type="text" class="form-control" id="" name="telefono" placeholder="Telefono" value="<?php echo $fila2->Telefono;?>">
                                                                                     </div>
@@ -227,7 +227,7 @@ foreach ($user->result() as $fila2) {
                                                                     </div>
                                                                     <div class="form-validation">
                                                         <!-- Bread crumb -->
-                                                         <h4>Editar Informacion del negocio</h4>
+                                                         <h4>Editar Información del negocio</h4>
                                                                     <form class="form-valide" action="<?=base_url()?>Perfiles/EditarPerfil" method="post">                             
                                                                         <div class="row ">
                                                                             <div class="col-md-6">
@@ -241,7 +241,7 @@ foreach ($user->result() as $fila2) {
                                                                             </div>
                                                                             <div class="col-md-6">
                                                                                 <div class="form-group">
-                                                                                <span>Direccion del Negocio </span>
+                                                                                <span>Dirección del Negocio </span>
                                                                                     <div class="input-group">
                                                                                         <input type="text" class="form-control" id="val-lastname " name="direcion_n" placeholder="Apellido" value="<?php echo $fila->Direccion_Negocio;?>">
                                                                                     </div>
@@ -264,7 +264,7 @@ foreach ($user->result() as $fila2) {
                                                                        
                                                                             <div class="col-md-6">
                                                                                 <div class="form-group">
-                                                                                <span>Descripcion </span>
+                                                                                <span>Descripción </span>
                                                                                     <div class="input-group">
                                                                                         <textarea type="text" class="form-control" id="val-municipio " name="descripcion_n" placeholder="Contraseña" value="<?php echo $fila->Descripcion_Negocio;?>"></textarea>
                                                                                     </div>
@@ -276,7 +276,7 @@ foreach ($user->result() as $fila2) {
                                                                         <div class="row ">
                                                                             <div class="col-md-6">
                                                                                 <div class="form-group">
-                                                                                <span>Direccion </span>
+                                                                                <span>Dirección </span>
                                                                                     <div class="input-group">
                                                                                         <input type="text" class="form-control" id="val-phoneus " name="direccion_n" placeholder="Direccion" value="<?php echo $fila->Direccion_Negocio;?>">
                                                                                     </div>
@@ -286,7 +286,7 @@ foreach ($user->result() as $fila2) {
                                                                        
                                                                             <div class="col-md-6">
                                                                                 <div class="form-group">
-                                                                                <span>Telefono </span>
+                                                                                <span>Teléfono </span>
                                                                                     <div class="input-group">
                                                                                         <input type="text" class="form-control" id="" name="telefono_n" placeholder="Telefono_n" value="<?php echo $fila->Telefono;?>">
                                                                                     </div>

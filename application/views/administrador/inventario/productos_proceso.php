@@ -25,7 +25,8 @@
                     else
                     {
                 ?>
-                    <table class="table">
+                     <a target="_blank" href="<?= base_url() ?>inventario/reporteInventarioEnProceso" class="btn btn-danger btn-sm"> Ver en PDF</a>
+                    <table class="table negociosD">
                         <thead>
                             <tr>
                                 <th></th>

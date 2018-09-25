@@ -34,56 +34,107 @@ class Controlie extends CI_Controller {
 		$datos = $this->input->post();
 
 		// Buscando posiciones vacias en los ingresos
+		$contadorIngresosN=0;
+		$contadorIngresosD=0;
 		for ($i=0; $i < sizeof($datos['ingresosN']); $i++)
 		{ 
-			if ($datos['ingresosN'][$i]=="" || $datos['ingresosD'][$i]=="")
+			if ($datos['ingresosN'][$i]!="")
 			{
-				echo '<script type="text/javascript">
+				/*echo '<script type="text/javascript">
 				alert("Error: No ingresaste todos los datos !!!");
 				self.location ="'.base_url().'controlie/"
 				</script>';
-				break;
+				break;*/
+				$contadorIngresosN = $contadorIngresosN+1;
+			}
+			if ($datos['ingresosD'][$i]!="")
+			{
+				/*echo '<script type="text/javascript">
+				alert("Error: No ingresaste todos los datos !!!");
+				self.location ="'.base_url().'controlie/"
+				</script>';
+				break;*/
+				$contadorIngresosD = $contadorIngresosD+1;
 			}
 		}
 
-
+		$contadorEgresosN=0;
+		$contadorEgresosD=0;
 		for ($i=0; $i < sizeof($datos['egresosN']); $i++)
 		{ 
-			if ($datos['egresosN'][$i]=="" || $datos['egresosD'][$i]=="")
+			if ($datos['egresosN'][$i]!="")
 			{
-				echo '<script type="text/javascript">
+				/*echo '<script type="text/javascript">
 				alert("Error: No ingresaste todos los datos !!!");
 				self.location ="'.base_url().'controlie/"
 				</script>';
-				break;
+				break;*/
+				$contadorEgresosN = $contadorEgresosN+1;
 			}
-		}
-		//var_dump($datos['egresosN']);
-		
-		$idUsuario = $this->session->userdata('id');
 
-		$this->load->model('Controlie_Model');
-		$bool = $this->Controlie_Model->guardarIE($datos, $idUsuario);
-
-		if ($bool== false)
-		{
-			echo '<script type="text/javascript">
-				alert("Error al guardar los datos !!!");
+			if ($datos['egresosD'][$i]!="")
+			{
+				/*echo '<script type="text/javascript">
+				alert("Error: No ingresaste todos los datos !!!");
 				self.location ="'.base_url().'controlie/"
 				</script>';
+				break;*/
+				$contadorEgresosD = $contadorEgresosD+1;
+			}
+		}
+		/*var_dump($datos['egresosN']);
+		echo "<br>Ingreso N ".$contadorIngresosN."<br>";
+		echo "Ingreso D ".$contadorIngresosD."<br>";
+		echo "Egreso N ".$contadorEgresosN."<br>";
+		echo "Egreso D ".$contadorEgresosD;*/
+
+		if (sizeof($datos['ingresosN'])== $contadorIngresosN && sizeof($datos['ingresosD'])== $contadorIngresosD
+			&& sizeof($datos['egresosN'])== $contadorEgresosN && sizeof($datos['egresosD'])== $contadorEgresosD)
+		{
+			/*echo "<br>Todo nice<br>";
+				var_dump($datos['ingresosN'])."<br>";
+				echo "<br>";
+				var_dump($datos['ingresosD'])."<br>";
+				echo "<br>";
+				var_dump($datos['egresosN'])."<br>";
+				echo "<br>";
+				var_dump($datos['egresosD'])."<br>";
+				echo "<br>";
+				var_dump($datos['estadoE'])."<br>";*/
+
+				$idUsuario = $this->session->userdata('id');
+
+				$this->load->model('Controlie_Model');
+				$bool = $this->Controlie_Model->guardarIE($datos, $idUsuario);
+
+				if ($bool== false)
+				{
+					echo '<script type="text/javascript">
+						alert("Error al guardar los datos !!!");
+						self.location ="'.base_url().'controlie/"
+						</script>';
+
+				}
+				else
+				{
+					if ($bool)
+					{
+						$fecha = $datos['fechaIE'];
+						echo '<script type="text/javascript">
+						alert("Insumos guardados correctamente !!!");
+						self.location ="'.base_url().'controlie/validarEgresos?f='.$fecha.'"
+						</script>';
+
+					}
+				}
 
 		}
 		else
 		{
-			if ($bool)
-			{
-				$fecha = $datos['fechaIE'];
-				echo '<script type="text/javascript">
-				alert("Insumos guardados correctamente !!!");
-				self.location ="'.base_url().'controlie/validarEgresos?f='.$fecha.'"
+			echo '<script type="text/javascript">
+				alert("Error: No ingresaste todos los datos requeridos !!!");
+				self.location ="'.base_url().'controlie/"
 				</script>';
-
-			}
 		}
 
 	}

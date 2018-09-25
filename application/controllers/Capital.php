@@ -20,7 +20,8 @@ class Capital extends CI_Controller {
 		
 		$this->load->Model("Capital_Model");
 		$datos = $this->Capital_Model->obternerRubros();
-		$data = array('datos' => $datos );	
+		$data = array('datos' => $datos );
+		
 		$this->load->view('administrador/capital/capital_inicial', $data);
 		$this->load->view('administrador/base/footer2');
 	}
@@ -28,7 +29,9 @@ class Capital extends CI_Controller {
 	public function guardarDatosNegocio()
 	{
 		$datos = $this->input->post();
+
 		$this->load->model("Capital_Model");
+
 		$this->Capital_Model->guardarNegocio($datos);
 		
 	}
@@ -36,9 +39,12 @@ class Capital extends CI_Controller {
 	public function negocios()
 	{
 		$this->load->view('administrador/base/header');
+
 		$this->load->Model("Capital_Model");
 		$datos = $this->Capital_Model->obtenerNegocios();
 		$data = array('datos' => $datos );
+
+
 		$this->load->view('administrador/capital/negocios', $data);
 		$this->load->view('administrador/base/footer2');
 	}
@@ -49,6 +55,7 @@ class Capital extends CI_Controller {
 		$this->load->model("Capital_Model");
 		$datos = $this->Capital_Model->detalleNegocio($id);
 		$data = array('datos' => $datos );
+
 		$this->load->view('administrador/base/header');
 		$this->load->view('administrador/capital/detalle_negocio', $data);
 		$this->load->view('administrador/base/footer2');

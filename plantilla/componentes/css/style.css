@@ -1080,7 +1080,7 @@ h6.h1 {
 .header {
   position: relative;
   z-index: 50;
-  background: #ffffff;
+  background: #fff;
   box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
 }
 .header .top-navbar {
@@ -1093,7 +1093,7 @@ h6.h1 {
 .header .top-navbar .navbar-header {
   line-height: 45px;
   text-align: center;
-  background: #ffffff;
+  background: #fff;
 }
 .header .top-navbar .navbar-header .navbar-brand {
   margin-right: 0;
@@ -1561,7 +1561,7 @@ textarea {
   display: block;
 }
 .sidebar-nav {
-  background:#000d5a;
+  background: #000d5a;
   padding: 0;
 }
 .sidebar-nav ul {
@@ -1572,7 +1572,7 @@ textarea {
   list-style: none;
 }
 .sidebar-nav ul li a {
-  color: #ffffff;
+  color: #607d8b;
   padding: 7px 35px 7px 15px;
   display: block;
   font-size: 14px;
@@ -1634,15 +1634,15 @@ textarea {
 .sidebar-nav > ul > li > a.active {
   font-weight: 400;
   background: #000d5a;
-  color: #ffffff;
+  color: #fff;
 }
 .sidebar-nav > ul > li.active > a {
-  color: #ffffff;
+  color: #1976d2;
   font-weight: 500;
-  border-left: 3px solid #000d5a;
+  border-left: 3px solid #fff;
 }
 .sidebar-nav > ul > li.active > a i {
-  color: #ffffff;
+  color: #1976d2;
 }
 .sidebar-nav .has-arrow-inicio {
   position: relative;
@@ -5486,7 +5486,7 @@ tbody tr td:last-child {
 .progress-content {
   margin-bottom: 20px;
 }
-.progress-content:last-child 
+.progress-content:last-child {
   margin-bottom: 0px;
 }
 .current-progressbar {
@@ -6744,7 +6744,7 @@ tbody tr td:last-child {
 /*-------- css code for responsive layout  --------*/
 /*  To make Responsive
 ---------------------------------------------------------------------- /
-* 1 - media screen and (max-width: 1750px)
+*	1 - media screen and (max-width: 1750px)
 *   2 - media screen and (max-width: 1680px)
 *   3 - media screen and (max-width: 1280px)
 *   4 - media screen and (max-width: 1199px)

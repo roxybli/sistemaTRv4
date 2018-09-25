@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="container-fluid">
-<h2 class="text-primary text-center">Emprende en los siguientes negocios</h2>
+<h2 class="text-primary text-center">Emprende en cualquiera de los siguientes negocios !!!</h2>
 <?php 
     if (sizeof($datos->result()) == 0)
     {
@@ -23,11 +23,11 @@
 
 
 <div class="row">
-    <div class="col-md-4 contenedorNegocios1">
+    <div class="col-md-4 contenedorNegocios">
         <table class="table negociosT">
-            <!--<tr class="">
+            <tr class="">
                 <th colspan="2" class="text-center">Alimentos y Bebidas</th>
-            </tr>-->
+            </tr>
 
             <?php 
                 foreach ($datos->result() as $filaNegocio)
@@ -46,11 +46,11 @@
         </table>
     </div>
 
-    <div class="col-md-4 contenedorNegocios2">
+    <div class="col-md-4 contenedorNegocios">
         <table class="table negociosT">
-          <!--  <tr class="">
-                <th colspan="2" class="text-center">Confección</th>
-            </tr>-->
+            <tr class="">
+                <th colspan="2" class="text-center">Textiles Confección</th>
+            </tr>
 
             <?php 
                 foreach ($datos->result() as $filaNegocio)
@@ -69,11 +69,11 @@
         </table>
     </div>
 
-    <div class="col-md-4 contenedorNegocios3">
+    <div class="col-md-4 contenedorNegocios">
         <table class="table negociosT">
-          <!--  <tr class="">
+            <tr class="">
                 <th colspan="2" class="text-center">Comercio</th>
-            </tr>-->
+            </tr>
 
             <?php 
                 foreach ($datos->result() as $filaNegocio)
@@ -94,11 +94,11 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4 contenedorNegocios4">
+    <div class="col-md-4 contenedorNegocios">
         <table class="table negociosT">
-          <!--  <tr class="">
+            <tr class="">
                 <th colspan="2" class="text-center">Técnologia e innovación</th>
-            </tr>-->
+            </tr>
 
             <?php 
                 foreach ($datos->result() as $filaNegocio)
@@ -117,11 +117,11 @@
         </table>
     </div>
 
-    <div class="col-md-4 contenedorNegocios5">
+    <div class="col-md-4 contenedorNegocios">
         <table class="table negociosT">
-          <!--  <tr class="">
-                <th colspan="2" class="text-center">Química</th>
-            </tr>-->
+            <tr class="">
+                <th colspan="2" class="text-center">Quimica</th>
+            </tr>
 
             <?php 
                 foreach ($datos->result() as $filaNegocio)
@@ -140,11 +140,11 @@
         </table>
     </div>
 
-    <div class="col-md-4 contenedorNegocios6">
+    <div class="col-md-4 contenedorNegocios">
         <table class="table negociosT">
-           <!-- <tr class="">
+            <tr class="">
                 <th colspan="2" class="text-center">Artesanias</th>
-            </tr>-->
+            </tr>
 
             <?php 
                 foreach ($datos->result() as $filaNegocio)
@@ -165,11 +165,11 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4 contenedorNegocios7">
+    <div class="col-md-4 contenedorNegocios">
         <table class="table negociosT">
-           <!-- <tr class="">
+            <tr class="">
                 <th colspan="2" class="text-center">Construcción</th>
-            </tr>-->
+            </tr>
 
             <?php 
                 foreach ($datos->result() as $filaNegocio)
@@ -188,11 +188,11 @@
         </table>
     </div>
 
-    <div class="col-md-4 contenedorNegocios8">
+    <div class="col-md-4 contenedorNegocios">
         <table class="table negociosT">
-           <!-- <tr class="">
+            <tr class="">
                 <th colspan="2" class="text-center">Servicios</th>
-            </tr>-->
+            </tr>
 
             <?php 
                 foreach ($datos->result() as $filaNegocio)
@@ -211,11 +211,11 @@
         </table>
     </div>
 
-    <div class="col-md-4 contenedorNegocios9">
+    <!--    <div class="col-md-4 contenedorNegocios">
         <table class="table negociosT">
-          <!--  <tr class="">
-            <th colspan="2" class="text-center">Textiles </th>
-            </tr> -->
+            <tr class="">
+                <th colspan="2" class="text-center">Textiles </th>
+            </tr>
 
             <?php 
                 foreach ($datos->result() as $filaNegocio)
@@ -232,7 +232,7 @@
                 }}}
              ?>
         </table>
-    </div>
+    </div>-->
 </div>
 
 </div>

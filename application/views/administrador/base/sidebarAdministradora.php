@@ -25,7 +25,7 @@
                         <li> <a class="has-arrow  " href="<?=base_url() ?>Emprendedoras/" aria-expanded="false"><i class="fa fa-suitcase"></i></i><span class="hide-menu">Bolsa de Emprendedoras </span></a>
  
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Noticias </span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tags"></i><span class="hide-menu">Noticias </span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="#" class="has-arrow">Ver Noticias</a>
                                     <ul aria-expanded="false" class="collapse">

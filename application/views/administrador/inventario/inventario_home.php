@@ -13,13 +13,16 @@
 </div>
 <!-- End Bread crumb -->
 <!-- Container fluid  -->
-<div class="container-fluid">
+<div class="container-fluid bg">
     <!-- Start Page Content -->
     <div class="row divCentrado">
         <div class="col-md-5 contenedorInventario" >
                 <a href="<?=base_url() ?>insumos/insumosExistentes ">
                     <div class="divColorVerde">
-                        <div>
+                    <div class="inventarioIMG">
+                        <img  src="<?= base_url()  ?>plantilla/images/card/Insumos.png" class="img img-rounded" height="140">
+                    </div>
+                        <div class="inventarioTitle">
                             <p><h3  class="text-center blanco"> Insumos </h3></p>
                         </div>
                 </div>
@@ -30,7 +33,10 @@
         <div class="col-md-5 ">
             <a href="<?=base_url() ?>inventario/producto_receta">
                 <div class="divColorVerde">
-                    <div>
+                    <div class="inventarioIMG">
+                        <img  src="<?= base_url()  ?>plantilla/images/card/RecetaMas.png" class="img img-rounded" height="140">
+                    </div>
+                    <div class="inventarioTitle">
                         <p><h3  class="text-center blanco"> Ingresar receta de producto  </h3></p>
                     </div>
             </div>
@@ -44,7 +50,10 @@
         <div class="col-md-5 ">
             <a href="<?=base_url() ?>inventario/consultar_receta">
                 <div class="divColorVerde">
-                    <div>
+                    <div class="inventarioIMG">
+                        <img  src="<?= base_url()  ?>plantilla/images/card/RecetasBuscar.png" class="img img-rounded" height="140">
+                    </div>
+                    <div class="inventarioTitle">
                         <p><h3  class="text-center blanco"> Consultar recetas   </h3></p>
                     </div>
             </div>
@@ -54,7 +63,10 @@
         <div class="col-md-5 ">
             <a href="<?=base_url() ?>inventario/productos_disponibles">
                 <div class="divColorVerde">
-                    <div>
+                    <div class="inventarioIMG">
+                        <img  src="<?= base_url()  ?>plantilla/images/card/Inventario.png" class="img img-rounded" height="140">
+                    </div>
+                    <div class="inventarioTitle">
                         <p><h3  class="text-center blanco"> Productos disponibles </h3></p>
                     </div>
             </div>
