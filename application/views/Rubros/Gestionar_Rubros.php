@@ -130,7 +130,7 @@
         var idU =id;
          swal({
             title: "Esta seguro que desea eliminar este registro ?",
-            text: "Usted eliminara todos los registros pertenecietes a esta usuaria !!",
+            text: "Eliminando rubros !!",
             type: "warning",
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
