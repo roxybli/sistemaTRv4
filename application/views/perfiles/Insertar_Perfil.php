@@ -150,7 +150,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <div class="input-group">
-                                                                        <input type="text" class="form-control" id="val-municipio " name="telefono" placeholder="Inserte su número de WhatsApp">
+                                                                        <input type="text" class="form-control" id="val-municipio " name="telefono"  placeholder="Inserte su número de WhatsApp">
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -36,7 +36,7 @@
                                 <th>Precio</th>
                                 <th>Lugar</th>
                                 <th>Creado Por</th>
-                                <th>Opcion</th>
+                                <th>Opción</th>
                             </tr>
                         </thead>
                         <tbody>
