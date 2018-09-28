@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Emprendedoras extends CI_Controller {
 	public function index()
 	{
-				if($tipo=$this->session->userdata('login')){
-			$this->load->view('administrador/base/header');
-			
+			if($tipo=$this->session->userdata('login')){
+			$this->load->view('administrador/base/header');	
 		}
 		else{
 			$this->load->view('administrador/base/headerVisitante');
@@ -112,13 +112,18 @@ class Emprendedoras extends CI_Controller {
 		$this->load->model('Perfiles_Model');
 		$perfil=$this->Perfiles_Model->Ver_Perfil($var, $cant);
 		$datos = array('perfil'=>$perfil);
-		if($tipo=$this->session->userdata('login')){
+		if($this->session->userdata('login')){
 			$this->load->view('administrador/base/header');
+			
+			$this->load->view('emprendedoras/ver_perfil', $datos);
+			$this->load->view('administrador/base/footer');
 		}
 		else{
 			$this->load->view('administrador/base/headerVisitante');
+			$this->load->view('emprendedoras/ver_perfil', $datos);
+			
 		}
-		$this->load->view('emprendedoras/ver_perfil', $datos);
+		
 
 	}
 
