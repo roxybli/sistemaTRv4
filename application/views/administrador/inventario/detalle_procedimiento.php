@@ -1,6 +1,6 @@
 <div class="row page-titles">
     <div class="col-md-5 align-self-center">
-        <a href="<?=base_url() ?>inventario/consultar_receta"><h3 class="text-primary"><i class="fa fa-chevron-left"></i>  Regresar</h3></a>
+        <a href="<?=base_url() ?>inventario/consultar_receta"><h3 class="text-primary"><i class="fa fa-chevron-left"></i> Volver </h3></a>
      </div>
     <div class="col-md-7 align-self-center">
         <ol class="breadcrumb">

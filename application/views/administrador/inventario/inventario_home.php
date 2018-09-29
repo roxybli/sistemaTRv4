@@ -1,10 +1,15 @@
 <?php //include_once"header.php"; ?>
             <!-- Bread crumb -->
-<div class="row page-titles">
-    <div class="col-md-5 align-self-center">
+<div class="row page-titles" style="background:#000d5a;">
+    <div class="col-md-4 align-self-center">
         <a href="<?=base_url() ?>inventario/"><h3 class="text-primary"><i class="fa fa-home"></i> Inventario</h3></a>
     </div>
-    <div class="col-md-7 align-self-center">
+
+    <div class="col-md-5 align-center">
+        <h3 style="color: #fff">Opciones disponibles </h3>
+     </div>
+
+    <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Inventario</a></li>
             <li class="breadcrumb-item active">Opciones</li>

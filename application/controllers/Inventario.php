@@ -230,6 +230,7 @@ class Inventario extends CI_Controller {
 		$id = $this->session->userdata('id');
 		$this->load->model('Inventario_Model');
 		$datos = $this->Inventario_Model->mostrarProductosTerminados($id);
+		$fecha = date("d-m-Y");
 		if (sizeof($datos->result())!=0) 
 		{
 			$this->load->library('M_pdf');
@@ -307,10 +308,13 @@ class Inventario extends CI_Controller {
 				    <p>CIUDAD MUJER, EL SALVADOR <br>
 				    REPORTE DE INSUMOS</p>   
 			    </div>
-			    </div>
+			    </div>";
 
-			<br>
-			    <strong style='font-weight: bold;'>Resumen de inventario</strong>
+			     foreach ($datos->result() as $user)
+		        {}
+
+			$html .= "<br>
+			    <strong style='font-weight: bold;'>Resumen de inventario de $user->Nombre $user->Apellido hasta la fecha  $fecha</strong>
 
 			</div>
 			<br>
@@ -399,6 +403,7 @@ class Inventario extends CI_Controller {
 		{
 			$this->load->library('M_pdf');
 
+			$fecha = date("d-m-Y");
 	        $data = [];
 
 	        $hoy = date("dmyhis");
@@ -472,10 +477,12 @@ class Inventario extends CI_Controller {
 				    <p>CIUDAD MUJER, EL SALVADOR <br>
 				    REPORTE DE INSUMOS</p>   
 			    </div>
-			    </div>
+			    </div>";
+			      foreach ($datos->result() as $user)
+		        {}
 
-			<br>
-			    <strong style='font-weight: bold;'>Resumen de ventas</strong>
+			$html .= "<br>
+			    <strong style='font-weight: bold;'>Resumen de ventas  de $user->Nombre $user->Apellido hasta la fecha  $fecha</strong>
 
 			</div>
 			<br>
@@ -523,7 +530,7 @@ class Inventario extends CI_Controller {
 
 		 
 
-		         $pdfFilePath = "resumen de insumos.pdf";
+		         $pdfFilePath = "resumen de ventas.pdf";
 		         //load mPDF library
 		        $this->load->library('M_pdf');
 		         $mpdf = new mPDF('c', 'A4'); 
@@ -562,7 +569,7 @@ class Inventario extends CI_Controller {
 		if (sizeof($datos->result())!=0) 
 		{
 			$this->load->library('M_pdf');
-
+			$fecha= date("d-m-Y");
 	        $data = [];
 
 	        $hoy = date("dmyhis");
@@ -636,10 +643,13 @@ class Inventario extends CI_Controller {
 				    <p>CIUDAD MUJER, EL SALVADOR <br>
 				    REPORTE DE INSUMOS</p>   
 			    </div>
-			    </div>
+			    </div>";
 
-			<br>
-			    <strong style='font-weight: bold;'>Resumen de productos en proceso</strong>
+			    foreach ($datos->result() as $user)
+		        {}
+
+			$html .="<br>
+			    <strong style='font-weight: bold;'>Resumen de productos en proceso de $user->Nombre $user->Apellido hasta la fecha  $fecha</strong>
 
 			</div>
 			<br>

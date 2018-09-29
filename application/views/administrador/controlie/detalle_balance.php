@@ -1,10 +1,15 @@
-<div class="row page-titles">
-    <div class="col-md-5 align-self-center">
+<div class="row page-titles" style="background:#000d5a;">
+    <div class="col-md-3 align-self-center">
         <a href="<?= base_url() ?>controlie/balances"><h3 class="text-primary"><i class="fa fa-chevron-left"></i> Volver</h3></a>
     </div>
-    <div class="col-md-7 align-self-center">
+
+    <div class="col-md-6 align-center">
+        <h3 style="color: #fff">Detalle del balance correspondiente a la fecha <?= $fecha ?></h3>
+     </div>
+
+    <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="javascript:void(0)">Ingresos y egresos</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Balance</a></li>
             <li class="breadcrumb-item active">detalles</li>
         </ol>
     </div>
@@ -14,7 +19,6 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-title">
-                <p><h4 id="">Balance correspondiente a la fecha <?= $fecha ?> </h4></p>
             </div>
             <div class="card-body">
                <div class="table-responsive">
@@ -27,7 +31,7 @@
                     {
 
                 ?>
-                    <table class="table">
+                    <table class="table detalleB">
                         <thead>
                             <tr>
                                 <th></th>

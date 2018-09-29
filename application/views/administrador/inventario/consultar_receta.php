@@ -1,8 +1,11 @@
-<div class="row page-titles">
-    <div class="col-md-5 align-self-center">
-        <a href="<?=base_url() ?>inventario/"><h3 class="text-primary"><i class="fa fa-chevron-left"></i> Volver a pagina principal</h3></a>
+<div class="row page-titles" style="background:#000d5a;">
+    <div class="col-md-4 align-self-center">
+        <a href="<?=base_url() ?>inventario/"><h3 class="text-primary"><i class="fa fa-chevron-left"></i> Volver </h3></a>
      </div>
-    <div class="col-md-7 align-self-center">
+     <div class="col-md-5 align-center">
+        <h3 style="color: #fff">Recetas disponibles</h3>
+     </div>
+    <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Recetas de productos</a></li>
             <li class="breadcrumb-item active">Existentes</li>
@@ -15,7 +18,6 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-title">
-                <h4>Ultimos Productos </h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -28,7 +30,7 @@
                     {
 
                 ?>
-                    <table class="table">
+                    <table class="table negociosD cell-border" id="inventarioRecetas">
                         <thead>
                             <tr>
                                 <th></th>
@@ -67,3 +69,10 @@
     </div>
 </div>
 </div>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('#inventarioRecetas').DataTable();
+} );
+</script>

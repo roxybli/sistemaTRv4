@@ -122,7 +122,7 @@ $(function(){
 		        datos += '<div class="col-md-6">';
 		        datos +=    '<div class="form-group">';
 		        datos +=       '<div class="input-group">';
-		        datos +=           '<input type="number" min="0" class="form-control" name="ingresosD[]" placeholder="Precio del ingreso numero '+ (i+1) +' " onkeypress="return numeros(event, \'num\')" required>';
+		        datos +=           '<input type="text" min="0" class="form-control" name="ingresosD[]" placeholder="Precio del ingreso numero '+ (i+1) +' " onkeypress="return numeros(event, \'num\')" required>';
 		        datos +=       '</div>';
 		        datos +=   ' </div>';
 		        datos += '</div>';
@@ -154,7 +154,7 @@ $(function(){
 		        datos +=	 '<div class="col-md-6">';
 		        datos +=	    '<div class="form-group">';
 		        datos +=       		'<div class="input-group">';
-		        datos +=        	   '<input type="number" min="0" class="form-control" id="" name="egresosD[]" placeholder="Precio del egreso numero '+ (i+1) +' " onkeypress="return numeros(event, \'num\')" required>';
+		        datos +=        	   '<input type="text" min="0" class="form-control" id="" name="egresosD[]" placeholder="Precio del egreso numero '+ (i+1) +' " onkeypress="return numeros(event, \'num\')" required>';
 		        datos +=    	   '</div>';
 		        datos +=  		'</div>';
 		        datos +=	'</div>';
@@ -441,7 +441,7 @@ $("#btnCapitalRubros").click(function() {
 		        datos +='<div class="col-md-4">';
 		        datos +=    '<div class="form-group">';
 		        datos +=        '<div class="input-group">';
-		        datos +=            '<input type="number" class="form-control" value="1" id="" name="cantidaMaquinaria[]" onkeypress="return numeros(event, \'num\')" required>';
+		        datos +=            '<input type="text" class="form-control" value="1" id="" name="cantidaMaquinaria[]" onkeypress="return numeros(event, \'num\')" required>';
 		        datos +=        '</div>';
 		        datos +=    '</div>';
 		        datos += '</div>';

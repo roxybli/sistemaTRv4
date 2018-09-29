@@ -1,8 +1,13 @@
-<div class="row page-titles">
-    <div class="col-md-5 align-self-center">
+<div class="row page-titles" style="background:#000d5a;">
+    <div class="col-md-4 align-self-center">
         <a href="<?= base_url() ?>controlie/"><h3 class="text-primary"><i class="fa fa-chevron-left"></i> Volver</h3></a>
     </div>
-    <div class="col-md-7 align-self-center">
+
+    <div class="col-md-5 align-center">
+        <h3 style="color: #fff">Balances disponibles </h3>
+     </div>
+
+    <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Ingresos y egresos</a></li>
             <li class="breadcrumb-item active">balances</li>
@@ -14,7 +19,6 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-title">
-                <p><h4 id="">Balances </h4></p>
             </div>
             <div class="card-body">
                <div class="table-responsive">
@@ -27,7 +31,7 @@
                     {
 
                 ?>
-                    <table class="table">
+                    <table class="table detalleB text-cell">
                         <thead>
                             <tr>
                                 <th></th>
@@ -48,10 +52,10 @@
                                     <td>
                                         
                                     </td>
-                                    <td class="text-primary"><span><?= $filaDatos->Fecha_Balance ?></span></td>
-                                    <td class="text-primary">Balance correspondiene a esta fecha</td>
-                                    <td><a href="<?= base_url() ?>controlie/detalleBalance?f=<?= $filaDatos->Fecha_Balance ?>" class="text-primary">Ver detalles</a></td>
-                                    <td class="text-primary"><span></span></td>
+                                    <td><span><?= $filaDatos->Fecha_Balance ?></span></td>
+                                    <td>Balance correspondiene a esta fecha</td>
+                                    <td><a href="<?= base_url() ?>controlie/detalleBalance?f=<?= $filaDatos->Fecha_Balance ?>">Ver detalles</a></td>
+                                    <td><span></span></td>
                                     
                                 </tr>
                         <?php    

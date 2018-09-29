@@ -6,7 +6,7 @@ class Insumos_Model extends CI_Model
 public function mostrarInsumos($id)
 	{
 
-		$sql="SELECT i.PK_Id_Insumo, i.Nombre_Insumo, i.Existencia_Insumo, i.Precio_Insumo, i.Medida_Insumo, i.FK_Id_Tipo_Insumo , ti.Nombre_Tipo FROM tbl_Insumos as i INNER JOIN tbl_Tipos_Insumos as ti on(i.FK_Id_Tipo_Insumo=ti.Pk_Id_Tipo_Insumo) WHERE i.FK_Id_Usuario = '$id'";
+		$sql="SELECT i.PK_Id_Insumo, i.Nombre_Insumo, i.Existencia_Insumo, i.Precio_Insumo, i.Medida_Insumo, i.FK_Id_Tipo_Insumo , ti.Nombre_Tipo, u.Nombre, u.Apellido FROM tbl_Insumos as i INNER JOIN tbl_Tipos_Insumos as ti on(i.FK_Id_Tipo_Insumo=ti.Pk_Id_Tipo_Insumo) INNER JOIN tbl_Usuarias as u on(i.FK_Id_Usuario = u.pk_Id_Usuaria) WHERE i.FK_Id_Usuario = '$id'";
 		$datos = $this->db->query($sql);
 		return $datos;
 	}

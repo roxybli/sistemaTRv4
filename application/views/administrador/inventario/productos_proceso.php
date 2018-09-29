@@ -1,8 +1,13 @@
-<div class="row page-titles">
-    <div class="col-md-5 align-self-center">
-        <a href="<?=base_url() ?>inventario/productos_disponibles"><h3 class="text-primary"> <i class="fa fa-chevron-left"></i> Regresar</h3></a>
+<div class="row page-titles" style="background:#000d5a;">
+    <div class="col-md-4 align-self-center">
+        <a href="<?=base_url() ?>inventario/productos_disponibles"><h3 class="text-primary"> <i class="fa fa-chevron-left"></i> Volver </h3></a>
      </div>
-    <div class="col-md-7 align-self-center">
+
+     <div class="col-md-5 align-center">
+        <h3 style="color: #fff">Productos en proceso</h3>
+     </div>
+
+    <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Productos en proceso</a></li>
             <li class="breadcrumb-item active">home</li>
@@ -13,8 +18,8 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
-            <div class="card-title">
-                <p><h4 class="text-primary">Productos en proceso </h4></p>
+            <div class="card-title text-right">
+                <a target="_blank" href="<?= base_url() ?>inventario/reporteInventarioEnProceso" class="btn btn-danger"> Ver en PDF</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -25,8 +30,7 @@
                     else
                     {
                 ?>
-                     <a target="_blank" href="<?= base_url() ?>inventario/reporteInventarioEnProceso" class="btn btn-danger btn-sm"> Ver en PDF</a>
-                    <table class="table negociosD">
+                    <table class="table negociosD" id="inventarioProductosProceso">
                         <thead>
                             <tr>
                                 <th></th>
@@ -79,3 +83,8 @@
     </div>
 </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('#inventarioProductosProceso').DataTable();
+} );
+</script>

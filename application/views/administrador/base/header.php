@@ -24,6 +24,7 @@
     <script src="<?=base_url() ?>plantilla/componentes/js/jquery-1.11.0.min.js"></script>
     <link href="<?=base_url() ?>plantilla/componentes/css/estilos.css" rel="stylesheet">
     <link href="<?=base_url() ?>plantilla/componentes/css/datepicker.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?=base_url() ?>plantilla/componentes/css/datatables.css"/>
 </head>
 
 <body class="fix-header fix-sidebar">

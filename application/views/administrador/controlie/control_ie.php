@@ -1,8 +1,11 @@
-<div class="row page-titles">
-    <div class="col-md-5 align-self-center">
-        <a href="#"><h3 class="text-primary"><i class="fa fa-home"></i> Control de ingresos y egresos</h3></a>
+<div class="row page-titles" style="background:#000d5a;">
+    <div class="col-md-4 align-self-center">
+    <a href="<?=base_url() ?>controlie/"><h3 class="text-primary"><i class="fa fa-chevron-left"></i> Volver </h3></a>
     </div>
-    <div class="col-md-7 align-self-center">
+     <div class="col-md-5 align-center">
+        <h3 style="color: #fff">Control de ingresos y egresos </h3>
+     </div>
+    <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Ingresos y egresos</a></li>
             <li class="breadcrumb-item active">home</li>
@@ -14,7 +17,6 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-title">
-                <p><h4 id="">Ingrese las cantidades correspondientes </h4> <a href="<?= base_url() ?>controlie/balances">Ver Balances</a></p>
             </div>
             <div class="card-body">
                 <div id="cabeceraIE">
@@ -23,6 +25,7 @@
                         <div class="row ">
                             <div class="col-md-3">
                                 <div class="form-group">
+                                    <strong><label>Cantidad de Ingresos</label></strong>
                                     <div class="input-group">
                                         <input type="number" class="form-control" id="cantidadIngresos" name="" min="0" placeholder="Cantidad de ingresos" onkeypress="return numeros(event, 'num')" required>
                                     </div>
@@ -30,6 +33,7 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
+                                <label>Cantidad de egresos</label>
                                     <div class="input-group">
                                         <input type="number" class="form-control" id="cantidadEgresos" name="" min="0" placeholder="Cantidad de egresos" onkeypress="return numeros(event, 'num')" required>
                                     </div>
@@ -38,6 +42,7 @@
                             <!--/span-->
                             <div class="col-md-3">
                                 <div class="form-group">
+                                <label>Fecha</label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="fechaIE" name="fechaIE" placeholder="Fecha" required>
                                     </div>
@@ -46,6 +51,7 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
+                                <label></label>
                                     <div class="input-group">
                                         <button type="button" id="procesarIE" class="btn btn-primary btn-flat "><i class="fa fa-share-square-o f-s-20"></i> Empezar</button>
                                     </div>
@@ -58,6 +64,7 @@
 
                         
                     </form>
+                    <hr>
                 </div>
 
             <form class="form-valide" method="post" action="<?= base_url() ?>controlie/guardarDatos" id="tablaIE" >  

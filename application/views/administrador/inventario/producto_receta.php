@@ -1,8 +1,13 @@
-<div class="row page-titles">
-    <div class="col-md-5 align-self-center">
-        <a href="<?=base_url() ?>inventario/"><h3 class="text-primary"><i class="fa fa-chevron-left"></i> Volver a pagina principal</h3></a>
+<div class="row page-titles" style="background:#000d5a;">
+    <div class="col-md-4 align-self-center">
+        <a href="<?=base_url() ?>inventario/"><h3 class="text-primary"><i class="fa fa-chevron-left"></i> Volver </h3></a>
      </div>
-    <div class="col-md-7 align-self-center">
+
+     <div class="col-md-5 align-center">
+        <h3 style="color: #fff">Ingresar receta de producto</h3>
+     </div>
+
+    <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Recetas de productos</a></li>
             <li class="breadcrumb-item active">Ingresar</li>
@@ -32,7 +37,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="number" min="0" class="form-control" id="precioProducto" name="precioProducto" onkeypress="return numeros(event, 'num')" placeholder="Precio del producto en $" required>
+                                        <input type="text" min="0" class="form-control" id="precioProducto" name="precioProducto" onkeypress="return numeros(event, 'num')" placeholder="Precio del producto en $" required>
                                     </div>
                                 </div>
                             </div>

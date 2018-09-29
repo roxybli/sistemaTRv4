@@ -1,8 +1,11 @@
-<div class="row page-titles">
-    <div class="col-md-5 align-self-center">
-        <a href="#"><h3 class="text-primary"><i class="fa fa-home"></i> Calculo de capital inicial</h3></a>
+<div class="row page-titles" style="background:#000d5a;">
+    <div class="col-md-4 align-self-center">
     </div>
-    <div class="col-md-7 align-self-center">
+     <div class="col-md-5 align-center">
+        <h3 style="color: #fff">Capital inicial </h3>
+     </div>
+
+    <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Capital inicial</a></li>
             <li class="breadcrumb-item active">home</li>
@@ -17,7 +20,7 @@
             </div>
             <div class="card-body">
                 <div id="capitalRubros">
-                <h4><a href="<?= base_url() ?>capital/negocios">Ver detalle negocios</a></h4>
+                <div ><h4><a href="<?= base_url() ?>capital/negocios" class="btn btn-warning">Ver detalle negocios</a></h4></div>
                     <form method="" action="">
                         <div class="row">
                             <div class="col-md-10">
@@ -62,7 +65,7 @@
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="number" class="form-control" id="materiaComestible" min="0" name="" placeholder="Número de materia comestible" onkeypress="return numeros(event, 'num')" required>
+                                        <input type="text" class="form-control" id="materiaComestible" min="0" name="" placeholder="Número de materia comestible" onkeypress="return numeros(event, 'num')" required>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +73,7 @@
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="number" class="form-control" id="maquinaria" name="" min="0" placeholder="Número de no materia comestible" onkeypress="return numeros(event, 'num')" required>
+                                        <input type="text" class="form-control" id="maquinaria" name="" min="0" placeholder="Número de no materia comestible" onkeypress="return numeros(event, 'num')" required>
                                         
                                     </div>
                                 </div>

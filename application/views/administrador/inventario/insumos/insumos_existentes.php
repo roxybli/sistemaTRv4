@@ -1,8 +1,11 @@
-<div class="row page-titles">
-    <div class="col-md-5 align-self-center">
-        <a href="<?=base_url() ?>inventario/"><h3 class="text-primary"><i class="fa fa-chevron-left"></i> Volver a pagina principal</h3></a>
+<div class="row page-titles" style="background:#000d5a;">
+    <div class="col-md-4 align-self-center">
+        <a href="<?=base_url() ?>inventario/"><h3 class="text-primary"><i class="fa fa-chevron-left"></i> Volver </h3></a>
      </div>
-    <div class="col-md-7 align-self-center">
+     <div class="col-md-5 align-center">
+        <h3 style="color: #fff">Insumos disponibles </h3>
+     </div>
+    <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Insumos</a></li>
             <li class="breadcrumb-item active">home</li>
@@ -15,15 +18,15 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-title">
-                <h4>Insumos existentes </h4>
-                <div class="form-group">
+                <!--<div class="form-group">
                     <div class="input-group">
+                        <a href="" title="Buscar Insumo"><button class="btn btn-primary"><i class="fa fa-search f-s-20"></i></button></a>
                         <input type="text" class="form-control" id="insumoB" name="" placeholder="Insumo a buscar">  
                         <div class="input-group-addon">
                         <a href="<?= base_url() ?>insumos/" title="Agregar Insumo"><button class="btn btn-primary"><i class="fa fa-plus f-s-20"></i></button></a>
                         </div>
-	                </div>
-	            </div>
+                    </div>
+                </div>-->
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -36,18 +39,19 @@
                     {
 
                 ?>
-                <a target="_blank" href="<?= base_url() ?>insumos/reporteInsumos" class="btn btn-danger btn-sm"> Ver en PDF</a>
-                    <table class="table negociosD" id="insumosE">
+                <div class="text-right">
+                <a href="<?= base_url() ?>insumos/" title="Agregar Insumo"><button class="btn btn-primary"><i class="fa fa-plus f-s-20"></i> Agregar nuevo insumo</button></a>
+                <a target="_blank" href="<?= base_url() ?>insumos/reporteInsumos" class="btn btn-danger"> Ver en PDF</a>
+                </div>
+                    <table class="table negociosD text-cell" id="inventarioInsumos">
                         <thead>
                             <tr>
-                                <th></th>
                                 <th>Nombre del insumo</th>
                                 <th>Cantidad</th>
                                 <th>Precio</th>
                                 <th>Medida</th>
                                 <th>Tipo</th>
                                 <th>Operación</th>
-                                <th></th>
                                 
                             </tr>
                         </thead>
@@ -57,14 +61,11 @@
                             {
                            ?> 
                                <tr>
-                                    <td>
-                                        
-                                    </td>
-                                    <td class="text-primary"><span><?= $filaInsumos->Nombre_Insumo ?></span></td>
-                                    <td class="text-primary"><span><?= $filaInsumos->Existencia_Insumo ?></span></td>
-                                    <td class="text-primary"><span><?= $filaInsumos->Precio_Insumo ?></span></td>
-                                    <td class="text-primary"><span><?= $filaInsumos->Medida_Insumo ?></span></td>
-                                    <td class="text-primary"><span><?= $filaInsumos->Nombre_Tipo ?></span></td>
+                                    <td><span><?= $filaInsumos->Nombre_Insumo ?></span></td>
+                                    <td><span><?= $filaInsumos->Existencia_Insumo ?></span></td>
+                                    <td><span><?= $filaInsumos->Precio_Insumo ?></span></td>
+                                    <td><span><?= $filaInsumos->Medida_Insumo ?></span></td>
+                                    <td><span><?= $filaInsumos->Nombre_Tipo ?></span></td>
                                     <td>                                
                                         <div class="dropdown" align="center">
                                             <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown"><i class="fa fa-cogs fa-lg"></i><span class="caret"></span></button>
@@ -73,9 +74,7 @@
                                                 <li><a href="<?= base_url() ?>insumos/eliminarInsumo?i=<?= $filaInsumos->PK_Id_Insumo?>"><i class="fa fa-trash-o fa-lg"></i> Eliminar</a></li>
                                             </ul>
                                         </div>
-                                    </td>
-                                    <td class="text-primary"><span></span></td>
-                                    
+                                    </td>                                  
                                 </tr>
                         <?php    
                                 }
@@ -91,3 +90,8 @@
     </div>
 </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('#inventarioInsumos').DataTable();
+} );
+</script>

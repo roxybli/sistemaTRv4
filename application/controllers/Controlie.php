@@ -17,6 +17,15 @@ class Controlie extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('administrador/base/header');
+		$this->load->view('administrador/controlie/index');
+		$this->load->view('administrador/base/footer2');
+
+	}
+
+
+	public function procesarIE()
+	{
+		$this->load->view('administrador/base/header');
 		$this->load->model('Controlie_Model');
 
 		$idUsuario = $this->session->userdata('id');
@@ -28,6 +37,21 @@ class Controlie extends CI_Controller {
 		$this->load->view('administrador/base/footer2');
 
 	}
+
+	public function resumenIE()
+	{
+		$this->load->view('administrador/base/header');
+		$this->load->view('administrador/controlie/resumen_ie');
+		$this->load->view('administrador/base/footer2');
+	}
+
+	public function estadisticasIE()
+	{
+		$this->load->view('administrador/base/header');
+		$this->load->view('administrador/controlie/estadisticas_ie');
+		$this->load->view('administrador/base/footer2');
+	}
+
 
 	public function guardarDatos()
 	{
