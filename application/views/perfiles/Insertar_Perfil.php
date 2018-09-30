@@ -52,19 +52,18 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <div class="input-group">
-                                                                        <select class="form-control" id="val-sede" name="rubro" required>
+                                                                        <select class="form-control" name="rubro" required>
                                                                             <?php
                                                                                 echo "<option value=''>Seleccione el rubro de su negocio</option>";
                                                                                 foreach ($rubros->result() as $fila) {
 
-                                                                                  echo "<option value=".$fila->pk_Id_Rubro.">".$fila->Nombre_Rubro."</option>";
+                                                                                  echo "<option value=".$fila->PK_Id_Rubro.">".$fila->Nombre_Rubro."</option>";
                                                                                 }
                                                                             ?>
                                                                         </select>
                                                                     </div>
                                                                 </div>  
                                                             </div>
-                                                          
                                                         </div>
                                                         <!--/row-->
                                                         <div class="row ">
