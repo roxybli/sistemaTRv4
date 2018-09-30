@@ -24,7 +24,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Insertar un nueo rubro</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Insertar un nuevo rubro</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -101,7 +101,7 @@
                                             <tr>
                                                 <th>Id Rubro</th>
                                                 <th>Nombre del Rubro</th>
-                                                <th colspan="2">Accion</th>
+                                                <th colspan="2">Acción</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -129,19 +129,19 @@
     function Eliminar(id){
         var idU =id;
          swal({
-            title: "Esta seguro que desea eliminar este registro ?",
-            text: "Eliminando rubros !!",
+            title: "¿Esta seguro que desea eliminar este rubro?",
+            text: "Eliminando rubro",
             type: "warning",
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Si, Eliminar !!",
-            cancelButtonText: "No, Cancelar !!",
+            confirmButtonText: "Eliminar",
+            cancelButtonText: "Cancelar",
             closeOnConfirm: false,
             closeOnCancel: false
         },
         function(isConfirm){
             if (isConfirm) {
-                swal("Eliminada!!", "Registro eliminado con exito !!", "success");
+                swal("Eliminada!!", "Registro eliminado con exito", "success");
                 document.location= '<?= base_url()?>Rubros/Eliminar?id='+idU;
             }
             else {
