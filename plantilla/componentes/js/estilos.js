@@ -388,16 +388,17 @@ $("#btnCapitalRubros").click(function() {
 
 				materiaPrimaC="";
 				materiaPrimaC += '<div class="col-md-12">';
-				materiaPrimaC += '<h2 class="text-success text-center"> Materia Comestible <h2>';
+				materiaPrimaC += '<h2 class="text-success text-center"> Materia Comestible </h2>';
 				materiaPrimaC += '</div>';
 
 				$("#elementoSR").append(materiaPrimaC);
+				$("#pm").slideDown();
 			for (var i = 0; i < materiaPrima; i++)
 			{
 
 				var datos = '';
 				datos += '<div class="row">';
-		        datos += '<div class="col-md-7">';
+		        datos += '<div class="col-md-3">';
 		        datos +=    '<div class="form-group">';
 		        datos +=       '<div class="input-group">';
 		        datos +=           '<input type="text" class="form-control" id="" value="" name="nombreElemento[]" placeholder="Nombre del elemento" required>';
@@ -405,10 +406,41 @@ $("#btnCapitalRubros").click(function() {
 		        datos +=   ' </div>';
 		        datos +='</div>';
 
-		        datos +='<div class="col-md-5">';
+		        datos += '<div class="col-md-3">';
+		        datos +=    '<div class="form-group">';
+		        datos +=       '<div class="input-group">';
+		        datos +=           '<input type="text" class="form-control" id="" value="" name="cantidadElemento[]" placeholder="Cantidad del elemento" required>';
+		        datos +=        '</div>';
+		        datos +=   ' </div>';
+		        datos +='</div>';
+
+		        datos +='<div class="col-md-2">';
 		        datos +=    '<div class="form-group">';
 		        datos +=        '<div class="input-group">';
-		        datos +=            '<input type="text" class="form-control" id="" name="dineroElemento[]" placeholder="Costo monetario" onkeypress="return numeros(event, \'num\')" required>';
+		        datos +=            '<select name="medidasElemento[]" class="form-control selectpicker" required>';
+				datos +=                 '<optgroup label="Unidades de medida de masa">';
+				datos +=                 '<option value="Libras">Libras</option>';
+				datos +=                 	'<option value="Onzas">Onzas</option>';
+				datos +=                 	'<option value="Gramos">Gramos</option>';
+				datos +=                 	'<option value="Kilogramos">Kilogramos</option>';
+				datos +=                 	'<option value="Miligramos">Miligramos</option>';
+				datos +=                 '</optgroup>';
+				datos +=                 '<optgroup label="Unidades de medida de capacidad">';
+				datos +=                 	'<option value="Litros">Litros</option>';
+				datos +=                 	'<option value="Mililitro">Mililitro</option>';
+				datos +=                 '</optgroup>';
+				datos +=                 '<optgroup label="Otros tipos">';
+				datos +=                 	'<option value="Litros">Unidad</option>';
+				datos +=                 '</optgroup>';
+				datos +=             '</select>';
+		        datos +=        '</div>';
+		        datos +=    '</div>';
+		        datos += '</div>';
+
+		        datos +='<div class="col-md-3">';
+		        datos +=    '<div class="form-group">';
+		        datos +=        '<div class="input-group">';
+		        datos +=            '<input type="text" class="form-control" id="" name="dineroElemento[]" placeholder="Precio unitario" onkeypress="return numeros(event, \'num\')" required>';
 		        datos +=        '</div>';
 		        datos +=    '</div>';
 		        datos += '</div>';
@@ -421,7 +453,8 @@ $("#btnCapitalRubros").click(function() {
 
 				maquinariaC="";
 				maquinariaC += '<div class="col-md-12">';
-				maquinariaC += '<h2 class="text-success text-center"> Maquinaria <h2>';
+				maquinariaC += '<h2 class="text-success text-center"> Maquinaria </h2>';
+				maquinariaC += '<hr>';
 				maquinariaC += '</div>';
 
 				$("#elementoSR").append(maquinariaC);
@@ -449,7 +482,7 @@ $("#btnCapitalRubros").click(function() {
 		        datos +='<div class="col-md-4">';
 		        datos +=    '<div class="form-group">';
 		        datos +=        '<div class="input-group">';
-		        datos +=            '<input type="text" class="form-control" id="" name="precioMaquinaria[]" placeholder="Precio de la maquinaria" onkeypress="return numeros(event, \'num\')"  required>';
+		        datos +=            '<input type="text" class="form-control" id="" name="precioMaquinaria[]" placeholder="Precio unitario" onkeypress="return numeros(event, \'num\')"  required>';
 		        datos +=        '</div>';
 		        datos +=    '</div>';
 		        datos += '</div>';

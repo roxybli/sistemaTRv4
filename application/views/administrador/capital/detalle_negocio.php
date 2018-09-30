@@ -10,22 +10,24 @@
     </div>
 </div>
 <div class="container-fluid">
-<table class="table table-bordered negociosD">
-    <tr class="alert-primary">
+<table class="table table-bordered negociosD" >
+    <tr>
     <?php 
         foreach ($datos->result() as $filaCabecera)
         {}
     ?>
-        <th class="text-center">Rubro: <strong> <?= $filaCabecera->Nombre_Rubro  ?></strong> </th>
-        <th colspan="2" class="text-center"> </h4>Negocio: <strong><?= $filaCabecera->Nombre_Subrubro  ?></strong></h4></th>
+        <th colspan="2" class="text-center" style="color:#fff">Rubro: <strong> <?= $filaCabecera->Nombre_Rubro  ?></strong> </th>
+        <th class="text-center" style="color:#fff"> Negocio: <strong><?= $filaCabecera->Nombre_Subrubro  ?></strong></th>
+        <th class="text-center" style="color:#fff"> Producción mensual: <strong><?= $filaCabecera->Produccion_Mensual  ?></strong></th>
     </tr>
     <tr>
         <td class="text-center"><strong>Nombre</strong></td>
         <td class="text-center"><strong>Cantidad</strong></td>
-        <td class="text-center"><strong>Precio </strong></td>
+        <td class="text-center"><strong>Precio unitario</strong></td>
+        <td class="text-center"><strong>Costo</strong></td>
     </tr>
     <tr>
-        <td colspan="3" class="text-center"><h4>Equipamiento</h4></td>
+        <td colspan="4  " class="text-center"><h4>Equipamiento</h4></td>
     </tr>
     <tr>
 
@@ -35,22 +37,23 @@
         {
             if ($filaCuerpoE->Fk_Id_Categoria_Elemento == 1)
             {
-                $totalE = $totalE + $filaCuerpoE->Precio_Elemento
+                $totalE = $totalE + ($filaCuerpoE->Precio_Elemento * $filaCuerpoE->Cantidad_Elemento );
     ?>
     <tr>
         <td class="text-center"><?= $filaCuerpoE->Nombre_Elemento  ?></td>
         <td class="text-center"><?= $filaCuerpoE->Cantidad_Elemento  ?></td>
         <td class="text-center">$<?= $filaCuerpoE->Precio_Elemento  ?></td>
+        <td class="text-center">$<?= $filaCuerpoE->Precio_Elemento * $filaCuerpoE->Cantidad_Elemento  ?></td>
     </tr>
 
     <?php }} ?>
      <tr  class="totalCapital">
-        <td colspan="2" class="text-center"><h6><strong>Total inversión en equipamiento</strong> </h6></td>
+        <td colspan="3" class="text-center"><h6><strong>Total inversión en equipamiento</strong> </h6></td>
         <td class="text-center"><h6><strong>$<?= $totalE; ?> </strong></h6></td>
     </tr>
 
     <tr>
-        <td colspan="3" class="text-center"><h4>Insumos</h4></td>
+        <td colspan="4" class="text-center"><h4>Insumos</h4></td>
     </tr>
     <tr>
 
@@ -60,22 +63,23 @@
         {
             if ($filaCuerpoI->Fk_Id_Categoria_Elemento == 2)
             {
-                $totalI = $totalI + $filaCuerpoI->Precio_Elemento
+                $totalI = $totalI + ($filaCuerpoI->Precio_Elemento * $filaCuerpoI->Cantidad_Elemento  );
     ?>
     <tr>
         <td class="text-center"><?= $filaCuerpoI->Nombre_Elemento  ?></td>
-        <td class="text-center">--</td>
+        <td class="text-center"><?= $filaCuerpoI->Cantidad_Elemento  ?> <?= $filaCuerpoI->Medida_Elemento  ?></td>
         <td class="text-center">$<?= $filaCuerpoI->Precio_Elemento  ?></td>
+        <td class="text-center">$<?= $filaCuerpoI->Precio_Elemento * $filaCuerpoI->Cantidad_Elemento  ?></td>
     </tr>
 
     <?php }} ?>
     <tr class="totalCapital">
-        <td colspan="2" class="text-center"><h6><strong>Total inversión en insumos </strong></h6></td>
+        <td colspan="3" class="text-center"><h6><strong>Total inversión en insumos </strong></h6></td>
         <td class="text-center"><h6><strong>$<?= $totalI ; ?> </strong></h6></td>
     </tr>
 
     <tr class="alert-primary">
-        <td colspan="2" class="text-center"><h6><strong>Inversión Total</strong></h6></td>
+        <td colspan="3" class="text-center"><h6><strong>Inversión Total</strong></h6></td>
         <td class="text-center"><h6><strong>$<?= $totalE + $totalI ; ?> </strong></h6></td>
     </tr>
 

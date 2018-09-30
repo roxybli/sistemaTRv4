@@ -96,11 +96,18 @@
                     <form action="<?= base_url() ?>capital/guardarDatosNegocio" method="post" id="elementoSR">
                          <div class="row">
                              <div class="col-md-12">
-                                 <input type="hidden" value="" id="idRubroC" name="idRubroC">
-                                 <p><h3 id="nombreRubroN" class="text-primary text-center"></h3></p>
-                                 <input type="hidden" value="" id="nombreRubroE" name="nombreRubroE">
+                                     <input type="hidden" value="" id="idRubroC" name="idRubroC">
+                                    <p><h3 id="nombreRubroN" class="text-primary text-center"></h3></p>
+                                    <input type="hidden" value="" id="nombreRubroE" name="nombreRubroE">
                              </div>
                          </div> 
+                         <div class="row" id="pm" style="display:none">
+                             <div class="col-md-12 text-right">
+                             <label>Producción mensual</label>
+                            <input type="text" value="" id="" name="produccionMensual" onkeypress="return numeros(event, 'num')" required>
+                            <hr>
+                         </div>
+                         </div>
                     </form>
                 </div>
 
