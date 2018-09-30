@@ -59,8 +59,17 @@
                         <?php
                             foreach ($insumos->result() as $filaInsumos)
                             {
+                                if (($filaInsumos->Cantidad_Minima + 2) < $filaInsumos->Existencia_Insumo)
+                                {
+                                    
+                                    echo '<tr>';
+                                }
+                                else
+                                {
+                                    echo '<tr style="background-color: rgba(255, 0, 0, 0.2);">';
+                                }
                            ?> 
-                               <tr>
+                               
                                     <td><span><?= $filaInsumos->Nombre_Insumo ?></span></td>
                                     <td><span><?= $filaInsumos->Existencia_Insumo ?></span></td>
                                     <td><span><?= $filaInsumos->Precio_Insumo ?></span></td>
@@ -84,6 +93,7 @@
                         
                         </tbody>
                     </table>
+                    <strong><span style="background-color: rgba(255, 0, 0, 0.2); color: rgba(255, 0, 0, 0)"> ... </span> Has sobrepasado la cantidad minima en stock</strong>
                 </div>
             </div>
         </div>

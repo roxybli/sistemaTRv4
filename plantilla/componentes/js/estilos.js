@@ -182,7 +182,7 @@ $(function(){
 			{
 				var datos = '';
 				datos += '<div class="row">';
-		        datos += '<div class="col-md-3">';
+		        datos += '<div class="col-md-2">';
 		        datos +=    '<div class="form-group">';
 		        datos +=       '<div class="input-group">';
 		        datos +=           '<input type="text" class="form-control" id="" value="" name="nombreInsumos[]" placeholder="Nombre del insumo" required>';
@@ -190,7 +190,7 @@ $(function(){
 		        datos +=   ' </div>';
 		        datos +='</div>';
 
-		        datos +='<div class="col-md-3">';
+		        datos +='<div class="col-md-2">';
 		        datos +=    '<div class="form-group">';
 		        datos +=        '<div class="input-group">';
 		        datos +=            '<input type="text" class="form-control" id="" name="cantidaInsumo[]" placeholder="Cantidad del insumos" onkeypress="return numeros(event, \'num\')" required>';
@@ -205,6 +205,7 @@ $(function(){
 		        datos +=        '</div>';
 		        datos +=    '</div>';
 		        datos += '</div>';
+
 
 		        datos +='<div class="col-md-2">';
 		        datos +=    '<div class="form-group">';
@@ -222,6 +223,14 @@ $(function(){
 				datos +=                 	'<option value="Mililitro">Mililitro</option>';
 				datos +=                 '</optgroup>';
 				datos +=             '</select>';
+		        datos +=        '</div>';
+		        datos +=    '</div>';
+		        datos += '</div>';
+
+		        datos +='<div class="col-md-2">';
+		        datos +=    '<div class="form-group">';
+		        datos +=        '<div class="input-group">';
+		        datos +=            '<input type="text" class="form-control" id="" name="cantidadMinima[]" placeholder="Minimo en stock" onkeypress="return numeros(event, \'num\')" required>';
 		        datos +=        '</div>';
 		        datos +=    '</div>';
 		        datos += '</div>';

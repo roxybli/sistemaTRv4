@@ -10,6 +10,88 @@ public function guardarIE($datos=null, $idUsuario)
 		$egresosN= $datos['egresosN'];
 		$egresosD= $datos['egresosD'];
 		$fecha= $datos['fechaIE'];
+		@$estadoE= $datos['estadoE'];
+
+		$ingresoTotal = 0;
+		$contadorI = 0;
+		$contadorE = 0;
+
+		// Insertando El Balance
+		$sql1 = "INSERT INTO tbl_Balance VALUES('', '$idUsuario', '$fecha', '$ingresoTotal')";
+		if ($this->db->query($sql1))
+		{
+			// Obteniendo el Id del ultimo balance...
+			$sql2 = "SELECT MAX(PK_Id_Balance) as idBalance FROM tbl_Balance";
+			$id = $this->db->query($sql2);
+			foreach ($id->result() as $idB)
+			{
+				$datoID = $idB->idBalance; // Id del balance
+			}
+		}
+
+		//Insertando Ingresos
+		if (sizeof($ingresosN) >0)
+		{
+			for ($i=0; $i < sizeof($ingresosN); $i++)
+			{ 
+				$sql3="INSERT INTO tbl_Ingresos VALUES('','$idUsuario', '$ingresosN[$i]', '$ingresosD[$i]', '$fecha')";
+				
+				if ($this->db->query($sql3))
+				{
+					$contadorI++;	
+				}
+
+				$ingresoTotal = $ingresoTotal + $ingresosD[$i];
+			}
+		} // Fin de Ingresos
+
+		// Insertando Egresos
+		$egresosBalance=0;
+		if (sizeof($egresosN) >0)
+		{
+			for ($i=0; $i < sizeof($egresosN); $i++)
+			{ 
+				$sql4="INSERT INTO tbl_Egresos VALUES('','$idUsuario', '$egresosN[$i]', '$egresosD[$i]', '$fecha')";
+			
+				if ($this->db->query($sql4))
+				{
+					// Obteniendo el ID del Egreso Insertado
+					$sql5 = "SELECT MAX(Pk_Id_Egreso ) as idE FROM tbl_Egresos";
+					$idE = $this->db->query($sql5);
+					foreach ($idE->result() as $idEgreso)
+					{
+						$datoIDE = $idEgreso->idE; // Id del ultimo egreso insertado
+					}
+
+					// Insertando los egresos en el balance
+					$sql6 = "INSERT INTO tbl_Ingresos_Egresos_Balance VALUES('$datoID', '$datoIDE ', 'Gasto', '$ingresoTotal')";
+					if ($this->db->query($sql6))
+					{
+						$egresosBalance++;
+					}
+
+					$contadorE++;	
+				}								
+			}
+		}
+			
+		if (($contadorI + $contadorE) == (sizeof($ingresosN) + sizeof($egresosN)) && sizeof($egresosN)== $egresosBalance)
+		{
+			return true;
+		}
+		return false;
+	}
+
+
+
+/*
+public function guardarIE($datos=null, $idUsuario)
+	{
+		$ingresosN= $datos['ingresosN'];
+		$ingresosD= $datos['ingresosD'];
+		$egresosN= $datos['egresosN'];
+		$egresosD= $datos['egresosD'];
+		$fecha= $datos['fechaIE'];
 		$estadoE= $datos['estadoE'];
 
 		$ingresoTotal = 0;
@@ -35,16 +117,13 @@ public function guardarIE($datos=null, $idUsuario)
 		{
 			for ($i=0; $i < sizeof($egresosN); $i++)
 			{ 
-				if ($estadoE[$i]=="1")
+				$sql2="INSERT INTO tbl_Egresos VALUES('','$idUsuario', '$egresosN[$i]', '$egresosD[$i]', '$fecha')";
+			
+				if ($this->db->query($sql2))
 				{
-					$sql2="INSERT INTO tbl_Egresos VALUES('','$idUsuario', '$egresosN[$i]', '$egresosD[$i]', '$fecha', 'Pendiente')";
-				
-					if ($this->db->query($sql2))
-					{
-						$contadorE++;	
-					}
+					$contadorE++;	
 				}
-				else
+								/*else
 				{
 					$sql2="UPDATE tbl_Egresos set Cantidad_Egreso='$egresosD[$i]', Fecha_Egreso='$fecha' WHERE Pk_Id_Egreso='$estadoE[$i]'";
 			
@@ -62,10 +141,36 @@ public function guardarIE($datos=null, $idUsuario)
 		$this->db->query($sql3); 	
 		if (($contadorI + $contadorE) == (sizeof($ingresosN) + sizeof($egresosN)))
 		{
-			return true;
+			$sql4 = "SELECT MAX(PK_Id_Balance) as idBalance FROM tbl_Balance";
+			$id = $this->db->query($sql4);
+			foreach ($id->result() as $idB)
+			{
+				$datoID = $idB->idBalance;
+			}
+
+			if (sizeof($egresosN) >0)
+			{
+				for ($i=0; $i < sizeof($egresosN); $i++)
+				{ 
+
+					$sql2="INSERT INTO tbl_Egresos VALUES('','$idUsuario', '$egresosN[$i]', '$egresosD[$i]', '$fecha')";
+					$sql5 = "INSERT INTO tbl_Ingresos_Egresos_Balance VALUES('$datoID', '$egreso', 'Gasto', '$ingreso')";
+				
+					if ($this->db->query($sql2))
+					{
+						$contadorE++;	
+					}
+				}
+			}
+
+			if ($this->db->query($sql5))
+			{
+					return true;
+			}
+
 		}
 		return false;
-	}
+	}*/
 
 	public function obtenerIngreso($fecha, $id)
 	{
@@ -89,6 +194,37 @@ public function guardarIE($datos=null, $idUsuario)
 	public function obtenerEgreso2($id)
 	{
 		$sql = "SELECT * FROM tbl_Egresos WHERE FK_Id_Usuario='$id' AND Fecha_Egreso=(SELECT MAX(Fecha_Egreso) FROM tbl_Egresos WHERE FK_Id_Usuario='$id') GROUP BY Nombre_Egreso";
+		$datos = $this->db->query($sql);
+		return $datos;
+	}
+
+	public function resumenIngresos($id)
+	{
+		//$sql ="SELECT DISTINCT Nombre_Ingreso  FROM tbl_Ingresos WHERE FK_Id_Usuario = '$id'";
+		$sql ="SELECT *  FROM tbl_Ingresos WHERE FK_Id_Usuario = '$id'";
+		$datos = $this->db->query($sql);
+		return $datos;
+	}
+
+	public function resumenEgresos($id)
+	{
+		//$sql ="SELECT DISTINCT Nombre_Egreso FROM tbl_Egresos WHERE FK_Id_Usuario = '$id'";
+		$sql ="SELECT * FROM tbl_Egresos WHERE FK_Id_Usuario = '$id'";
+		$datos = $this->db->query($sql);
+		return $datos;
+	}
+
+
+	public function obtenerIngresosBases()
+	{
+		$sql = "SELECT Nombre as Nombre_Ingreso FROM tbl_Ingresos_Egresos_Bases WHERE Tipo='Ingreso'";
+		$datos = $this->db->query($sql);
+		return $datos;
+	}
+
+	public function obtenerEgresosBases()
+	{
+		$sql = "SELECT Nombre as Nombre_Egreso FROM tbl_Ingresos_Egresos_Bases WHERE Tipo='Egreso'";
 		$datos = $this->db->query($sql);
 		return $datos;
 	}

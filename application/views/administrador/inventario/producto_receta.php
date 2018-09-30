@@ -18,7 +18,6 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-title">
-                <h4 id="tituloReceta">Receta de Producto </h4>
             </div>
             <div class="card-body">
                 <div id="cabeceraReceta">
@@ -28,16 +27,18 @@
                         <div class="row ">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label>Nombre del Producto</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="nombreProducto" name="nombreProducto" placeholder="Nombre del producto" required>
+                                        <input type="text" class="form-control" id="nombreProducto" name="nombreProducto" placeholder="" required>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
+                                <label>Precio del producto</label>
                                     <div class="input-group">
-                                        <input type="text" min="0" class="form-control" id="precioProducto" name="precioProducto" onkeypress="return numeros(event, 'num')" placeholder="Precio del producto en $" required>
+                                        <input type="text" min="0" class="form-control" id="precioProducto" name="precioProducto" onkeypress="return numeros(event, 'num')" placeholder="" required>
                                     </div>
                                 </div>
                             </div>
@@ -45,6 +46,7 @@
                             <!--/span-->
                             <div class="col-md-3">
                                 <div class="form-group">
+                                    <label>Tipo de materia</label>
                                     <div class="input-group">
                                         <select name="" id="categoriaInsumos" class="form-control" required>
                                             <option value="#">Ver materia prima por</option>

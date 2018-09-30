@@ -1,8 +1,17 @@
-<div class="row page-titles">
-    <div class="col-md-5 align-self-center">
-        <a href="<?= base_url() ?>capital/negocios"><h3 class="text-primary"><i class="fa fa-chevron-left"></i>Regresar</h3></a>
+<?php 
+    foreach ($datos->result() as $filaCabecera)
+    {}
+?>
+<div class="row page-titles" style="background:#000d5a;">
+    <div class="col-md-4 align-self-center">
+        <a href="<?= base_url() ?>capital/negocios"><h3 class="text-primary"><i class="fa fa-chevron-left"></i> Volver</h3></a>
     </div>
-    <div class="col-md-7 align-self-center">
+
+    <div class="col-md-5 align-center">
+        <h3 style="color: #fff">Detalle del negocio <strong><?= $filaCabecera->Nombre_Subrubro   ?></strong></h3>
+     </div>
+
+    <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Capital inicial</a></li>
             <li class="breadcrumb-item active">detalle negocio</li>
@@ -12,13 +21,8 @@
 <div class="container-fluid">
 <table class="table table-bordered negociosD" >
     <tr>
-    <?php 
-        foreach ($datos->result() as $filaCabecera)
-        {}
-    ?>
-        <th colspan="2" class="text-center" style="color:#fff">Rubro: <strong> <?= $filaCabecera->Nombre_Rubro  ?></strong> </th>
-        <th class="text-center" style="color:#fff"> Negocio: <strong><?= $filaCabecera->Nombre_Subrubro  ?></strong></th>
-        <th class="text-center" style="color:#fff"> Producción mensual: <strong><?= $filaCabecera->Produccion_Mensual  ?></strong></th>
+        <th colspan="2" class="text-center" style="color:#fff"> Rubro: <strong><?= $filaCabecera->Nombre_Rubro ?></strong></th>
+        <th colspan="2" class="text-center" style="color:#fff"> Producción mensual: <strong><?= $filaCabecera->Produccion_Mensual  ?></strong></th>
     </tr>
     <tr>
         <td class="text-center"><strong>Nombre</strong></td>

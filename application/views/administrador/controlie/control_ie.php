@@ -88,7 +88,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="" name="ingresosD[]" value="0" placeholder="Precio del ingreso" required>
+                                            <input type="text" class="form-control" id="" name="ingresosD[]" value="0" placeholder="Precio del ingreso" required>
                                         </div>
                                     </div>
                                 </div>
@@ -109,30 +109,14 @@
                                     <div class="form-group">
                                         <div class="input-group">';
                      echo  '               <input type="text" value="'.$egresosF->Nombre_Egreso.'" class="form-control" id="" name="egresosN[]" placeholder="">';
-                     if ($egresosF->Estado_Egreso=="Pendiente")
-                         {
-                             echo  '<input type="hidden" value="'.$egresosF->Pk_Id_Egreso.'" class="form-control" id="" name="estadoE[]" placeholder="">';
-                         }
-                         else
-                         {
-                             echo  '<input type="hidden" value="1" class="form-control" id="" name="estadoE[]" placeholder="">';
 
-                         }
                      echo '             </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="input-group">';
-
-                    if ($egresosF->Estado_Egreso == "Pendiente")
-                    {
-                       echo '<input type="text" class="form-control" id="" name="egresosD[]" value="'.$egresosF->Cantidad_Egreso.'">';
-                    }
-                    else
-                    {
-                        echo '<input type="number" class="form-control" id="" name="egresosD[]" value="0">';
-                    }
+                    echo  '               <input type="text" value="0" class="form-control" id="" name="egresosD[]" placeholder="">';
                     echo '                  </div>
                                     </div>
                                 </div>

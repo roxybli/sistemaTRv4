@@ -28,10 +28,25 @@ class Controlie extends CI_Controller {
 		$this->load->view('administrador/base/header');
 		$this->load->model('Controlie_Model');
 
+		// Ingresos y egresos Bases
+		$ingresosB = $this->Controlie_Model->obtenerIngresosBases();
+		$egresosB = $this->Controlie_Model->obtenerEgresosBases();
+
+
 		$idUsuario = $this->session->userdata('id');
 		$ingresos = $this->Controlie_Model->obtenerIngreso2($idUsuario);
 		$egresos = $this->Controlie_Model->obtenerEgreso2($idUsuario);
-		$data = array('ingresos' => $ingresos, 'egresos' => $egresos);
+
+		if (sizeof($ingresos->result())==0 && sizeof($egresos->result())==0)
+		{
+			$data = array('ingresos' => $ingresosB, 'egresos' => $egresosB);
+		}
+		else
+		{
+
+			$data = array('ingresos' => $ingresos, 'egresos' => $egresos);
+		}
+
 
 		$this->load->view('administrador/controlie/control_ie', $data);
 		$this->load->view('administrador/base/footer2');
@@ -40,8 +55,16 @@ class Controlie extends CI_Controller {
 
 	public function resumenIE()
 	{
+		$this->load->model('Controlie_Model');
+		//echo substr('abcdef', 0, 4);  // abcd
+		// Ingresos y egresos 
+		$idUsuario = $this->session->userdata('id');
+		$ingresos = $this->Controlie_Model->resumenIngresos($idUsuario);
+		$egresos = $this->Controlie_Model->resumenEgresos($idUsuario);
+
+		$data = array('ingresos' => $ingresos , 'egresos' => $egresos );
 		$this->load->view('administrador/base/header');
-		$this->load->view('administrador/controlie/resumen_ie');
+		$this->load->view('administrador/controlie/resumen_ie', $data);
 		$this->load->view('administrador/base/footer2');
 	}
 
@@ -143,10 +166,10 @@ class Controlie extends CI_Controller {
 				{
 					if ($bool)
 					{
-						$fecha = $datos['fechaIE'];
+						//$fecha = $datos['fechaIE'];
 						echo '<script type="text/javascript">
 						alert("Insumos guardados correctamente !!!");
-						self.location ="'.base_url().'controlie/validarEgresos?f='.$fecha.'"
+						self.location ="'.base_url().'controlie/procesarIE"
 						</script>';
 
 					}
@@ -157,7 +180,7 @@ class Controlie extends CI_Controller {
 		{
 			echo '<script type="text/javascript">
 				alert("Error: No ingresaste todos los datos requeridos !!!");
-				self.location ="'.base_url().'controlie/"
+				self.location ="'.base_url().'controlie/procesarIE"
 				</script>';
 		}
 

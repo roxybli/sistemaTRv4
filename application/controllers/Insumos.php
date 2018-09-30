@@ -42,7 +42,7 @@ class Insumos extends CI_Controller {
 		$datos = $this->input->post();
 		for ($i=0; $i < sizeof($datos['nombreInsumos']); $i++)
 		{ 
-			if ($datos['nombreInsumos'][$i]=="" || $datos['cantidaInsumo'][$i]=="" || $datos['precioInsumo'][$i]=="" || $datos['medidasInsumo'][$i]=="" || $datos['tipoInsumo'][$i]=="")
+			if ($datos['nombreInsumos'][$i]=="" || $datos['cantidaInsumo'][$i]=="" || $datos['precioInsumo'][$i]=="" || $datos['medidasInsumo'][$i]=="" || $datos['tipoInsumo'][$i]=="" || $datos['cantidadMinima'][$i]=="" )
 			{
 				echo '<script type="text/javascript">
 				alert("Error: No ingresaste todos los datos !!!");
