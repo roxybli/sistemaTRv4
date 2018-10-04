@@ -31,6 +31,7 @@
 
 <div class="">
 <!-- Always shows a header, even in smaller screens. -->
+<body class="fix-header fix-sidebar">
 <div  class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
@@ -41,6 +42,7 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav id="menu" class="mdl-navigation mdl-layout--large-screen-only">
+      <a id="ln" class="mdl-navigation__link" href="<?=base_url() ?>"><span class="letra-menu"><i class="fa fa-shopping-bag" style="margin:10;" aria-hidden="true"></i>Bolsa de emprendedoras</span></a>
         <a id="ln" class="mdl-navigation__link" href="<?=base_url() ?>Anuncios/"><span class="letra-menu"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
 Noticias</span></a>
         <a id="ln" class="mdl-navigation__link" href="<?= base_url()?>Login"><span class="letra-menu"><i style="margin:10;" class="fa fa-user-circle" aria-hidden="true"></i>Iniciar sesion</span></a>
@@ -53,7 +55,10 @@ Noticias</span></a>
     <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="<?=base_url() ?>Anuncios/"><span><i style="margin:10;" class="fa fa-newspaper-o" aria-hidden="true"></i>Noticias</span></a>
       <a class="mdl-navigation__link" href="<?= base_url()?>Login"><span sty><i style="margin:10;" class="fa fa-user-circle" aria-hidden="true"></i>Iniciar sesion</span></a>
-     <a  class="mdl-navigation__link" href="<?=base_url() ?>Emprendedoras/"><span sty><i style="margin:10;" class="fa fa-suitcase" aria-hidden="true"></i>Bolsa de Emprendedoras</span></a>
-
+     <a  class="mdl-navigation__link" href="<?=base_url() ?>Emprendedoras/"><span sty><i style="margin:10;" class="fa fa-shopping-bag" aria-hidden="true"></i>Bolsa de Emprendedoras</span></a>
     </nav>
   </div>
+  
+
+
+  

@@ -107,11 +107,10 @@
                     </ul>
                     <ul class="navbar-nav my-lg-0">
                         <!-- Search -->
-                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
+                       <!-- <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
-
+                        </li>-->
                         <!-- Comment -->
                        
                         <!-- End Comment -->
@@ -135,7 +134,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Ver todos los mensajes</strong> <i class="fa fa-angle-right"></i> </a>
+                                        <a class="nav-link text-center" href="<?= base_url()?>Mensajes/ListarMensajes"> <strong>Ver todos los mensajes</strong> <i class="fa fa-angle-right"></i> </a>
                                     </li>
                                 </ul>
                             </div>

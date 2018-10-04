@@ -59,7 +59,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal 2</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Editar Informacion de los rubros</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -91,17 +91,19 @@
 
 
                             <div class="card-title">
-                                <h4>Gestion de rubros</h4>
+                                <h3>Gestion de rubros</h3>
                             </div>
                             <div class="card-body">
-                            <a class="btn btn-success form-control" style="color:white; background-color:#512da8" data-toggle="modal" data-target="#ModalInsert"><i class="fa fa-plus-circle" aria-hidden="true"></i>Crear nuevo rubro</a>
-                                <div class="table-responsive">
-                                    <table class="table">
+                                <h6 class="card-subtitle">Usted puede descargar los datos en los siguientes formatos copiar, CSV, Excel, PDF & Print</h6>
+                            <a class="btn btn-success" style="color:white; padding:10px; margin: 20px;  background-color:#512da8" data-toggle="modal" data-target="#ModalInsert"><i class="fa fa-plus-circle" style="margin:10px;" aria-hidden="true"></i>Crear nuevo rubro</a>
+                                <div class="table-responsive m-t-40">
+                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
                                                 <th>Id Rubro</th>
                                                 <th>Nombre del Rubro</th>
-                                                <th colspan="2">Accion</th>
+                                                <th>Accion</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -112,8 +114,16 @@
                                                     echo "<td id='nom'>".$Rubros->Nombre_Rubro."</td>";
                                                     $nombre = "'".$Rubros->Nombre_Rubro."'";
 
-                                                    echo "<td><a onclick='Eliminar($Rubros->PK_Id_Rubro)' class='btn btn-danger m-b-10 m-l-5'><i style='color:white;' class='fa fa-trash-o' aria-hidden='true'></i></a></td>";
-                                                    echo '<td><a onclick="editar('.$Rubros->PK_Id_Rubro.','.$nombre.')" class="btn btn-warning m-b-10 m-l-5" style="color:white;" data-toggle="modal" data-target="#ModalEdit"><i style="color:white;" class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>';
+                                                    //echo "<td><a onclick='Eliminar($Rubros->PK_Id_Rubro)' class='btn btn-danger m-b-10 m-l-5'><i style='color:white;' class='fa fa-trash-o' aria-hidden='true'></i></a></td>";
+                                                   // echo '<td><a onclick="editar('.$Rubros->PK_Id_Rubro.','.$nombre.')" class="btn btn-warning m-b-10 m-l-5" style="color:white;" data-toggle="modal" data-target="#ModalEdit"><i style="color:white;" class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>';
+
+                                                     echo '<td><div class="dropdown" align="center">
+                                                                <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown"><i class="fa fa-cogs fa-lg"></i><span class="caret"></span></button>
+                                                                <ul class="dropdown-menu">
+                                                                    <li><a onclick="Eliminar('.$Rubros->PK_Id_Rubro.')" class="btn btn-danger m-b-10 m-l-5"><i style="color:white;" class="fa fa-trash-o" aria-hidden="true"></i></a>Eliminar</li>
+                                                                     <li><a onclick="editar('.$Rubros->PK_Id_Rubro.','.$nombre.')" class="btn btn-warning m-b-10 m-l-5" style="color:white;" data-toggle="modal" data-target="#ModalEdit"><i style="color:white;" class="fa fa-pencil-square-o" aria-hidden="true"></i></a> Editar</li> 
+                                                                        </ul>
+                                                                </div></td>';
                                                 }
                                             ?>
                                         </tbody>

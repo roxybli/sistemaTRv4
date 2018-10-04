@@ -72,6 +72,13 @@ if(isset($_POST['btn'])){
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <textarea type="text" class="form-control" id="val-name " name="Descripcion_Noticia" placeholder="Descripcion de la Noticia" pattern="[A-Z-0-9]+" required></textarea> 
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                              <div class="col-md-12">
                                                                 <div class="form-group">
                                                                     <div class="input-group">
@@ -99,7 +106,19 @@ if(isset($_POST['btn'])){
                                                             <!--/span-->
                                                             <!--/span--> 
                                                         </div>
-                                                        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30"><i class="fa fa-share-square-o f-s-20"></i>Publicar</button>
+                                                        
+
+                                                        <div class="row">
+                                                        <div class="col-md-6">
+                                                        <a style="color:white;" class="btn btn-success"><i class="fa fa-times-circle f-s-20" style="margin:10px;"></i>Cancelar</a>  
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                        <button type="submit" class="btn btn-primary"><i class="fa fa-share-square-o f-s-20" style="margin:10px;"></i>Publicar</button>
+                                                            
+                                                        </div>
+                                                        </div> 
+
+
                                                        
                                                     </form>
                                         <!-- End Bread crumb -->

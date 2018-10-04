@@ -26,5 +26,14 @@ class Mensajes extends CI_Controller {
 		$this->Mensajes_Model->EstadoMensaje($id);
 		echo json_encode($id);
 	}
+	public function ListarMensajes(){
+		$this->load->model('Mensajes_Model');
+		$mens=$this->Mensajes_Model->ListarMensajes();
+
+		$data = array('Mensajes'=>$mens);
+		$this->load->view('administrador/base/header');
+		$this->load->view('Mensajes/Mensajes_Invitados',$data);
+		$this->load->view('administrador/base/footer');
+	}
 }
 ?>

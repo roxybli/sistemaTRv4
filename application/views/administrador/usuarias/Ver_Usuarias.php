@@ -1,4 +1,17 @@
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
+<style type="text/css">
+         .TituloUser{
+        display: block;
+        margin: 0 auto;
+        background-color: #8e24aa;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        border-radius: 98;
+        width: 60%;
+        font-weight: bold;
+     }
+</style>
 <?php 
 foreach ($registro->result() as $info2) {
 }
@@ -22,14 +35,14 @@ foreach ($registro->result() as $info2) {
                         
                     <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Usuarias registradas</h4>
-                                <h5><?php echo $info2->Nombre_Sede?></h5>
+                                <h4 class="card TituloUser">Usuarias registradas</h4>
+                                <h5 style="margin:10px;"><?php echo $info2->Nombre_Sede?></h5>
                                 <h6 class="card-subtitle">Usted puede descargar los datos en los siguientes formatos copiar, CSV, Excel, PDF & Print</h6>
                                 <div class="table-responsive m-t-40">
                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th>Id usuario</th>
+                                        <thead >
+                                            <tr style="background'color:#0005da; color:white;">
+                                                <th style="background'color:#0005da; color:white;"> Id usuario</th>
                                                 <th>Nombre completo</th>
                                                 <th>Direccion</th>
                                                 <th>Tipo de usuaria</th>
@@ -75,8 +88,8 @@ foreach ($registro->result() as $info2) {
                                                         echo '<td><div class="dropdown" align="center">
                                                                 <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown"><i class="fa fa-cogs fa-lg"></i><span class="caret"></span></button>
                                                                 <ul class="dropdown-menu">
-                                                                    <li><a title="Este usuario esta activo no se puede eliminar" class="btn btn-danger m-b-10 m-l-5"><i style="color:white;" class="fa fa-trash-o" aria-hidden="true"></i></a></li>
-                                                                    <li><a class="btn btn-warning m-b-10 m-l-5"><i style="color:white;" class="fa fa-pencil-square-o" aria-hidden="true"></i></a></li>                                </ul>
+                                                                    <li onclick="NoDelete()"><a title="Este usuario esta activo no se puede eliminar" ><i  class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a> </li>
+                                                                    <li><a ><i  class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></li>                                </ul>
                                                                 </div></td>';
                                                      }
                                                      else{
@@ -85,7 +98,7 @@ foreach ($registro->result() as $info2) {
                                                         echo '<td><div class="dropdown" align="center">
                                                                 <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown"><i class="fa fa-cogs fa-lg"></i><span class="caret"></span></button>
                                                                 <ul class="dropdown-menu">
-                                                                    <li><a onclick="Eliminar($id)" class="btn btn-danger m-b-10 m-l-5"><i class="fa fa-trash-o" aria-hidden="true"></i></a></li>                                </ul>
+                                                                    <li><a onclick="Eliminar($id)" class="btn btn-danger m-b-10 m-l-5"><i class="fa fa-trash-o" aria-hidden="true"></i>Eliminar</a></li>                                </ul>
                                                                 </div></td>';
                                                         /*echo "<td><a class='btn btn-warning m-b-10 m-l-5'><i style='color:white;' class='fa fa-pencil-square-o' aria-hidden='true'></i></a></td>";*/
                                                      }
@@ -97,8 +110,8 @@ foreach ($registro->result() as $info2) {
                                                         echo '<td><div class="dropdown" align="center">
                                                                 <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown"><i class="fa fa-cogs fa-lg"></i><span class="caret"></span></button>
                                                                 <ul class="dropdown-menu">
-                                                                    <li><a title="Este usuario esta activo no se puede eliminar" class="btn btn-danger m-b-10 m-l-5"><i style="color:white;" class="fa fa-trash-o" aria-hidden="true"></i></a></li>
-                                                                    <li><a class="btn btn-warning m-b-10 m-l-5"><i style="color:white;" class="fa fa-pencil-square-o" aria-hidden="true"></i></a></li>                                </ul>
+                                                                    <li onclick="NoDelete()"><a  title="Este usuario esta activo no se puede eliminar"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a> </li>
+                                                                    <li><a ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a> Editar</li>                                </ul>
                                                                 </div></td>';
                                                        /*echo "<td><a class='disabled btn btn-danger m-b-10 m-l-5'><i style='color:white;' class='fa fa-trash-o' aria-hidden='true'></i></a></td>";
                                                         */
@@ -144,5 +157,27 @@ foreach ($registro->result() as $info2) {
                 swal("Cancelado !!", "Proceso cancelado !!", "error");
             }
         });
+    }
+    function NoDelete(){
+        toastr.warning('Esta usaria esta activa no se puede eliminar','Aviso',{
+        "positionClass": "toast-bottom-full-width",
+        timeOut: 5000,
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": true,
+        "preventDuplicates": true,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut",
+        "tapToDismiss": false
+
+    })
+        //alert("Hola");
     }
 </script>

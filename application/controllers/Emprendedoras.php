@@ -121,6 +121,7 @@ class Emprendedoras extends CI_Controller {
 		else{
 			$this->load->view('administrador/base/headerVisitante');
 			$this->load->view('emprendedoras/ver_perfil', $datos);
+			$this->load->view('administrador/base/footer');
 			
 		}
 		

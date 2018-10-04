@@ -14,6 +14,16 @@ foreach ($user->result() as $fila2) {
 </style>
             <!-- Container fluid  -->
             <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Inicio</h3> </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Perfil</a></li>
+                        <li class="breadcrumb-item active">Mi Perfil</li>
+                    </ol>
+                </div>
+            </div>
             <div class="container-fluid">
                 <div class="row">
                     <!-- Column -->
@@ -235,7 +245,7 @@ foreach ($user->result() as $fila2) {
                                                                                 <span>Nombre del negocio </span>
                                                                                     <div class="input-group">
                                                                                         <input type="text" class="form-control" id="val-name" name="nombre_n" placeholder="Nombre" value="<?php echo $fila->Nombre_Negocio;?>">
-                                                                                        <input type="text" hidden name="id_usuaria" value="<?php echo $fila->pk_Id_Usuaria;?>">
+                                                                                        <input type="text" hidden name="id_usuaria" value="<?php echo $fila->FK_Usuaria;?>">
                                                                                     </div>
                                                                                 </div>
                                                                             </div>

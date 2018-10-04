@@ -5,9 +5,11 @@ class Perfiles_Model extends CI_Model
 
 		$sql="SELECT * FROM VW_Perfiles where FK_Usuaria ='$id'";
 		$validar=$this->db->query($sql);
-		$fechaActual = date("d/m/y");
-		$sql2="UPDATE tbl_Usuarias SET Fecha_Actividad='$fechaActual' WHERE pk_Id_Usuaria ='$id'";
-		$this->db->query($sql2);
+		if($this->session->userdata('id_tipo')!=1 && $this->session->userdata('id_tipo')!=2 ){
+			$fechaActual = date("Y/m/d");
+			$sql2="UPDATE tbl_Usuarias SET Fecha_Actividad='$fechaActual' WHERE pk_Id_Usuaria ='$id'";
+			$this->db->query($sql2);
+		}
 		return $validar->result();
 	}
 	public function BuscarPerfil($Nombre, $sede, $rubro){
@@ -16,7 +18,6 @@ class Perfiles_Model extends CI_Model
 		return $result->result();
 	}
 	public function CargarBolsa(){
-
 		$sql="SELECT * FROM VW_Perfiles";
 		$validar=$this->db->query($sql);
 		return $validar;
@@ -117,6 +118,13 @@ class Perfiles_Model extends CI_Model
 		//ATT. DESARROLLADOR 1.
 
 		//CREATE OR REPLACE VIEW  VW_Perfiles AS SELECT p.*, r.*, u.Nombre, u.Apellido, s.* FROM tbl_Perfiles_Empresariales AS p INNER JOIN tbl_Rubros AS r ON p.FK_Rubro = r.PK_Id_Rubro INNER JOIN tbl_Usuarias AS u ON p.FK_Usuaria =u.pk_Id_Usuaria INNER JOIN tbl_Sedes as s ON u.FK_Sede = s.pk_Id_Sede 
+		
+		//OJO NO BORRAR 
 
+	}
+	public function NumRubro(){
+		$sql="SELECT COUNT(*) AS Num, r.Nombre_Rubro FROM tbl_Perfiles_Empresariales AS P INNER JOIN tbl_Rubros AS r ON P.FK_Rubro = r.PK_Id_Rubro GROUP BY FK_Rubro ORDER BY Num DESC LIMIT 1";
+		$r=$this->db->query($sql);
+		return $r;
 	}
 }

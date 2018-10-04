@@ -34,6 +34,7 @@
                                      </ul>
                                 </li>
                                 <li><a href="<?=base_url() ?>Anuncios/publicar_anuncios">Publicar Noticias</a>
+                                <li><a href="<?=base_url() ?>Anuncios/GestionarNoticias">Gestionar noticias</a></li>
                                 </li>
                         </li>
                             </ul>
@@ -46,7 +47,11 @@
                                         <li><a href="<?=base_url() ?>Guias/Cargar_Guias?v=2">Videos</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="<?=base_url() ?>Guias">Publicar Guia Multimedia</a>                         
+                                <li><a href="<?=base_url() ?>Guias">Publicar Guia Multimedia</a>
+
+                                </li>
+                                <li><a href="<?=base_url() ?>Guias/Gestionar">Gestionar Guia Multimedia</a>
+                                                         
                                 </li>
                         </li>
                             </ul>
