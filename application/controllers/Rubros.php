@@ -18,13 +18,13 @@ class Rubros extends CI_Controller {
 		$bool=$this->Rubros_Model->insertarRubros($datos);
 		if($bool){
 			echo '<script type="text/javascript">
-				alert("Rubro insertado con exito");
+				alert("Rubro insertado con ´éxito");
 				self.location ="'.base_url().'/Rubros"
 				</script>';
 		}
 		else{
 			echo '<script type="text/javascript">
-				alert("NO se pudo realizar la accion");
+				alert("NO se pudo realizar la acción");
 				self.location ="'.base_url().'/Rubros"
 				</script>';
 		}
@@ -41,7 +41,7 @@ class Rubros extends CI_Controller {
 		}
 		else{
 			echo '<script type="text/javascript">
-				alert("NO se pudo realizar la accion");
+				alert("NO se pudo realizar la acción");
 				self.location ="'.base_url().'/Rubros"
 				</script>';
 		}
@@ -52,13 +52,13 @@ class Rubros extends CI_Controller {
 		$bool=$this->Rubros_Model->eliminarRubros($datos);
 		if($bool){
 			echo '<script type="text/javascript">
-				alert("Rubro eliminado con exito");
+				alert("Rubro eliminado con éxito");
 				self.location ="'.base_url().'/Rubros"
 				</script>';
 		}
 		else{
 			echo '<script type="text/javascript">
-				alert("NO se pudo realizar la accion");
+				alert("NO se pudo realizar la acción");
 				self.location ="'.base_url().'/Rubros"
 				</script>';
 		}

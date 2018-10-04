@@ -25,7 +25,7 @@
         <td class="text-center"><strong>Precio </strong></td>
     </tr>
     <tr>
-        <td colspan="3" class="text-center"><h4>Equipamiento</h4></td>
+        <td colspan="3" class="text-center"><h4>Maquinaria</h4></td>
     </tr>
     <tr>
 
@@ -45,7 +45,7 @@
 
     <?php }} ?>
      <tr  class="totalCapital">
-        <td colspan="2" class="text-center"><h6><strong>Total inversión en equipamiento</strong> </h6></td>
+        <td colspan="2" class="text-center"><h6><strong>Total inversión en Maquinaria</strong> </h6></td>
         <td class="text-center"><h6><strong>$<?= $totalE; ?> </strong></h6></td>
     </tr>
 
@@ -77,7 +77,10 @@
     <tr class="alert-primary">
         <td colspan="2" class="text-center"><h6><strong>Inversión Total</strong></h6></td>
         <td class="text-center"><h6><strong>$<?= $totalE + $totalI ; ?> </strong></h6></td>
-    </tr>
+    <tr class="alert-primary">
+        <td colspan="2" class="text-center"><h6><strong>Precios de insumos y maquinaria son de referencia segun estudio de Ciudad Mujer 2018</strong></h6></td>
+        <td class="text-center"></td>
+    </tr>    </tr>
 
 </table>
 </div>

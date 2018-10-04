@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="container-fluid">
-<h2 class="text-primary text-center">Emprende en cualquiera de los siguientes negocios !!!</h2>
+<h2 class="text-primary text-center">Emprende en los siguientes negocios</h2>
 <?php 
     if (sizeof($datos->result()) == 0)
     {
