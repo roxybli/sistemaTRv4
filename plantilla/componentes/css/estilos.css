@@ -112,3 +112,27 @@
 .noOculto{
 display: inline;
 }
+
+/* Inicion de Tabs de ingreso y egresos */
+#contenedorRIE{
+	margin:  0 auto;
+}
+.cardResumenIE{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.cardResumenIE .nav-tabs{
+	background-color: #000d5a;
+}
+.cardResumenIE .nav-tabs li{
+	padding: 10px
+}
+.cardResumenIE .nav-tabs li a{
+	color: #fff;
+	padding: 10px
+}
+.cardResumenIE .nav-tabs li a:hover{
+	background:#000d7f; 
+}
+/* Fin de Tabs de ingreso y egresos */

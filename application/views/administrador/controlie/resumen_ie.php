@@ -1,5 +1,4 @@
-<?php //include_once"header.php"; ?>
-            <!-- Bread crumb -->
+        <!-- Bread crumb -->
 <div class="row page-titles" style="background:#000d5a;">
     <div class="col-md-4 align-self-center">
         <a href="<?=base_url() ?>controlie"><h3 class="text-primary"> <i class="fa fa-chevron-left"></i> Volver </h3></a>
@@ -20,53 +19,51 @@
 <!-- Container fluid  -->
 <div class="container-fluid">
 <div class="row">
-	<table class="table negociosD">
-     <tr>
-         <th  style="color:#fff">Elemento</th>
-         <th  style="color:#fff">Enero</th>
-         <th  style="color:#fff">Febrero</th>
-         <th  style="color:#fff">Marzo</th>
-         <th  style="color:#fff">Abril</th>
-         <th  style="color:#fff">Mayo</th>
-         <th  style="color:#fff">Junio</th>
-         <th  style="color:#fff">Julio</th>
-         <th  style="color:#fff">Agosto</th>
-         <th  style="color:#fff">Septiembre</th>
-         <th  style="color:#fff">Octubre</th>
-         <th  style="color:#fff">Noviembre</th>
-         <th  style="color:#fff">Diciembre</th>
-     </tr>
-     <tr>
-         <td class="text-center"  style="background: #000d5a; color:#fff">Ingreso</td>
-     </tr>
-    <?php 
-        foreach ($ingresos->result() as $ingreso)
-        {
-        
-     ?>
-        <tr>
-            <td>
-                <?= $ingreso->Nombre_Ingreso;?>
-            </td>
-        </tr>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-title">
+            </div>
+            <div class="card-body" >
+                <div>
+                    <form class="form" method="post" action="<?= base_url() ?>controlie/resumenMensualIE">
+                        <div class="row ">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <strong><label>Selecciona un mes</label></strong>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                   <select name="mesResumen" class="form-control" id="departamentoResumen" required>
+                                        <option value=""></option>
+                                        <option value="01">Enero</option>
+                                        <option value="02">Febrero</option>
+                                        <option value="03">Marzo</option>
+                                        <option value="04">Abril</option>
+                                        <option value="05">Mayo</option>
+                                        <option value="06">Junio</option>
+                                        <option value="07">Julio</option>
+                                        <option value="08">Agosto</option>
+                                        <option value="09">Septiembre</option>
+                                        <option value="10">Octubre</option>
+                                        <option value="11">Noviembre</option>
+                                        <option value="12">Diciembre</option>
+                                    </select>  
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-2">
+                                    <button class="btn btn-primary">Aceptar</button>
+                            </div>
 
-     <?php } ?>
-
-     <tr>
-         <td class="text-center"  style="background: #000d5a; color:#fff">Egreso</td>
-     </tr>
-    <?php 
-        foreach ($egresos->result() as $egreso)
-        {
-        
-     ?>
-        <tr>
-            <td><?= $egreso->Nombre_Egreso ?></td>
-        </tr>
-
-     <?php } ?>
-
-    </table>
+                            <!--/span-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 </div>
 </div>
 <!-- End Container fluid  -->
+

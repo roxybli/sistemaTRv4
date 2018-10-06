@@ -55,16 +55,8 @@ class Controlie extends CI_Controller {
 
 	public function resumenIE()
 	{
-		$this->load->model('Controlie_Model');
-		//echo substr('abcdef', 0, 4);  // abcd
-		// Ingresos y egresos 
-		$idUsuario = $this->session->userdata('id');
-		$ingresos = $this->Controlie_Model->resumenIngresos($idUsuario);
-		$egresos = $this->Controlie_Model->resumenEgresos($idUsuario);
-
-		$data = array('ingresos' => $ingresos , 'egresos' => $egresos );
 		$this->load->view('administrador/base/header');
-		$this->load->view('administrador/controlie/resumen_ie', $data);
+		$this->load->view('administrador/controlie/resumen_ie');
 		$this->load->view('administrador/base/footer2');
 	}
 
@@ -248,6 +240,28 @@ class Controlie extends CI_Controller {
 		$this->load->view('administrador/base/header');
 		$this->load->view('administrador/controlie/detalle_balance', $data);
 		$this->load->view('administrador/base/footer2');
+	}
+
+	public function resumenMensualIE()
+	{
+			$d = $this->input->post();
+			$mes =$d['mesResumen'];
+
+			$a = date('Y');
+			$fechaI = $a.'-'.$mes.'-01';
+			$fechaF = $a.'-'.$mes.'-31';
+			$id = $this->session->userdata('id');
+
+			$this->load->model("Controlie_Model");
+			$ingresos = $this->Controlie_Model->resumenIngresos($id, $fechaI, $fechaF);
+			$egresos = $this->Controlie_Model->resumenEgresos($id, $fechaI, $fechaF);
+
+			$data = array('ingresos' => $ingresos, 'egresos'=>$egresos);
+			$this->load->view('administrador/base/header');
+			$this->load->view('administrador/controlie/detalle_resumen', $data);
+			$this->load->view('administrador/base/footer2');
+
+		
 	}
 
 

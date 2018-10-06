@@ -198,18 +198,18 @@ public function guardarIE($datos=null, $idUsuario)
 		return $datos;
 	}
 
-	public function resumenIngresos($id)
+	public function resumenIngresos($id, $i, $f)	
 	{
 		//$sql ="SELECT DISTINCT Nombre_Ingreso  FROM tbl_Ingresos WHERE FK_Id_Usuario = '$id'";
-		$sql ="SELECT *  FROM tbl_Ingresos WHERE FK_Id_Usuario = '$id'";
-		$datos = $this->db->query($sql);
-		return $datos;
+		$sql ="SELECT *  FROM tbl_Ingresos WHERE FK_Id_Usuario = '$id' AND DATE(Fecha_Ingreso) BETWEEN '$i' AND '$f'";
+		$ingresos = $this->db->query($sql);
+		return $ingresos;
 	}
 
-	public function resumenEgresos($id)
+	public function resumenEgresos($id, $i, $f)
 	{
 		//$sql ="SELECT DISTINCT Nombre_Egreso FROM tbl_Egresos WHERE FK_Id_Usuario = '$id'";
-		$sql ="SELECT * FROM tbl_Egresos WHERE FK_Id_Usuario = '$id'";
+		$sql ="SELECT * FROM tbl_Egresos WHERE FK_Id_Usuario = '$id' AND DATE(Fecha_Egreso) BETWEEN '$i' AND '$f'";
 		$datos = $this->db->query($sql);
 		return $datos;
 	}
