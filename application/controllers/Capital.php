@@ -18,6 +18,14 @@ class Capital extends CI_Controller {
 	{
 		$this->load->view('administrador/base/header');
 		
+		$this->load->view('administrador/capital/index');
+		$this->load->view('administrador/base/footer2');
+	}
+
+	public function ingresarNegocio()
+	{
+		$this->load->view('administrador/base/header');
+		
 		$this->load->Model("Capital_Model");
 		$datos = $this->Capital_Model->obternerRubros();
 		$data = array('datos' => $datos );
@@ -39,25 +47,36 @@ class Capital extends CI_Controller {
 	public function negocios()
 	{
 		$this->load->view('administrador/base/header');
-
 		$this->load->Model("Capital_Model");
-		$datos = $this->Capital_Model->obtenerNegocios();
+		$datos = $this->Capital_Model->obternerRubros();
 		$data = array('datos' => $datos );
-
-
 		$this->load->view('administrador/capital/negocios', $data);
 		$this->load->view('administrador/base/footer2');
 	}
 
-	public function detalleNegocio()
+	public function detalleNegocio($id)
 	{
-		$id = $_GET['e'];
 		$this->load->model("Capital_Model");
 		$datos = $this->Capital_Model->detalleNegocio($id);
 		$data = array('datos' => $datos );
 
 		$this->load->view('administrador/base/header');
 		$this->load->view('administrador/capital/detalle_negocio', $data);
+		$this->load->view('administrador/base/footer2');
+	}
+
+	public function detalleCapital()
+	{
+	    $dato = $this->input->post();
+	    $id =  $dato['rubro'];
+		$this->load->Model("Capital_Model");
+		$datos = $this->Capital_Model->obtenerNegocios($id);
+		$data = array('datos' => $datos );
+
+
+
+	    $this->load->view('administrador/base/header');
+		$this->load->view('administrador/capital/negocios_rubro', $data);
 		$this->load->view('administrador/base/footer2');
 	}
 

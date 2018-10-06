@@ -84,9 +84,9 @@ public function obternerRubros()
 
 	}
 
-	public function obtenerNegocios()
+	public function obtenerNegocios($id)
 	{
-		$sql = "SELECT r.Nombre_Rubro,sr.PK_Id_Subrubro, sr.Nombre_Rubro as Nombre_Subrubro FROM tbl_Rubros as r INNER JOIN tbl_Subrubros as sr ON(r.PK_Id_Rubro = sr.FK_Id_Rubro)";
+		$sql = "SELECT r.Nombre_Rubro,sr.PK_Id_Subrubro, sr.Nombre_Rubro as Nombre_Subrubro FROM tbl_Rubros as r INNER JOIN tbl_Subrubros as sr ON(r.PK_Id_Rubro = sr.FK_Id_Rubro) WHERE PK_Id_Rubro = '$id'";
 		$datos = $this->db->query($sql);
 		return $datos;
 	}

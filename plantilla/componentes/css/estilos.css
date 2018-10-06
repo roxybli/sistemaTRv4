@@ -1,8 +1,11 @@
 
 .bg{
-	background-image: url("../../images/ae_3.jpg");
+	background-image: url("../../images/card/fondo_inventario.png");
+	background-repeat: repeat;
 	top: 0;
 	bottom: 0;
+	margin-top: -30px;
+	margin-bottom: -30px;
 
 }
 .divCentrado{
