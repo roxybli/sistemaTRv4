@@ -102,12 +102,10 @@
                                             <tr>
                                                 <th>Id Rubro</th>
                                                 <th>Nombre del Rubro</th>
-<<<<<<< HEAD
+
                                                 <th>Accion</th>
                                                 
-=======
-                                                <th colspan="2">Acción</th>
->>>>>>> 46d80ce2135f142fdb0201a79102bf845a6fb9e9
+                                               
                                             </tr>
                                         </thead>
                                         <tbody>

@@ -13,7 +13,6 @@
         article img{max-height:180px;}
         article p,footer p{text-align:center;}
   </style>
-
 <style type="text/css">
     #div12{
         margin: 12px;
