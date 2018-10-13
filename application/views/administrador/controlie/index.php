@@ -66,7 +66,7 @@
         </div>
 
         <div class="col-md-5 ">
-            <a href="<?=base_url() ?>controlie/estadisticasIE">
+            <a href="<?=base_url() ?>controlie/estadisticaMensualIE">
                 <div class="divColorVerde">
                     <div class="inventarioIMG">
                         <img  src="<?= base_url()  ?>plantilla/images/card/estadisticasV.png" class="img img-rounded" height="140">

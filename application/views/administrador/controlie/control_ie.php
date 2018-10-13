@@ -88,7 +88,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="" name="ingresosD[]" value="0" placeholder="Precio del ingreso" required>
+                                            <input type="text" class="form-control" id="" name="ingresosD[]" value=""  onkeypress="return numeros(event, 'num')" required>
                                         </div>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="input-group">';
-                    echo  '               <input type="text" value="0" class="form-control" id="" name="egresosD[]" placeholder="">';
+                    echo  '               <input type="text" value=" " class="form-control" id="" name="egresosD[]" onkeypress="return numeros(event, \'num\')"  placeholder="">';
                     echo '                  </div>
                                     </div>
                                 </div>
@@ -125,6 +125,7 @@
             } 
             
             ?>
+                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30"><i class="fa fa-share-square-o f-s-20"></i> Iniciar proceso</button>
 			</form>
                     
             </div>

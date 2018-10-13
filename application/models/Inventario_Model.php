@@ -143,7 +143,7 @@ public function guardarProcedimiento($datos=null)
 
 	public function mostrarProductosTerminados($id)
 	{
-		$sql = "SELECT p.Nombre_Producto, p.Precio_Producto,i.PK_Id_Inventario, i.Existencia_Producto, i.Fecha_Creacion, i.Lugar_Existencia, i.Estado, u.Nombre, u.Apellido FROM tbl_Productos as p INNER JOIN tbl_Inventario as i on(
+		$sql = "SELECT p.Nombre_Producto, p.Precio_Producto,i.PK_Id_Inventario, i.Existencia_Producto, i.Fecha_Creacion, i.Estado, u.Nombre, u.Apellido, u.Direccion as 'Lugar_Existencia' FROM tbl_Productos as p INNER JOIN tbl_Inventario as i on(
  				p.PK_Id_Producto = i.FK_Id_Producto) INNER JOIN tbl_Usuarias as u on(p.FK_Id_Usuario= u.pk_Id_Usuaria) AND p.FK_Id_Usuario = '$id' AND i.Estado='Terminado'";
 		$datos = $this->db->query($sql);
 		return $datos;

@@ -276,6 +276,20 @@ public function guardarIE($datos=null, $idUsuario)
 		return $datos;
 	}
 
+	public function estadisticaIE($id, $i, $f)
+	{
+		$sql = "SELECT Cantidad_Ingreso as 'Total', Fecha_Ingreso, Nombre_Ingreso, Cantidad_Ingreso FROM tbl_Ingresos WHERE FK_Id_Usuario='$id' AND DATE(Fecha_Ingreso) BETWEEN '$i' AND '$f' ";
+		$datos = $this->db->query($sql);
+		return $datos;
+	}
+
+	public function estadisticaIEE($id, $i, $f)
+	{
+		$sql = "SELECT Cantidad_Egreso as 'Total', Fecha_Egreso, Nombre_Egreso, Cantidad_Egreso FROM tbl_Egresos WHERE FK_Id_Usuario='$id' AND DATE(Fecha_Egreso) BETWEEN '$i' AND '$f' ";
+		$datos = $this->db->query($sql);
+		return $datos;
+	}
+
 
 }
 

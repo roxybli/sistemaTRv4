@@ -60,8 +60,9 @@ class Controlie extends CI_Controller {
 		$this->load->view('administrador/base/footer2');
 	}
 
-	public function estadisticasIE()
+	public function estadisticaMensualIE()
 	{
+
 		$this->load->view('administrador/base/header');
 		$this->load->view('administrador/controlie/estadisticas_ie');
 		$this->load->view('administrador/base/footer2');
@@ -259,10 +260,28 @@ class Controlie extends CI_Controller {
 			$data = array('ingresos' => $ingresos, 'egresos'=>$egresos);
 			$this->load->view('administrador/base/header');
 			$this->load->view('administrador/controlie/detalle_resumen', $data);
-			$this->load->view('administrador/base/footer2');
-
-		
+			$this->load->view('administrador/base/footer2');		
 	}
 
+
+	public function estadisticaMIE()
+	{
+			$d = $this->input->post();
+			$mes =$d['mesResumen'];
+
+			$a = date('Y');
+			$fechaI = $a.'-'.$mes.'-01';
+			$fechaF = $a.'-'.$mes.'-31';
+			$id = $this->session->userdata('id');
+
+			$this->load->model("Controlie_Model");
+			$ingresos = $this->Controlie_Model->estadisticaIE($id, $fechaI, $fechaF);
+			$egresos = $this->Controlie_Model->estadisticaIEE($id, $fechaI, $fechaF);
+
+			$data = array('ingresos' => $ingresos, 'egresos' => $egresos);
+			$this->load->view('administrador/base/header');
+			$this->load->view('administrador/controlie/detalle_estadistica', $data);
+			$this->load->view('administrador/base/footer2');		
+	}
 
 }

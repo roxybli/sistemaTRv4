@@ -35,7 +35,8 @@
                             <tr>
                                 <th>Producto</th>
                                 <th>Cantidad</th>
-                                <th>Monto</th>
+                                <th>Precio</th>
+                                <th>Total</th>
                                 <th>Fecha</th>
                             </tr>
                         </thead>
@@ -48,7 +49,8 @@
                             <tr>
                                 <td><?= $filaProducto->Nombre_Producto ?></td>
                                 <td><?= $filaProducto->Cantidad_Venta ?></td>
-                                <td>$<?= $filaProducto->Precio_Producto * $filaProducto->Cantidad_Venta?></td>
+                                <td>$<?= $filaProducto->Precio_Producto ?></td>
+                                <td>$<?= $filaProducto->Cantidad_Venta * $filaProducto->Precio_Producto ?></td>
                                 <td><?= $filaProducto->Fecha_Venta ?></td>
                                 
                             </tr>

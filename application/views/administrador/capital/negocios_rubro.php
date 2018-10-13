@@ -10,7 +10,7 @@
     <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Capital inicial</a></li>
-            <li class="breadcrumb-item active">home</li>
+            <li class="breadcrumb-item active">negocios</li>
         </ol>
     </div>
 </div>

@@ -33,12 +33,11 @@
                     <table class="table negociosD cell-border" id="inventarioRecetas">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Producto</th>
-                                <th>Precio</th>
-                                <th>Lugar</th>
-                                <th>Creado Por</th>
-                                <th>Opcion</th>
+                                <th class="text-center">Producto</th>
+                                <th class="text-center">Precio</th>
+                                <th class="text-center">Lugar</th>
+                                <th class="text-center">Creado Por</th>
+                                <th class="text-center">Opcion</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,14 +46,11 @@
                             {
                         ?>
                             <tr>
-                                <td>
-                                    
-                                </td>
-                                <td><span><?= $filaProcedimientos->Nombre_Producto ?></span></td>
-                                <td><span>$<?= $filaProcedimientos->Precio_Producto ?></span></td>
-                                <td><span><?= $filaProcedimientos->Direccion ?></span></td>
-                                <td><span><?= $filaProcedimientos->Nombre ?></span></td>
-                                <td><a href="<?= base_url() ?>inventario/detalleProcedimiento?e=<?= $filaProcedimientos->PK_Id_Producto ?>">Ver detalles</a></td>
+                                <td class="text-center"><span><?= $filaProcedimientos->Nombre_Producto ?></span></td>
+                                <td class="text-center"><span>$<?= $filaProcedimientos->Precio_Producto ?></span></td>
+                                <td class="text-center"><span><?= $filaProcedimientos->Direccion ?></span></td>
+                                <td class="text-center"><span><?= $filaProcedimientos->Nombre ?></span></td>
+                                <td class="text-center"><a href="<?= base_url() ?>inventario/detalleProcedimiento?e=<?= $filaProcedimientos->PK_Id_Producto ?>">Ver detalles</a></td>
                             </tr>
                         
                         <?php       

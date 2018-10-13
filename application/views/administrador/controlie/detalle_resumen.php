@@ -10,7 +10,7 @@
     <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Resumen de ingresos y egresos</a></li>
-            <li class="breadcrumb-item active">balances</li>
+            <li class="breadcrumb-item active">detalles</li>
         </ol>
     </div>
 </div>

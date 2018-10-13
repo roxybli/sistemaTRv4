@@ -67,49 +67,72 @@ class Inventario extends CI_Controller {
 	public function guardarProcedimiento()
 	{
 		$datos = $this->input->post();
-		for ($i=0; $i < sizeof($datos['cantidadInsumo']); $i++)
-		{ 
-			if ($datos['cantidadInsumo'][$i] <= 0)
-			{
-				unset($datos['idInsumos'][$i]);
-				unset($datos['nombreInsumo'][$i]);
-				unset($datos['medidaInsumo'][$i]);
-			}
+
+		if (!isset($datos['materiaPrimaSeleccionada']))
+		{
+			echo '<script type="text/javascript">
+				alert("Debes seleccionar la materia prima");
+				self.location ="'.base_url().'inventario/producto_receta"
+				</script>';
 		}
-		$cantidadI = array();
-		for ($i=0; $i < sizeof($datos['cantidadInsumo']); $i++)
-		{ 
-			if ($datos['cantidadInsumo'][$i] != 0)
-			{
-				//unset($datos['cantidadInsumo'][$i]);
-				array_push($cantidadI, $datos['cantidadInsumo'][$i] );
-
+		else
+		{
+			for ($i=0; $i < sizeof($datos['cantidadInsumo']); $i++)
+			{ 
+				if ($datos['cantidadInsumo'][$i] <= 0)
+				{
+					unset($datos['idInsumos'][$i]);
+					unset($datos['nombreInsumo'][$i]);
+					unset($datos['medidaInsumo'][$i]);
+				}
 			}
+			$cantidadI = array();
+			for ($i=0; $i < sizeof($datos['cantidadInsumo']); $i++)
+			{ 
+				if ($datos['cantidadInsumo'][$i] != 0)
+				{
+					//unset($datos['cantidadInsumo'][$i]);
+					array_push($cantidadI, $datos['cantidadInsumo'][$i] );
+
+				}
+			}
+
+			$datoss = array();
+
+			sort($datos['idInsumos']);
+			//var_dump($datos['idInsumos']);
+
+			sort($datos['medidaInsumo']);
+			//var_dump($datos['nombreInsumo']);
+
+			//var_dump($cantidadI);
+
+			$datoss['materiaPrimaSeleccionada' ] = $datos['materiaPrimaSeleccionada'];
+			$datoss['medidaInsumo' ] = $datos['medidaInsumo'];
+			$datoss['cantidadInsumo' ] = $cantidadI;
+
+			$datoss['nombreProducto' ]  = $datos['nombreProducto'];
+			$datoss['precioProducto' ]  = $datos['precioProducto'];
+			$datoss['idUsuario' ]  = $datos['idUsuario'];
+
+
+			if (sizeof($datoss['cantidadInsumo']) == 0)
+			{
+				echo '<script type="text/javascript">
+				alert("No ingresaste todas las cantidades de las materias primas seleccionadas");
+				self.location ="'.base_url().'inventario/producto_receta"
+				</script>';
+			}
+			else
+			{
+				$this->load->model('Inventario_Model');
+				$this->Inventario_Model->guardarProcedimiento($datoss);
+			}
+
+			//var_dump($datoss);
+
+			//var_dump($datos['cantidadInsumo']);
 		}
-
-		$datoss = array();
-
-		sort($datos['idInsumos']);
-		//var_dump($datos['idInsumos']);
-
-		sort($datos['medidaInsumo']);
-		//var_dump($datos['nombreInsumo']);
-
-		//var_dump($cantidadI);
-
-		$datoss['materiaPrimaSeleccionada' ] = $datos['materiaPrimaSeleccionada'];
-		$datoss['medidaInsumo' ] = $datos['medidaInsumo'];
-		$datoss['cantidadInsumo' ] = $cantidadI;
-
-		$datoss['nombreProducto' ]  = $datos['nombreProducto'];
-		$datoss['precioProducto' ]  = $datos['precioProducto'];
-		$datoss['idUsuario' ]  = $datos['idUsuario'];
-
-		//var_dump($datoss);
-
-		//var_dump($datos['cantidadInsumo']);
-		$this->load->model('Inventario_Model');
-		$this->Inventario_Model->guardarProcedimiento($datoss);
 	}
 
 	public function detalleProcedimiento()
@@ -146,7 +169,7 @@ class Inventario extends CI_Controller {
 			{
 				echo '<script type="text/javascript">
 				alert("Su producto esta en proceso !!!");
-				self.location ="'.base_url().'inventario/productos_disponibles"
+				self.location ="'.base_url().'inventario/productos_proceso"
 				</script>';
 			}
 		}

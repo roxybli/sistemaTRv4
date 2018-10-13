@@ -98,6 +98,12 @@
                         <?php 
                             foreach ($insumos->result() as $filaInsumos)
                             {
+                                $nombre = '"'.$filaInsumos->Nombre_Insumo.'"';
+                                $idInsumo = '"'.$filaInsumos->PK_Id_Insumo.'"';
+                                $precioInsumo = '"'.$filaInsumos->Precio_Insumo.'"';
+                                $medidaInsumo = '"'.$filaInsumos->Medida_Insumo.'"';
+                                $idTipoInsumo = '"'.$filaInsumos->FK_Id_Tipo_Insumo.'"';
+
                                 if ($filaInsumos->FK_Id_Tipo_Insumo==1)
                                 {
                                     echo '<tr class="comestible">';
@@ -120,6 +126,9 @@
                                     <td class="text-primary"><input type="hidden" name="tipoInsumo[]" value="<?= $filaInsumos->FK_Id_Tipo_Insumo ?>"  required></td>
                                     <td>                                
                                         <input type="checkbox" class="form-control" name="materiaPrimaSeleccionada[]" value="<?= $filaInsumos->PK_Id_Insumo ?>" >
+                                        <?php 
+                                         //echo "<button type='button' class='btn btn-primary btn-sm' onclick='agregar($nombre, $precioInsumo, $medidaInsumo, $idInsumo, $idTipoInsumo)'><i class='fa fa-plus'></i></button>";
+                                         ?>
                                     </td>
                                     <td class="text-primary"><span></span></td>
                                     
@@ -135,6 +144,16 @@
                     <button type="submit" id="segundoPasoR" class="btn btn-primary btn-flat m-b-30 m-t-30"><i class="fa fa-save f-s-30"></i> Guardar </button>
                     </div>
                 </div>
+
+                            <!--<table class="table table-bordered" id="datosReceta">
+                                <tr>
+                                    <td>INSUMO</td>
+                                    <td>PRECIO</td>
+                                    <td>MEDIDA</td>
+                                    <td>CANTIDAD REQUERIDA</td>
+                                    <td>EXISTENCIA</td>
+                                </tr>
+                            </table>-->
                     </form>
                 </div>
                             
@@ -144,3 +163,22 @@
 </div> 
 
 </div>
+<script>
+   /* function agregar(n, p, m, iI, iT)
+    {
+        html = '';
+        html += '<tr>';
+        html +=             '<td><label>' + n + '</label></td>';
+        html +=             '<td><label>' + p + '</label></td>';
+        html +=             '<td><label>' + m + '</label></td>';
+        html +=             '<td><input type="text" value=""></td>';
+        html +=             '<td><label>' + iI + '</label></td>';
+        html +=             '<td><label>' + iT + '</label></td>';
+        html +=        '</tr>';
+
+        $("#datosReceta").append(html);
+        $(this).css("display","none");
+        //alert(n + p + m + iI + iT);
+    }*/
+</script>
+
