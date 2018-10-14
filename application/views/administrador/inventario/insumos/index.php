@@ -19,7 +19,7 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-title">
-                <h4>Cantidad de insumos </h4>
+                <p class="text-danger">(*) Todos los campos son requeridos.</p>
             </div>
             <div class="card-body">
                 <div id="cabeceraReceta">
@@ -29,6 +29,7 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
+                                    <label for=""><h4>Cantidad de insumos </h4></label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" min="1" id="cantidadInsumos" onkeypress="return numeros(event, 'num')" name="" placeholder="Cantidad de insumos" required>
                                     </div>

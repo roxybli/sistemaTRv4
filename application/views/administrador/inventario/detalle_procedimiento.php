@@ -59,14 +59,12 @@
                     <table class="table text-center">
                         <thead>
                             <tr>
-                                <th></th>
                                 <th>Materia Prima</th>
                                 <th>Precio</th>
                                 <th>Existencia</th>
                                 <th>Requerida</th>
                                 <th>Medida</th>
                                 <th>Direccion</th>
-                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -75,16 +73,12 @@
                             {
                         ?>
                             <tr>
-                                <td> 
-                                    
-                                </td>
                                 <td><span><?= $filaProcedimientos->Nombre_Insumo ?></span></td>
                                 <td><span><?= $filaProcedimientos->Precio_Insumo ?></span></td>
                                 <td><input type="text" name="existenciaInsumo[]"  value="<?= $filaProcedimientos->Existencia_Insumo ?>"> <input type="hidden" name="idInsumos[]"  value="<?= $filaProcedimientos->PK_Id_Insumo?>"></td>
                                 <td><span><input type="text" name="cantidadInsumo[]" value="<?= $filaProcedimientos->Cantidad_Insumo ?>" class="calc"></span></td>
                                 <td><span><?= $filaProcedimientos->Medida_Insumo ?></span></td>
                                 <td><span><?= $filaProcedimientos->Direccion ?></span></td>
-                                <td><span><?= $filaProcedimientos->FK_Id_Insumo ?></span></td>
                             </tr>
                         
                         <?php       

@@ -21,6 +21,9 @@
 <div class="container-fluid">
 <table class="table table-bordered negociosD" >
     <tr>
+        <td colspan="4"><a href="<?= base_url() ?>capital/detalleNegocioPDF/<?= $filaCabecera->PK_Id_Subrubro ?>" class="btn btn-danger btn-sm" target="_blank">Ver en PDF</a></td>
+    </tr>
+    <tr>
         <th colspan="2" class="text-center" style="color:#fff"> Rubro: <strong><?= $filaCabecera->Nombre_Rubro ?></strong></th>
         <th colspan="2" class="text-center" style="color:#fff"> Producción mensual: <strong><?= $filaCabecera->Produccion_Mensual  ?></strong></th>
     </tr>

@@ -30,19 +30,20 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
+                <div class="text-right">
+                <a href="<?= base_url() ?>insumos/" title="Agregar Insumo"><button class="btn btn-primary"><i class="fa fa-plus f-s-20"></i> Agregar nuevo insumo</button></a>
                 <?php 
                  if (sizeof($insumos->result()) == 0)
                     {
-                        echo '<h3 class="text-danger">No hay datos que mostrar inserte nuevos datos !!!</h3>';
+                        echo '</div><h3 class="text-danger">No hay datos que mostrar inserte nuevos datos !!!</h3>';
                     }
                     else
                     {
 
                 ?>
-                <div class="text-right">
-                <a href="<?= base_url() ?>insumos/" title="Agregar Insumo"><button class="btn btn-primary"><i class="fa fa-plus f-s-20"></i> Agregar nuevo insumo</button></a>
                 <a target="_blank" href="<?= base_url() ?>insumos/reporteInsumos" class="btn btn-danger"> Ver en PDF</a>
                 </div>
+                <strong><span style="background-color: rgba(255, 0, 0, 0.2); color: rgba(255, 0, 0, 0)"> ... </span> Has sobrepasado la cantidad minima en stock</strong>
                     <table class="table negociosD text-cell" id="inventarioInsumos">
                         <thead>
                             <tr>
@@ -93,7 +94,6 @@
                         
                         </tbody>
                     </table>
-                    <strong><span style="background-color: rgba(255, 0, 0, 0.2); color: rgba(255, 0, 0, 0)"> ... </span> Has sobrepasado la cantidad minima en stock</strong>
                 </div>
             </div>
         </div>

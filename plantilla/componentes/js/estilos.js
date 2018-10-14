@@ -63,6 +63,14 @@ $(function(){
 	    	
 	});
 */
+
+	$('#fechaIE').datepicker({
+					format: 'yyyy-mm-dd',
+					language:'es',
+
+				});
+
+
 	$("#categoriaInsumos").change(function(){
 		$("#segundaParteR").slideUp();
 		var tipoMateriaPrima = $("#categoriaInsumos").val();
@@ -162,8 +170,8 @@ $(function(){
 		        datos +='</div>';
 				$("#tablaIE").append(datos);
 			}
-				fecha = '<input type="hidden" name="fechaIE" value="'+fecha+'">';
-		    	$("#tablaIE").append(fecha);
+			boton = '<button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30"><i class="fa fa-share-square-o f-s-20"></i> Iniciar proceso</button>';
+		    	$("#tablaIE").append(boton);
 
 	    }
 	});
@@ -283,6 +291,18 @@ $(function(){
 
 		$("#CP").attr('value', num);
 		$("#FP").attr('value', fecha);
+		$("#fechaIngresosEgresos").attr('value', fecha);
+
+	});
+
+	$("#cantidadProducto").change(function ()
+	{
+
+		var num = $("#cantidadProducto").val();
+		var fecha = $("#fechaIE").val();
+
+		$("#CP").attr('value', num);
+		$("#FP").attr('value', fecha);
 
 	});
 
@@ -298,11 +318,7 @@ $(function(){
                 months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
                 monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
 				};
-	$('#fechaIE').datepicker({
-				format: 'yyyy-mm-dd',
-				language:'es',
-
-			});
+	
 		});
 
 	$('#cantidadProducto').click(function() 

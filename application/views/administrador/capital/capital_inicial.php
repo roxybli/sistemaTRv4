@@ -18,12 +18,14 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-title">
+                    <p class="text-danger">(*) Todos los campos son requeridos.</p>
             </div>
             <div class="card-body" >
                 <div id="capitalRubros">
                     <form method="" action="">
                         <div class="row">
                             <div class="col-md-10">
+                            <label for="">Selecciona una opción</label>
                                 <select name="" class="form-control" id="idRubro" required>
 
                                     <option value="">Elija uno de los siguientes rubros </option>
@@ -49,8 +51,8 @@
                         <div class="row ">
                             <div class="col-md-12">
                                 <div class="form-group">
+                                <label for="">Nombre del negocio</label>
                                     <div class="input-group">
-                                       
                                         <input type="text" list="negocios" class="form-control" id="nombreSubrubro" name="" placeholder="Nombre de la actividad" required>
                                         <datalist id="negocios">
                                             <option value="Panaderia y Pasteleria">
@@ -64,6 +66,7 @@
                         <div class="row ">
                             <div class="col-md-5">
                                 <div class="form-group">
+                                    <label for="">Cantidad de materia comestible</label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="materiaComestible" min="0" name="" placeholder="Número de materia comestible" onkeypress="return numeros(event, 'num')" required>
                                     </div>
@@ -72,6 +75,7 @@
 
                             <div class="col-md-5">
                                 <div class="form-group">
+                                <label for="">Cantidad de materia no comestible</label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="maquinaria" name="" min="0" placeholder="Número de no materia comestible" onkeypress="return numeros(event, 'num')" required>
                                         

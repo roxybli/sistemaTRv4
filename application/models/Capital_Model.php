@@ -93,7 +93,7 @@ public function obternerRubros()
 
 	public function detalleNegocio($id)
 	{
-		$sql="SELECT  esr.Fk_Id_Categoria_Elemento, esr.Nombre_Elemento, esr.Cantidad_Elemento, esr.Precio_Elemento,  esr.Medida_Elemento, ce.Nombre_Categoria, sr.Nombre_Rubro as Nombre_Subrubro, sr.Produccion_Mensual, r.Nombre_Rubro FROM tbl_Elementos_Subrubros as esr INNER JOIN tbl_Categoria_Elementos as ce on(esr.Fk_Id_Categoria_Elemento=ce.Pk_Id_Categoria_Elemento) INNER join tbl_Subrubros as sr on(esr.Fk_Id_Subrubro = sr.PK_Id_Subrubro) INNER JOIN tbl_Rubros as r on(sr.FK_Id_Rubro = r.PK_Id_Rubro)
+		$sql="SELECT  esr.Fk_Id_Categoria_Elemento, esr.Nombre_Elemento, esr.Cantidad_Elemento, esr.Precio_Elemento,  esr.Medida_Elemento, ce.Nombre_Categoria, sr.Nombre_Rubro as Nombre_Subrubro, sr.Produccion_Mensual, sr.PK_Id_Subrubro, r.Nombre_Rubro FROM tbl_Elementos_Subrubros as esr INNER JOIN tbl_Categoria_Elementos as ce on(esr.Fk_Id_Categoria_Elemento=ce.Pk_Id_Categoria_Elemento) INNER join tbl_Subrubros as sr on(esr.Fk_Id_Subrubro = sr.PK_Id_Subrubro) INNER JOIN tbl_Rubros as r on(sr.FK_Id_Rubro = r.PK_Id_Rubro)
 			WHERE sr.PK_Id_Subrubro='$id'";
 		$datos = $this->db->query($sql);
 		return $datos;
