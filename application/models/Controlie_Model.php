@@ -201,7 +201,7 @@ public function guardarIE($datos=null, $idUsuario)
 	public function resumenIngresos($id, $i, $f)	
 	{
 		//$sql ="SELECT DISTINCT Nombre_Ingreso  FROM tbl_Ingresos WHERE FK_Id_Usuario = '$id'";
-		$sql ="SELECT *  FROM tbl_Ingresos WHERE FK_Id_Usuario = '$id' AND DATE(Fecha_Ingreso) BETWEEN '$i' AND '$f'";
+		$sql ="SELECT i.PK_Id_Ingreso, i.FK_Id_Usuario, i.Nombre_Ingreso, i.Cantidad_Ingreso, i.Fecha_Ingreso, u.Nombre, u.Apellido FROM tbl_Ingresos as i INNER JOIN tbl_Usuarias as u ON(i.FK_Id_Usuario = u.pk_Id_Usuaria) WHERE FK_Id_Usuario = '$id' AND DATE(Fecha_Ingreso) BETWEEN '$i' AND '$f'";
 		$ingresos = $this->db->query($sql);
 		return $ingresos;
 	}
@@ -270,8 +270,8 @@ public function guardarIE($datos=null, $idUsuario)
 
 	public function detalleBalance($fecha)
 	{
-	 $sql = "SELECT b.Fecha_Balance, bie.Total_Ingreso, bie.Nombre_Operacion, e.Nombre_Egreso, e.Cantidad_Egreso FROM tbl_Balance as b INNER JOIN tbl_Ingresos_Egresos_Balance as bie
-				on(b.PK_Id_Balance = bie.FK_Id_Balance) INNER JOIN tbl_Egresos as e ON(bie.FK_Id_Egreso= e.Pk_Id_Egreso) WHERE b.Fecha_Balance='".$fecha."'";
+	 $sql = "SELECT b.Fecha_Balance, bie.Total_Ingreso, bie.Nombre_Operacion, e.Nombre_Egreso, e.Cantidad_Egreso, u.Nombre, u.Apellido FROM tbl_Balance as b INNER JOIN tbl_Ingresos_Egresos_Balance as bie
+				on(b.PK_Id_Balance = bie.FK_Id_Balance) INNER JOIN tbl_Egresos as e ON(bie.FK_Id_Egreso= e.Pk_Id_Egreso) INNER JOIN tbl_Usuarias AS u ON(b.FK_Id_Usuario = u.pk_Id_Usuaria) WHERE b.Fecha_Balance='$fecha'";
 		$datos = $this->db->query($sql);
 		return $datos;
 	}

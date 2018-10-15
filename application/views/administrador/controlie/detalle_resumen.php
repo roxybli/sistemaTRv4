@@ -9,7 +9,7 @@
 
     <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="javascript:void(0)">Resumen de ingresos y egresos</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ingresos y egresos</a></li>
             <li class="breadcrumb-item active">detalles</li>
         </ol>
     </div>
@@ -31,11 +31,14 @@
                 ?>
                     <table class="table table-bordered negociosD">
                         <tr>
+                            <td colspan="2" class="text-right"><a href="<?= base_url() ?>controlie/resumenMensualIEPDF/<?= $mes ?>" target="_blank" class="btn btn-danger btn-sm">Ver en PDF</a></td>
+                        </tr>
+                        <tr>
                             <th colspan="2" class="text-center" style="color:#fff">INGRESOS</th>
                         </tr>
                         <tr >
-                            <td class="text-center">Nombre</td>
-                            <td class="text-center">Monto</td>
+                            <td class="text-center">NOMBRE</td>
+                            <td class="text-center">MONTO</td>
                         </tr>
 
                         <?php 
@@ -55,10 +58,6 @@
 
                         <tr>
                             <th colspan="2" class="text-center" style="color:#fff">EGRESOS</th>
-                        </tr>
-                        <tr>
-                            <td class="text-center">Nombre</td>
-                            <td class="text-center">Monto</td>
                         </tr>
                         <?php 
                         $totalE=0;

@@ -87,7 +87,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input type="text" value="<?= $ingresosF->Nombre_Ingreso ?>" class="form-control" id="" name="ingresosN[]"  placeholder="" required>
+                                            <input type="text" value="<?= $ingresosF->Nombre_Ingreso ?>" class="form-control" id="" name=""  placeholder="" readonly>
+                                            <input type="hidden" value="<?= $ingresosF->Nombre_Ingreso ?>" class="form-control" id="" name="ingresosN[]"  placeholder="" required>
                                         </div>
                                     </div>
                                 </div>
@@ -114,7 +115,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="input-group">';
-                     echo  '               <input type="text" value="'.$egresosF->Nombre_Egreso.'" class="form-control" id="" name="egresosN[]" placeholder="">';
+                     echo  '               <input type="text" value="'.$egresosF->Nombre_Egreso.'" class="form-control" id="" name="" readonly>';
+                     echo  '               <input type="hidden" value="'.$egresosF->Nombre_Egreso.'" class="form-control" id="" name="egresosN[]" placeholder="">';
 
                      echo '             </div>
                                     </div>

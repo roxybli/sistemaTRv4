@@ -33,16 +33,19 @@
                 ?>
                     <table class="table detalleB">
                         <thead>
-                            <tr>
-                                <th></th>
-                                <th>Fecha</th>
-                                <th>Operacion</th>
-                                <th>Egreso de dinero</th>
-                                <th>Ingreso</th>
-                                <th>Balance</th>
-                                <th></th>
-                                
-                            </tr>
+                        <tr>
+                            <td colspan="6" class="text-right"><a href="<?= base_url() ?>controlie/detalleBalancePDF/<?= $fecha ?>" class="btn btn-danger btn-sm" target="_blank">Ver en PDF</a></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th>Fecha</th>
+                            <th>Operacion</th>
+                            <th>Egreso de dinero</th>
+                            <th>Ingreso</th>
+                            <th>Balance</th>
+                            <th></th>
+                            
+                        </tr>
                         </thead>
                         <tbody>
                         <?php
