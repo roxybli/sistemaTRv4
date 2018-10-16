@@ -124,7 +124,7 @@ table td{
                 ?>
                     <table class="negociosD" cellpadding="10">
                         <tr>
-                            <th colspan="12" class="text-center" style="color:#fff">ESTADISTICA DE INGRESOS</th>
+                            <th colspan="12" class="text-center" style="color:#fff">ESTADISTICA DE EGRESOS</th>
                         </tr>
                         <?php 
                             foreach ($egresos->result() as $egresos)
