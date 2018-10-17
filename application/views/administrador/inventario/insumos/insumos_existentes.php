@@ -41,10 +41,15 @@
                     {
 
                 ?>
+<<<<<<< HEAD
                 <a target="_blank" href="<?= base_url() ?>insumos/reporteInsumos" class="btn btn-danger"> Ver en PDF</a>
                 </div>
                 <strong><span style="background-color: rgba(255, 0, 0, 0.2); color: rgba(255, 0, 0, 0)"> ... </span> Has sobrepasado la cantidad minima en stock</strong>
                     <table class="table negociosD text-cell" id="inventarioInsumos">
+=======
+                <a target="_blank" href="<?= base_url() ?>insumos/reporteInsumos" class="btn btn-danger btn-sm"> Ver en PDF</a>
+                    <table class="table negociosD" id="insumosE">
+>>>>>>> pr/1
                         <thead>
                             <tr>
                                 <th>Nombre del insumo</th>

@@ -18,7 +18,11 @@
 </div>
 <!-- End Bread crumb -->
 <!-- Container fluid  -->
+<<<<<<< HEAD
 <div class="container-fluid bg" style="height:615px">
+=======
+<div class="container-fluid bg">
+>>>>>>> pr/1
     <!-- Start Page Content -->
     <div class="row divCentrado">
         <div class="col-md-5 contenedorInventario" >

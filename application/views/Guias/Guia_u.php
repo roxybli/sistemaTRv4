@@ -51,7 +51,9 @@ padding: 25px;
                     <div class="tab-pane active" id="home" role="tabpanel">
                         <div class="row card-title degradado_lineal ">
                             <h1  class="encabezado">
-                                <?php echo $GuiaU->Titulo_Guia;?></h1><hr>   
+                                <?php echo $GuiaU->Titulo_Guia;?></h1><hr> 
+
+                                <span ><p style="color:white;"><i class="fa fa-check" style="margin:10px; color:white;"></i>Publicado por <?= $GuiaU->Nombre?><span><p style="color:white;"><i class="fa fa-calendar" style="margin:10px; color:white;"></i>Fecha de publicacion <?= $GuiaU->Fecha_Publicacion?></p><br></span></p><br></span>  
                         </div>
                         
                         <div class="card-body">
@@ -63,10 +65,16 @@ padding: 25px;
                                             <div>
                                                 <div class="m-t-20 row">
                                                         <div class="col-md-11 col-xs-12 contenido ">
-                                                            <div>
+                                                        <div>
+                                                             <?php echo $GuiaU->Descripcion_Guia;?>
+                                                        </div>
+                                                        <div class="row"> 
+                                                            <img style="margin:10px;" class="img-responsive radius" src="<?= base_url()?>plantilla/Documentos/<?= $GuiaU->Imagen?>">
+                                                        </div>
+                                                        <div class="row">
                                                              <?php echo $GuiaU->Contenido;?>
                                                         </div>
-                                                        <div class="DivDescarga">
+                                                        <div class="DivDescarga row">
                                                         <?php
                                                         if($GuiaU->Tipo_publicacion=="Documento"){
                                                             echo '<a href="'.base_url().'plantilla/Documentos/'.$GuiaU->Documento_Guia.'" class ="btn btn-info btn-md" style="color:white; padding:25px;"><i class="fa fa-download fa-2x" ></i> Descargar Documento</a>';

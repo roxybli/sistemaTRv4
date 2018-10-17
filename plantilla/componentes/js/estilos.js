@@ -228,6 +228,12 @@ $(function(){
 				datos +=                 	'<option value="Litros">Litros</option>';
 				datos +=                 	'<option value="Mililitro">Mililitro</option>';
 				datos +=                 '</optgroup>';
+				datos +=                 '<optgroup label="Unidades de medida de longitud">';
+				datos +=                 	'<option value="Yardas">Yardas</option>';
+				datos +=                 	'<option value="Centimetros">Centimetros</option>';
+				datos +=                 	'<option value="Pulgadas">Pulgadas</option>';	
+				datos +=                 	'<option value="Metros">Metros</option>';											
+				datos +=                 '</optgroup>';				
 				datos +=             '</select>';
 		        datos +=        '</div>';
 		        datos +=    '</div>';

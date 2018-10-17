@@ -253,7 +253,10 @@ class Inventario extends CI_Controller {
 		$id = $this->session->userdata('id');
 		$this->load->model('Inventario_Model');
 		$datos = $this->Inventario_Model->mostrarProductosTerminados($id);
+<<<<<<< HEAD
 		$fecha = date("d-m-Y");
+=======
+>>>>>>> pr/1
 		if (sizeof($datos->result())!=0) 
 		{
 			$this->load->library('M_pdf');
@@ -331,6 +334,7 @@ class Inventario extends CI_Controller {
 				    <p>CIUDAD MUJER, EL SALVADOR <br>
 				    REPORTE DE INSUMOS</p>   
 			    </div>
+<<<<<<< HEAD
 			    </div>";
 
 			     foreach ($datos->result() as $user)
@@ -338,6 +342,12 @@ class Inventario extends CI_Controller {
 
 			$html .= "<br>
 			    <strong style='font-weight: bold;'>Resumen de inventario de $user->Nombre $user->Apellido hasta la fecha  $fecha</strong>
+=======
+			    </div>
+
+			<br>
+			    <strong style='font-weight: bold;'>Resumen de inventario</strong>
+>>>>>>> pr/1
 
 			</div>
 			<br>
@@ -426,7 +436,10 @@ class Inventario extends CI_Controller {
 		{
 			$this->load->library('M_pdf');
 
+<<<<<<< HEAD
 			$fecha = date("d-m-Y");
+=======
+>>>>>>> pr/1
 	        $data = [];
 
 	        $hoy = date("dmyhis");
@@ -500,12 +513,19 @@ class Inventario extends CI_Controller {
 				    <p>CIUDAD MUJER, EL SALVADOR <br>
 				    REPORTE DE INSUMOS</p>   
 			    </div>
+<<<<<<< HEAD
 			    </div>";
 			      foreach ($datos->result() as $user)
 		        {}
 
 			$html .= "<br>
 			    <strong style='font-weight: bold;'>Resumen de ventas  de $user->Nombre $user->Apellido hasta la fecha  $fecha</strong>
+=======
+			    </div>
+
+			<br>
+			    <strong style='font-weight: bold;'>Resumen de ventas</strong>
+>>>>>>> pr/1
 
 			</div>
 			<br>
@@ -553,7 +573,11 @@ class Inventario extends CI_Controller {
 
 		 
 
+<<<<<<< HEAD
 		         $pdfFilePath = "resumen de ventas.pdf";
+=======
+		         $pdfFilePath = "resumen de insumos.pdf";
+>>>>>>> pr/1
 		         //load mPDF library
 		        $this->load->library('M_pdf');
 		         $mpdf = new mPDF('c', 'A4'); 
@@ -592,7 +616,11 @@ class Inventario extends CI_Controller {
 		if (sizeof($datos->result())!=0) 
 		{
 			$this->load->library('M_pdf');
+<<<<<<< HEAD
 			$fecha= date("d-m-Y");
+=======
+
+>>>>>>> pr/1
 	        $data = [];
 
 	        $hoy = date("dmyhis");
@@ -666,6 +694,7 @@ class Inventario extends CI_Controller {
 				    <p>CIUDAD MUJER, EL SALVADOR <br>
 				    REPORTE DE INSUMOS</p>   
 			    </div>
+<<<<<<< HEAD
 			    </div>";
 
 			    foreach ($datos->result() as $user)
@@ -673,6 +702,12 @@ class Inventario extends CI_Controller {
 
 			$html .="<br>
 			    <strong style='font-weight: bold;'>Resumen de productos en proceso de $user->Nombre $user->Apellido hasta la fecha  $fecha</strong>
+=======
+			    </div>
+
+			<br>
+			    <strong style='font-weight: bold;'>Resumen de productos en proceso</strong>
+>>>>>>> pr/1
 
 			</div>
 			<br>

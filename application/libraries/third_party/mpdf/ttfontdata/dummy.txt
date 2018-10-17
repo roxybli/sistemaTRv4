@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 This is just a placeholder file so that the folder is created on install.
+=======
+This is just a placeholder file so that the folder is created on install.
+>>>>>>> pr/1
 It can be deleted once installed.

@@ -81,6 +81,8 @@ class Controlie extends CI_Controller {
 			if ($datos['ingresosN'][$i]!="")
 			{
 				/*echo '<script type="text/javascript">
+<<<<<<< HEAD
+=======
 				alert("Error: No ingresaste todos los datos !!!");
 				self.location ="'.base_url().'controlie/"
 				</script>';
@@ -90,10 +92,23 @@ class Controlie extends CI_Controller {
 			if ($datos['ingresosD'][$i]!="")
 			{
 				/*echo '<script type="text/javascript">
+>>>>>>> pr/1
 				alert("Error: No ingresaste todos los datos !!!");
 				self.location ="'.base_url().'controlie/"
 				</script>';
 				break;*/
+<<<<<<< HEAD
+				$contadorIngresosN = $contadorIngresosN+1;
+			}
+			if ($datos['ingresosD'][$i]!="")
+			{
+				/*echo '<script type="text/javascript">
+				alert("Error: No ingresaste todos los datos !!!");
+				self.location ="'.base_url().'controlie/"
+				</script>';
+				break;*/
+=======
+>>>>>>> pr/1
 				$contadorIngresosD = $contadorIngresosD+1;
 			}
 		}
@@ -159,10 +174,17 @@ class Controlie extends CI_Controller {
 				{
 					if ($bool)
 					{
+<<<<<<< HEAD
 						//$fecha = $datos['fechaIE'];
 						echo '<script type="text/javascript">
 						alert("Insumos guardados correctamente !!!");
 						self.location ="'.base_url().'controlie/procesarIE"
+=======
+						$fecha = $datos['fechaIE'];
+						echo '<script type="text/javascript">
+						alert("Insumos guardados correctamente !!!");
+						self.location ="'.base_url().'controlie/validarEgresos?f='.$fecha.'"
+>>>>>>> pr/1
 						</script>';
 
 					}
@@ -173,7 +195,11 @@ class Controlie extends CI_Controller {
 		{
 			echo '<script type="text/javascript">
 				alert("Error: No ingresaste todos los datos requeridos !!!");
+<<<<<<< HEAD
 				self.location ="'.base_url().'controlie/procesarIE"
+=======
+				self.location ="'.base_url().'controlie/"
+>>>>>>> pr/1
 				</script>';
 		}
 

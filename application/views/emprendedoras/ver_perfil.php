@@ -7,7 +7,12 @@
 <!--FUnetes de rox-->
 <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet"> 
-
+  <link rel="stylesheet" href="<?= base_url()?>/plantilla/componentes/js/lightbox/css/lightbox.min.css">
+  <style>
+        header{text-align:center;}
+        article img{max-height:180px;}
+        article p,footer p{text-align:center;}
+  </style>
 <style type="text/css">
     #div12{
         margin: 12px;
@@ -85,7 +90,7 @@
                  <div class="contacts">
                     <a onclick="MostrarC(<?php echo $Perfil->Correo?>)"><i class="fa fa-plus"></i></a>
                     <a onmouseover="MostrarW(<?php echo $Perfil->Telefono?>)"><i class="fa fa-whatsapp"></i></a>
-                    <a href="" title="Iniciar chat en la plataforma"><i class="fa fa-envelope"></i></a>
+                    <a data-toggle="modal" data-target="#ModalMensaje" title="Iniciar chat en la plataforma"><i class="fa fa-envelope" ></i></a>
                     <div  class="clrear">
                     </div>
 
@@ -111,16 +116,130 @@
 	</div>
     	<div class="col-lg-8">
     		<h1>Nuestro Trabajo</h1>
-    		 <div class="row">
-                <div class="col-lg-3 col-md-6 m-b-20"><img src="<?php echo base_url().'plantilla/img_perfil/'.$Perfil->Foto1;?>" class="img-responsive radius"  style="height:200px;" /></div>
-                <div class="col-lg-3 col-md-6 m-b-20"><img src="<?php echo base_url().'plantilla/img_perfil/'.$Perfil->Foto2;?>" class="img-responsive radius" style="height:200px;" /></div>
-                <div class="col-lg-3 col-md-6 m-b-20"><img src="<?php echo base_url().'plantilla/img_perfil/'.$Perfil->Foto3;?>" class="img-responsive radius" style="height:200px;" /></div>
-            </div>
+    		<div class="container galeria">
+        <articles class="row">
+            <article class="col-md-3">
+                <a href="<?php echo base_url().'plantilla/img_perfil/'.$Perfil->Foto1;?>" data-lightbox="example-set" data-title="Nuestro trabajo">
+                <img src="<?php echo base_url().'plantilla/img_perfil/'.$Perfil->Foto1;?>" alt="" class="img-thumbnail"></a>
+                <p></p>
+            </article>
+            <article class="col-md-3">
+                <a href="<?php echo base_url().'plantilla/img_perfil/'.$Perfil->Foto2;?>" data-lightbox="example-set" data-title="Nuestro trabajo">
+                <img src="<?php echo base_url().'plantilla/img_perfil/'.$Perfil->Foto2;?>" alt="" class="img-thumbnail"></a>
+                <p></p>
+            </article>
+            <article class="col-md-3">
+                <a href="<?php echo base_url().'plantilla/img_perfil/'.$Perfil->Foto3;?>" data-lightbox="example-set" data-title="Nuestro trabajo">
+                <img src="<?php echo base_url().'plantilla/img_perfil/'.$Perfil->Foto3;?>" alt="" class="img-thumbnail"></a>
+                <p></p>
+            </article>
+    </div>
     	</div>	
     </div>
 	</div>
+    
+    <script src="<?= base_url()?>plantilla/componentes/js/lightbox/js/lightbox.min.js"></script>
+  <script>
+      lightbox.option({
+        'albumLabel': "Imagen %1 de %2"
+      })
+  </script>
 	</main>
+<!-- Modal edit -->
+<div  class="modal fade" id="ModalMensaje" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#000d5a; opacity:80;">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="color:white;">Enviame un mensaje</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <!-- Bread crumb -->
+            <form class="form-valide" action="<?=base_url()?>Mensajes/Guardar" method="POST" id="mensaje" name="mensaje">         
+                <div class="row ">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="input-group">
+                            <input type="text" hidden >   
+                                <input type="text" class="form-control"  id="Emisor_Mensaje" name="Emisor_Mensaje" placeholder="Nombre">
+                                <input type="text" hidden name="ID" id="ID" value="<?php echo $Perfil->FK_Usuaria;?>">
+                            </div>
+                         
+                        </div>
+                        </div>
+                        <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="input-group">  
+                                <input type="text" class="form-control"  id="Contacto_Mensaje" name="Contacto_Mensaje" placeholder="Numero de contacto">
+                            </div>
+                            
+                        </div>
+                        </div>
+                         <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="input-group"> 
+                                
+                                <textarea type="text" class="form-control"  id="Contenido_Mensaje" name="Contenido_Mensaje" placeholder="Contenido">
+                                    
+                                </textarea>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" style="margin:5;" aria-hidden="true"></i> Enviar</button>
+                        </div>
+                </div>
+
+            </form>
+      </div>
+      <div class="modal-footer" style="background-color:#acc90d; opacity:80;">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
+$(document).on("submit", "#mensaje", function(e){
+    e.preventDefault();
+    //alert($(this).serialize());
+    id=$("#ID").val();
+    emisor= document.getElementById("Emisor_Mensaje").value;
+    contacto=$("#Contacto_Mensaje").val();
+    contenido=$("#Contenido_Mensaje").val();
+    guardar(id, emisor, contacto,contenido);
+    /*$.ajax({
+        url: "<?=base_url()?>Mensajes/Guardar",
+        type: "POST",
+        data: {datos:$(this).serialize()},
+        success:function(data){
+            alert(data);
+        }
+    });*/
+});
+    function guardar(id, emisor, contacto, contenido){
+        //alert(contacto);
+        $.ajax({
+        url: '<?php echo base_url()?>Mensajes/Guardar',
+        type: "POST",
+        data: {Emisor_Mensaje:emisor, Contacto_Mensaje:contacto, Contenido_Mensaje:contenido, ID:id},
+        success:function(data){
+            if(data==""){
+               swal("Mensaje enviado con exito", "Me comunicare contigo a tu numero de contacto!!", "success");
+               document.getElementById("Emisor_Mensaje").value="";
+               $("#Contacto_Mensaje").val("");
+               $("#Contenido_Mensaje").val("");
+            }
+            else
+            {
+                alert('error');
+            }
+        }
+    });
+    }
 	function MostrarW(valor){
     swal("Contactanos en WhatsApp envia un mensaje al: "+valor)
 	}

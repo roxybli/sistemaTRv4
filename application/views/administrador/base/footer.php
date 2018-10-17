@@ -1,4 +1,5 @@
-            <!-- footer -->
+                    <!-- Page wrapper  -->
+   
             <footer class="footer">Copyright <a href="#!">UES-FMO</a> &copy; <?php echo date("Y");?></footer>
             <!-- End footer -->
         </div>
@@ -30,6 +31,14 @@
     <script src="<?=base_url() ?>plantilla/componentes/js/scripts.js"></script>
     <script src="<?=base_url() ?>plantilla/componentes/js/estilos.js"></script>
 
+    <!--ARCHIVOS PARA LAS VALIDACIONES-->
+
+    <script src="<?=base_url() ?>plantilla/componentes/js/jquery.validate.js"></script>
+    <script src="<?=base_url() ?>plantilla/componentes/js/jquery.maskedinput.js"></script>
+
+    <script src="<?=base_url() ?>plantilla/componentes/js/FormValidateMask.js"></script>
+
+    <!--FIN DE LOS ARCHIVOS PARA VALIDAR-->
     <!-- scripit DataTab-->
     <script src="<?=base_url() ?>plantilla/componentes/js/lib/datatables/datatables.min.js"></script>
     <script src="<?=base_url() ?>plantilla/componentes/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>

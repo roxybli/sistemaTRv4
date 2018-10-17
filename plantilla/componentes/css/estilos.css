@@ -1,11 +1,17 @@
 
 .bg{
+<<<<<<< HEAD
 	background-image: url("../../images/card/fondo_inventario.png");
 	background-repeat: repeat;
 	top: 0;
 	bottom: 0;
 	margin-top: -30px;
 	margin-bottom: -30px;
+=======
+	background-image: url("../../images/ae_3.jpg");
+	top: 0;
+	bottom: 0;
+>>>>>>> pr/1
 
 }
 .divCentrado{
@@ -52,6 +58,7 @@
 	border: #fff;
 	border-width: 5px;
 	border-style: solid;
+<<<<<<< HEAD
 	font-weight: bold;
 	height: 400px;
 }
@@ -81,6 +88,27 @@
 }
 
 .detalleB td{
+=======
+	font-weight: bold;
+	height: 400px;
+}
+
+.negociosT th{
+	background: #000d5a;
+	margin: 0;
+	color: #fff;
+	font-weight: bold;
+}
+
+.negociosD th{
+	background: #000d5a;
+	margin: 0;
+	color: #fff;
+	font-weight: bold;
+}
+
+.negociosD td{
+>>>>>>> pr/1
 	color: #000;
 }
 
@@ -111,6 +139,7 @@
   }
 .noOculto{
 display: inline;
+<<<<<<< HEAD
 }
 
 /* Inicion de Tabs de ingreso y egresos */
@@ -136,3 +165,6 @@ display: inline;
 	background:#000d7f; 
 }
 /* Fin de Tabs de ingreso y egresos */
+=======
+}
+>>>>>>> pr/1

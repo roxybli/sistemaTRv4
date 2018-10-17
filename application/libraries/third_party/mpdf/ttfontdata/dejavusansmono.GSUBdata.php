@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php
+>>>>>>> pr/1
 $GSLuCoverage = array (
   0 => 
   array (
@@ -202,5 +206,9 @@ $GSLuCoverage = array (
       106 => 1,
     ),
   ),
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> pr/1
 ?>

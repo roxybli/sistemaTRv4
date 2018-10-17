@@ -32,26 +32,42 @@ class Login extends CI_Controller {
 	public function home()
 	{
 		$id=$this->session->userdata('id');
+		$id_tipo=$this->session->userdata('id_tipo');
 		$this->load->model('Perfiles_Model');
-		$ver=$this->Perfiles_Model->verificarPerfil($id);
-		$users=$this->Perfiles_Model->cargarUsuaria($id);
-		//$info1 = array('info' => $ver);
-		if($ver){
-			$info1 = array('info' => $ver, 'user'=>$users);
+		if($id_tipo==1 or $id_tipo==2){
+			$this->load->model('Usuarias_Model');
+			$num =$this->Usuarias_Model->NuevasUsuarias();
+			$numR=$this->Perfiles_Model->NumRubro();
+			$numUT =$this->Usuarias_Model->NumeroUsuarias();
+			$ns =$this->Usuarias_Model->NumeroUsuariasSede();
+			$d=array('num_user'=>$num, 'num_rubro'=>$numR, 'TotalU'=>$numUT, 'Nus'=>$ns);
 			$this->load->view('administrador/base/header');
-			$this->load->view('administrador/base/home');
-			$this->load->view('administrador/plugin/app-profile', $info1);
+			$this->load->view('administrador/base/home',$d);
 			$this->load->view('administrador/base/footer');
 		}
 		else{
-			$this->load->model('Rubros_Model');
-			$verr=$this->Rubros_Model->verRubros();
-			$data= array('rubros'=>$verr);
-			$this->load->view('administrador/base/header');
-			//$this->load->view('administrador/base/home');
-			$this->load->view('perfiles/Insertar_Perfil',$data);
-			$this->load->view('administrador/base/footer');
+			$ver=$this->Perfiles_Model->verificarPerfil($id);
+			$users=$this->Perfiles_Model->cargarUsuaria($id);
+			//$info1 = array('info' => $ver);
+
+			if($ver){
+				$info1 = array('info' => $ver, 'user'=>$users);
+				$this->load->view('administrador/base/header');
+				$this->load->view('administrador/plugin/app-profile', $info1);
+				$this->load->view('administrador/base/footer');
+			}
+			else{
+				$this->load->model('Rubros_Model');
+				$verr=$this->Rubros_Model->verRubros();
+				$data= array('rubros'=>$verr);
+				$this->load->view('administrador/base/header');
+				//$this->load->view('administrador/base/home');
+				$this->load->view('perfiles/Insertar_Perfil',$data);
+				$this->load->view('administrador/base/footer');
+			}
+
 		}
+		
 
 	}
 	public function validar()

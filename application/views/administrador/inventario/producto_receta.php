@@ -121,7 +121,7 @@
                         
                                     <td class="text-primary"><input type="text" name="nombreInsumo[]" value="<?= $filaInsumos->Nombre_Insumo ?>" required>
                                                             <input type="hidden" name="idInsumos[]" value="<?= $filaInsumos->PK_Id_Insumo ?>"  required></td>
-                                    <td class="text-primary"><input type="number" min="0" name="cantidadInsumo[]" onkeypress="return numeros(event, 'num')"></td>
+                                    <td class="text-primary"><input type="number" min="0" name="cantidadInsumo[]" onkeypress="return numeros(event, 'num')" required></td>
                                     <td class="text-primary"><input type="text" name="precioInsumo[]" value="<?= $filaInsumos->Precio_Insumo ?>"  required></td>
                                     <td class="text-primary"><input type="text" name="medidaInsumo[]" value="<?= $filaInsumos->Medida_Insumo ?>"  required></td>
                                     <td class="text-primary"><input type="hidden" name="tipoInsumo[]" value="<?= $filaInsumos->FK_Id_Tipo_Insumo ?>"  required></td>

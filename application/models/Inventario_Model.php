@@ -148,6 +148,50 @@ public function guardarProcedimiento($datos=null)
 		$datos = $this->db->query($sql);
 		return $datos;
 	}
+    
+    public function mostrarProductoTerminado($u, $p)
+	{
+		$sql = "SELECT p.Nombre_Producto, p.Precio_Producto,i.PK_Id_Inventario, i.Existencia_Producto, i.Fecha_Creacion, i.Lugar_Existencia, i.Estado, u.Nombre, u.Apellido FROM tbl_Productos as p INNER JOIN tbl_Inventario as i 
+		on(p.PK_Id_Producto = i.FK_Id_Producto) INNER JOIN tbl_Usuarias as u on(p.FK_Id_Usuario= u.pk_Id_Usuaria) AND p.FK_Id_Usuario = $u AND i.Estado='Terminado' AND i.PK_Id_Inventario='$p' ";
+		$datos = $this->db->query($sql);
+		return $datos;
+	}
+
+	public function efectuarVenta($datos =null)
+	{
+		$idInventario = $datos['idActualizar'];
+		$cantidadE = $datos['existenciaProducto'];
+		$cantidadV = $datos['cantidadVender'];
+		$fecha = $datos['fechaVenta'];
+
+		$total = $cantidadE-$cantidadV;
+		$sql = "UPDATE tbl_Inventario SET Existencia_Producto='". $total."' WHERE PK_Id_Inventario='".$idInventario."'";
+		if ($this->db->query($sql))
+		{
+			$sql2 = "INSERT INTO tbl_Venta VALUES('', '$idInventario', '$cantidadV', '$fecha')";
+			if ($this->db->query($sql2))
+			{
+				echo '<script type="text/javascript">
+					alert("Transacción exitosa !!!");
+					self.location ="'.base_url().'inventario/productos_disponibles";
+					</script>';
+			}
+		}	
+		else
+		{
+			echo '<script type="text/javascript">alert("Error al realizar la transacción")</script>';
+		}
+	}
+
+
+	public function obtenerVentas($id)
+	{
+		$sql = "SELECT v.Cantidad_Venta, v.Fecha_Venta, p.Nombre_Producto, p.Precio_Producto FROM tbl_Venta as v INNER JOIN tbl_Inventario as i 
+		on(v.Fk_Id_Inventario = i.PK_Id_Inventario) INNER JOIN tbl_Productos as p on(i.FK_Id_Producto = p.PK_Id_Producto) WHERE p.FK_Id_Usuario='$id'";
+		$datos = $this->db->query($sql);
+		return $datos;
+	}
+    
 
     public function mostrarProductoTerminado($u, $p)
 	{

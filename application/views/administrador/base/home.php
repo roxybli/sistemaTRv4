@@ -1,4 +1,29 @@
-<?php //include_once"header.php"; ?>
+<?php 
+foreach ($num_user->result() as $n) {
+}
+foreach ($num_rubro->result() as $r) {
+}
+foreach ($TotalU->result() as $t) {
+}
+foreach ($Nus->result() as $ns) {
+}
+ ?>
+<style type="text/css">
+    .iconImage{
+        display: inline-block;
+    }
+    .textIcon{
+        display: inline-block;
+        color: white;
+        margin: 10px;
+        font-weight: bold;
+    }
+    .CardItem a:hover{
+        display: block;
+        margin: 0px 40px;
+       
+    }
+</style>
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
@@ -13,18 +38,17 @@
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
             <div class="container-fluid">
-                <!-- Start Page Content -->
+                            <!-- Start Page Content -->
                 <div class="row">
-                  <!--  <div class="col-md-3">
-                             
+                    <div class="col-md-3">
                         <div class="card p-30">
                             <div class="media">
                                 <div class="media-left meida media-middle">
                                     <span><i class="fa fa-usd f-s-40 color-primary"></i></span>
                                 </div>
-                                   <div class="media-body media-text-right">
-                                    <h2></h2>
-                                    <p class="m-b-0">Capital inicial</p>
+                                <div class="media-body media-text-right">
+                                    <h5> <?= $r->Num?></h5>
+                                    <p class="m-b-0">Rubro con mas usuarias: <?= $r->Nombre_Rubro?></p>
                                 </div>
                             </div>
                         </div>
@@ -36,8 +60,8 @@
                                     <span><i class="fa fa-shopping-cart f-s-40 color-success"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2></h2>
-                                    <p class="m-b-0">Inventario</p>
+                                    <h2><?= $t->Registro?></h2>
+                                    <p class="m-b-0">Total de usuarias</p>
                                 </div>
                             </div>
                         </div>
@@ -46,15 +70,16 @@
                         <div class="card p-30">
                             <div class="media">
                                 <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-archive f-s-40 color-warning"></i></span>
+                                    <span><i class="fa fa-shopping-cart f-s-40 color-success"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2></h2>
-                                    <p class="m-b-0">Control de Ingresos y Egresos</p>
+                                    <h2><?= $ns->Registro?></h2>
+                                    <p class="m-b-0">usuarias <?= $ns->Nombre_Sede?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-3">
                         <div class="card p-30">
                             <div class="media">
@@ -62,18 +87,62 @@
                                     <span><i class="fa fa-user f-s-40 color-danger"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2></h2>
-                                    <p class="m-b-0">Usuarios</p>
+                                    <h2><?= $n->Numero_Usuarias_Nuevas?></h2>
+                                    <p class="m-b-0">Nuevas usuarias</p>
                                 </div>
                             </div>
                         </div>
-                    </div>-->
+                    </div>
+                </div>
+                <!-- Start Page Content -->
+                <div class="row" id="MenuCard">
+                    <div class="col-md-6">
+                            <div class="CardItem card" style="background-color:#8e24aa; color:white; height:100px;">
+                                <a href="<?=base_url()?>Emprendedoras/verUsuarias">
+                                <div>
+                                    <img class="iconImage"  src="<?= base_url()?>plantilla/images/usuario.png">
+                                    <h3 class="textIcon">Gestionar usuarias</h3>
+                                </div>
+                                </a> 
+                            </div>
+                    </div>
+                    <div class="col-md-6">
+                            <div class="CardItem card" style="background-color:#00897b; color:white; height:100px;">
+                                <a href="<?=base_url() ?>Emprendedoras/">
+                                <div>
+                                    <img class="iconImage"  src="<?= base_url()?>plantilla/images/carro.png">
+                                    <h3 class="textIcon">Bolsa de emprendedoras</h3>
+                                </div>
+                                </a>
+                                
+                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        
+                            <div  class="CardItem card" style="background-color:#512da8; color:white; height:100px;">
+                                    <a href="<?=base_url() ?>Guias/Gestionar">
+                                    <div>
+                                        <img class="iconImage"  src="<?= base_url()?>plantilla/images/participacion.png">
+                                        <h3 class="textIcon">Gestionar Guias Multimedia</h3>
+                                    </div>
+                                    </a>
+                                    
+                                </div>
+                        
+                            
+                    </div>
+                     <div class="col-md-6">
+                            <div class="CardItem card" style="background-color:#d81b60; color:white; height:100px;">
+                                <a href="<?=base_url() ?>Anuncios/GestionarNoticias">
+                                <div>
+                                    <img class="iconImage"  src="<?= base_url()?>plantilla/images/navegador.png">
+                                    <h3 class="textIcon">Gestionar Noticias</h3>
+                                </div>
+                                </a>
+                                
+                            </div>
+                    </div>
                 </div>
             
             </div>
             <!-- End Container fluid  -->
-
-<!--          
-                <?php //include_once"../componentes/plugin/app-profile.php"; ?>
-
-<?php //include_once"footer.php"; ?>

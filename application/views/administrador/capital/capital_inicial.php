@@ -68,7 +68,11 @@
                                 <div class="form-group">
                                     <label for="">Cantidad de materia comestible</label>
                                     <div class="input-group">
+<<<<<<< HEAD
                                         <input type="text" class="form-control" id="materiaComestible" min="0" name="" placeholder="Número de materia comestible" onkeypress="return numeros(event, 'num')" required>
+=======
+                                        <input type="number" class="form-control" id="materiaComestible" min="0" name="" placeholder="Número de materia comestible" onkeypress="return numeros(event, 'num')" required>
+>>>>>>> pr/1
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +81,11 @@
                                 <div class="form-group">
                                 <label for="">Cantidad de materia no comestible</label>
                                     <div class="input-group">
+<<<<<<< HEAD
                                         <input type="text" class="form-control" id="maquinaria" name="" min="0" placeholder="Número de no materia comestible" onkeypress="return numeros(event, 'num')" required>
+=======
+                                        <input type="number" class="form-control" id="maquinaria" name="" min="0" placeholder="Número de no materia comestible" onkeypress="return numeros(event, 'num')" required>
+>>>>>>> pr/1
                                         
                                     </div>
                                 </div>

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 dis/establish/ment/arian/ism
+=======
+dis/establish/ment/arian/ism
+>>>>>>> pr/1

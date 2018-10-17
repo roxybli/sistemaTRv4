@@ -43,11 +43,19 @@
                                                 <hr>
                                             </div>
                                             <div class="card-body">
-                                              <div class="row">
+                                        <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group ">
                                                 <label class="control-label">Inserte el titulo de la publicacion</label>
                                                     <input type="text" name="Titulo" class="form-control" required="true">
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group ">
+                                                <label class="control-label">Inserte una descripcion para la publicacion</label>
+                                                    <input type="text" name="Descripcion" class="form-control" required="true">
                                                 </div>
                                             </div>   
                                         </div>
@@ -77,7 +85,22 @@
                                                 </div>
                                             </div>   
                                         </div>
-
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>Seleccionar una imagen(opcional)</label>
+                                            </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <a onclick="SubirImg()" class="btn btn-info btn-medium" style="color:white; padding:0 25 0 25;"><i class="fa fa-upload fa-2x" style="margin-right:10px;"></i>Subir Imagen</a>
+                                                                <input required  hidden type="file" name="imagenN" id="imagenN" change="filePeview(this)">
+                                                        </div>
+                                                    </div>  
+                                                </div>
+                                            <div class="col-md-4" id="mostrarI">
+                                                <img src="<?=base_url()?>plantilla/images/picture.png">
+                                            </div>
+                                        </div>
                                          <div class="row">
                                             <div class="col-md-12">
                                         <label class="control-label">A continuacion se muestra una area para digitar el contenido que acompañe la publicacion</label>
@@ -91,12 +114,20 @@
                                             <div class="col-md-12">
                                                 <div class="form-group ">
                                                    <button hidden name="BotonEnv" class="btn-md  btn btn-success" value="Publicar" id="Publicar" name="Publicar">Publicar</button>
-                                                   <a id="Enviar" name="Enviar" class="btn btn-md btn-success">Publicar</a>
                                                 </div>
 
                                             </div>   
                                                 
-                                            </div>  
+                                            </div> 
+                                            <div class="row">
+                                                        <div class="col-md-6">
+                                                        <a href="<?= base_url()?>Guias/Gestionar" style="color:white;" class="btn btn-success"><i class="fa fa-times-circle f-s-20" style="margin:10px;"></i>Cancelar</a>  
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                        <a style="color:white;" id="Enviar" name="Enviar"  class="btn btn-primary"><i class="fa fa-share-square-o f-s-20" style="margin:10px;"></i>Publicar</a>
+                                                            
+                                                        </div>
+                                                        </div> 
                                         </div>
                                         </div>
                                 </form>
@@ -210,7 +241,6 @@ function seleccionArchivo(evt){
          document.getElementById('descripcion').innerHTML='';
          $("#documento").val('');
     }
-
 }
 $('#Enviar').click(function(){
     var doc = $('#Documento').val();
@@ -223,8 +253,6 @@ $('#Enviar').click(function(){
             document.getElementById('Publicar').click();
         }
         }
-        
-    
     else{
         document.getElementById('Publicar').click();  
     }
@@ -234,5 +262,61 @@ $('#BotonEnv').click(function(){
     alert('Error');
 });*/
 
+function SubirImg(){
+    document.getElementById('imagenN').click();
+}
+function filePreview(input){
+if(input.files && input.files[0]){
+    var reader = new FileReader(); 
+    reader.readAsDataURL(input.files[0]);
+    reader.onload =function(e) {
+            //$('#formAnuncio + img').remove();
+            //$('#formAnuncio').after('<div class="col-md-4"><img  src="'+e.target.result+'"  width="450" height="300" id="vista"/>');
+            //$('#formAnuncio').innerHTML='<div class="col-md-4"><img  src="'+e.target.result+'"  width="450" height="300" id="vista"/>';
+            document.getElementById('mostrarI').innerHTML='<img  src="'+e.target.result+'"  width="200" height="200" id="vista" alt="Imagen a publicar"/>';
+    }
+    }
+}
+$('#imagenN').change(function(){
+    //filePreview(this);
+    ValidarImagen(this);
+});
+
+function ValidarImagen(obj){
+    var uploadFile = obj.files[0];
+    if (!window.FileReader) {
+        alert('El navegador no soporta la lectura de archivos');
+        return;
+    }
+
+    if (!(/\.(jpg|png|gif|jpeg)$/i).test(uploadFile.name)) {
+        alert('El archivo a adjuntar no es una imagen');
+    }
+    else {
+        var img = new Image();
+        img.onload = function () {
+            if (this.width.toFixed(0) != 400 && this.height.toFixed(0) != 246) {
+                //alert('Las medidas deben ser: 200 * 200');
+                sweetAlert("Accion no permitida", "Tamanio de la imagen no permitida", "error");
+                 $("#imagenN").val('');
+                 document.getElementById('mostrarI').innerHTML='<img src="<?=base_url()?>plantilla/images/picture.png">';
+
+            }
+            else if (uploadFile.size < 20000)
+            {
+                sweetAlert("Accion no permitida", "El tamaño de la imagen no puede exeder los 200kb", "error");
+                document.getElementById('mostrarI').innerHTML='<img src="<?=base_url()?>plantilla/images/picture.png">';
+               
+            }
+            else {
+                alert('Imagen correcta :)');
+                document.getElementById('mostrarI').innerHTML='<img  src="'+URL.createObjectURL(uploadFile)+'"  width="200" height="200" id="vista" alt="Imagen a publicar"/>';                
+            }
+        };
+        img.src = URL.createObjectURL(uploadFile);
+
+        
+    }                 
+}
 
 </script>

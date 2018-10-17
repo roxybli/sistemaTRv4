@@ -1,6 +1,8 @@
+ <script src="<?=base_url() ?>plantilla/mtl/material.min.js"></script>
+ <link href="<?=base_url() ?>plantilla/mtl/material.min.css" rel="stylesheet">
 <style type="text/css">
     #div12{
-        margin: 12px;
+        margin: 30px;
         /*background-color: #acc90d;*/
 
         
@@ -58,6 +60,7 @@
 
     }
 </style>
+
 
   <main class="mdl-layout__content">
     <div class="page-content">
@@ -161,7 +164,8 @@ Filtrar</a>
                  </div>
             </div>
 	    </div>
-	    		<div class="container-fluid">
+        <div class="container-fluid">
+	    		
 				<div class="row" id="DivRejillas">
 
 					<?php
@@ -173,10 +177,11 @@ Filtrar</a>
 						 //echo "\$Perfiles[$i] => $perfil.\n";
 						 //$i++;
 					?>
-					<div id='div12' class='col-lg-3'>
+					<div id='div12' class='col-md-3'>
 					<p style='color:#000d5a;'></p>
 					<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-						  <div class="mdl-card__title" style="background: url('<?php echo base_url()?>plantilla/img_perfil/<?php echo $perfil->Foto_Perfil?>') center / cover; height: 200px;  background-repeat: no-repeat;">
+						  <div class="mdl-card__title">
+                          <img class="img-responsive radius" style="height:250px;" src="<?= base_url()?>plantilla/img_perfil/<?= $perfil->Foto_Perfil?>">
 						  </div>
 						  <div class="mdl-card__supporting-text">
 						  	<h2 class="mdl-card__title-text" style=""><?php echo $perfil->Nombre_Negocio?></h2>
@@ -198,6 +203,7 @@ Filtrar</a>
 				</div>
 			</div>
 		</div>
+        
   </main>
 <script type="text/javascript">
     //$(document).on("ready", Buscar(" "));
@@ -221,7 +227,7 @@ Filtrar</a>
     function Buscar(valor1, valor2, valor3)
     {
         $.ajax({
-            url:"Emprendedoras/BuscarPor",
+            url:"<?= base_url()?>Emprendedoras/BuscarPor",
             type:"POST",
             data:{buscar:valor1, buscarS:valor2, buscarR:valor3},
             success:function(respuesta){
