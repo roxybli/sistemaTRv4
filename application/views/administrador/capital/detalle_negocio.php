@@ -19,7 +19,6 @@
     </div>
 </div>
 <div class="container-fluid">
-<<<<<<< HEAD
 <table class="table table-bordered negociosD" >
     <tr>
         <td colspan="4"><a href="<?= base_url() ?>capital/detalleNegocioPDF/<?= $filaCabecera->PK_Id_Subrubro ?>" class="btn btn-danger btn-sm" target="_blank">Ver en PDF</a></td>
@@ -27,16 +26,6 @@
     <tr>
         <th colspan="2" class="text-center" style="color:#fff"> Rubro: <strong><?= $filaCabecera->Nombre_Rubro ?></strong></th>
         <th colspan="2" class="text-center" style="color:#fff"> Producción mensual: <strong><?= $filaCabecera->Produccion_Mensual  ?></strong></th>
-=======
-<table class="table table-bordered negociosD">
-    <tr class="alert-primary">
-    <?php 
-        foreach ($datos->result() as $filaCabecera)
-        {}
-    ?>
-        <th class="text-center">Rubro: <strong> <?= $filaCabecera->Nombre_Rubro  ?></strong> </th>
-        <th colspan="2" class="text-center"> </h4>Negocio: <strong><?= $filaCabecera->Nombre_Subrubro  ?></strong></h4></th>
->>>>>>> pr/1
     </tr>
     <tr>
         <td class="text-center"><strong>Nombre</strong></td>
@@ -45,11 +34,7 @@
         <td class="text-center"><strong>Costo</strong></td>
     </tr>
     <tr>
-<<<<<<< HEAD
         <td colspan="4  " class="text-center"><h4>Equipamiento</h4></td>
-=======
-        <td colspan="3" class="text-center"><h4>Maquinaria</h4></td>
->>>>>>> pr/1
     </tr>
     <tr>
 
@@ -70,11 +55,7 @@
 
     <?php }} ?>
      <tr  class="totalCapital">
-<<<<<<< HEAD
         <td colspan="3" class="text-center"><h6><strong>Total inversión en equipamiento</strong> </h6></td>
-=======
-        <td colspan="2" class="text-center"><h6><strong>Total inversión en Maquinaria</strong> </h6></td>
->>>>>>> pr/1
         <td class="text-center"><h6><strong>$<?= $totalE; ?> </strong></h6></td>
     </tr>
 
@@ -100,27 +81,14 @@
 
     <?php }} ?>
     <tr class="totalCapital">
-<<<<<<< HEAD
         <td colspan="3" class="text-center"><h6><strong>Total inversión en insumos </strong></h6></td>
-=======
-        <td colspan="2" class="text-center"><h6><strong>Total inversión en insumos </strong></h6></td>
->>>>>>> pr/1
         <td class="text-center"><h6><strong>$<?= $totalI ; ?> </strong></h6></td>
     </tr>
 
     <tr class="alert-primary">
-<<<<<<< HEAD
         <td colspan="3" class="text-center"><h6><strong>Inversión Total</strong></h6></td>
         <td class="text-center"><h6><strong>$<?= $totalE + $totalI ; ?> </strong></h6></td>
     </tr>
-=======
-        <td colspan="2" class="text-center"><h6><strong>Inversión Total</strong></h6></td>
-        <td class="text-center"><h6><strong>$<?= $totalE + $totalI ; ?> </strong></h6></td>
-    <tr class="alert-primary">
-        <td colspan="2" class="text-center"><h6><strong>Precios de insumos y maquinaria son de referencia segun estudio de Ciudad Mujer 2018</strong></h6></td>
-        <td class="text-center"></td>
-    </tr>    </tr>
->>>>>>> pr/1
 
 </table>
 </div>

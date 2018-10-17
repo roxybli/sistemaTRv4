@@ -13,7 +13,7 @@
     <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Ingresos y egresos</a></li>
-            <li class="breadcrumb-item active">home</li>
+            <li class="breadcrumb-item active">Home</li>
         </ol>
     </div>
 </div>
@@ -78,7 +78,7 @@
                 //Ingresos Existentes
             if (sizeof($ingresos->result()) > 0)
             {
-                echo '<p class="text-warning" >Ingresos ya existentes</p>';
+                echo '<p class="text-warning" >Ingresos</p>';
                 foreach ($ingresos->result() as $ingresosF)
                 {
                 ?>
@@ -106,7 +106,7 @@
                 //Egresos Existentes
             if (sizeof($ingresos->result()) > 0)
             {
-                echo '<p class="text-warning" >Egresos ya existentes</p>';
+                echo '<p class="text-warning" >Egresos</p>';
                 foreach ($egresos->result() as $egresosF)
                 {
 

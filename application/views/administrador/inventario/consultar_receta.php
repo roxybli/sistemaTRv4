@@ -33,20 +33,11 @@
                     <table class="table negociosD cell-border" id="inventarioRecetas">
                         <thead>
                             <tr>
-<<<<<<< HEAD
                                 <th class="text-center">Producto</th>
                                 <th class="text-center">Precio</th>
                                 <th class="text-center">Lugar</th>
                                 <th class="text-center">Creado Por</th>
                                 <th class="text-center">Opcion</th>
-=======
-                                <th></th>
-                                <th>Producto</th>
-                                <th>Precio</th>
-                                <th>Lugar</th>
-                                <th>Creado Por</th>
-                                <th>Opción</th>
->>>>>>> pr/1
                             </tr>
                         </thead>
                         <tbody>

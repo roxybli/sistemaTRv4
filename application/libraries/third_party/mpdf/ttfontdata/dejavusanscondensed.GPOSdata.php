@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php
->>>>>>> pr/1
 $LuCoverage = array (
   0 => 
   array (
@@ -595,9 +591,5 @@ $LuCoverage = array (
       61207 => 19,
     ),
   ),
-<<<<<<< HEAD
 );
-=======
-);
->>>>>>> pr/1
 ?>

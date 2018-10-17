@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 <div class="row page-titles" style="background:#000d5a;">
     <div class="col-md-4 align-self-center">
         <a href="<?=base_url() ?>inventario/productos_disponibles"><h3 class="text-primary"><i class="fa fa-times-circle"></i> Cancelar</h3></a>
@@ -13,15 +12,6 @@
     <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Venta</a></li>
-=======
-<div class="row page-titles">
-    <div class="col-md-5 align-self-center">
-        <a href="<?=base_url() ?>inventario/productos_disponibles"><h3 class="text-primary"><i class="fa fa-times-circle"></i> Cancelar</h3></a>
-     </div>
-    <div class="col-md-7 align-self-center">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="javascript:void(0)">Detalle producto</a></li>
->>>>>>> pr/1
             <li class="breadcrumb-item active">home</li>
         </ol>
     </div>
@@ -29,10 +19,6 @@
 <div class="container-fluid">
   <form role="form" action="<?= base_url() ?>inventario/venderProducto" id="formSolicitud" class="formEquipo" method="post">
    <fieldset>
-<<<<<<< HEAD
-=======
-     <legend>Datos del producto</legend>
->>>>>>> pr/1
      <hr>
      <?php 
       foreach ($datos->result() as $producto) {

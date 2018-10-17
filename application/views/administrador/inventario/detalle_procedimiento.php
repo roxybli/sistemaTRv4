@@ -5,7 +5,7 @@
     <div class="col-md-7 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Receta de productos</a></li>
-            <li class="breadcrumb-item active">Detalles</li>
+            <li class="breadcrumb-item active">detalles</li>
         </ol>
     </div>
 </div>
@@ -64,12 +64,7 @@
                                 <th>Existencia</th>
                                 <th>Requerida</th>
                                 <th>Medida</th>
-<<<<<<< HEAD
                                 <th>Direccion</th>
-=======
-                                <th>Dirección</th>
-                                <th></th>
->>>>>>> pr/1
                             </tr>
                         </thead>
                         <tbody>
@@ -84,10 +79,6 @@
                                 <td><span><input type="text" name="cantidadInsumo[]" value="<?= $filaProcedimientos->Cantidad_Insumo ?>" class="calc"></span></td>
                                 <td><span><?= $filaProcedimientos->Medida_Insumo ?></span></td>
                                 <td><span><?= $filaProcedimientos->Direccion ?></span></td>
-<<<<<<< HEAD
-=======
-                               <!-- <td><span><?= $filaProcedimientos->FK_Id_Insumo ?></span></td>-->   
->>>>>>> pr/1
                             </tr>
                         
                         <?php       

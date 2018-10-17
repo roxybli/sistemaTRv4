@@ -30,12 +30,7 @@
                     else
                     {
                 ?>
-<<<<<<< HEAD
                     <table class="table negociosD" id="inventarioProductosProceso">
-=======
-                     <a target="_blank" href="<?= base_url() ?>inventario/reporteInventarioEnProceso" class="btn btn-danger btn-sm"> Ver en PDF</a>
-                    <table class="table negociosD">
->>>>>>> pr/1
                         <thead>
                             <tr>
                                 <th></th>

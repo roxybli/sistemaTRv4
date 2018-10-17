@@ -145,11 +145,7 @@ class Insumos extends CI_Controller {
 	if (sizeof($datos->result())!=0) 
 	{
 		$this->load->library('M_pdf');
-<<<<<<< HEAD
 		$fecha = date("d-m-Y");
-=======
-
->>>>>>> pr/1
         $data = [];
 
         $hoy = date("dmyhis");
@@ -223,19 +219,12 @@ class Insumos extends CI_Controller {
 			    <p>CIUDAD MUJER, EL SALVADOR <br>
 			    REPORTE DE INSUMOS</p>   
 		    </div>
-<<<<<<< HEAD
 		    </div>";
 		foreach ($datos->result() as $user)
 	        {}
 
 		$html .="<br>
 		    <strong style='font-weight: bold;'>Descripción de insumos de $user->Nombre $user->Apellido hasta $fecha</strong>
-=======
-		    </div>
-
-		<br>
-		    <strong style='font-weight: bold;'>Descripción de insumos</strong>
->>>>>>> pr/1
 
 		</div>
 		<br>

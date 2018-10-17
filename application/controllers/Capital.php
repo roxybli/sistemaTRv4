@@ -47,12 +47,9 @@ class Capital extends CI_Controller {
 	public function negocios()
 	{
 		$this->load->view('administrador/base/header');
-
 		$this->load->Model("Capital_Model");
 		$datos = $this->Capital_Model->obternerRubros();
 		$data = array('datos' => $datos );
-
-
 		$this->load->view('administrador/capital/negocios', $data);
 		$this->load->view('administrador/base/footer2');
 	}
