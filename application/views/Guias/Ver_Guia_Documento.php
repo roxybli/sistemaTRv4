@@ -18,7 +18,9 @@
                                                             <h1 style="color:#000;"> <?php echo $Guias->Titulo_Guia;?></h1><hr>
                                                             <p style="color:black;"><?php echo $Guias->Descripcion_Guia;?></p>
 
-                                                            <span><p><i class="fa fa-check" style="margin:10px;"></i>Publicado por <?= $Guias->Nombre?><span><p><i class="fa fa-calendar" style="margin:10px;"></i>Fecha de publicacion <?= $Guias->Fecha_Publicacion?></p><br></span></p><br></span>
+                                                            <span><p><i class="fa fa-check" style="margin:10px;">
+                                                                
+                                                            </i>Publicado por <?= $Guias->Nombre?><span><p><i class="fa fa-calendar" style="margin:10px;"></i>Fecha de publicacion <?= $Guias->Fecha_Publicacion?></p><br></span></p><br></span>
                                                             <a href="<?= base_url()?>Guias/VerGuia?id=<?php echo $Guias->pk_Id_Guia?>" class="btn btn-info"><i class="fa fa-eye fa-2x" style="margin: 10px;"></i>Ver Publicacion</a>
                                                         </div>
                                                 </div>
