@@ -4,6 +4,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+<style type="text/css">
+         .TituloUser{
+        display: block;
+        margin: 0 auto;
+        background-color: #04B486;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        border-radius: 98;
+        width: 100%;
+        font-weight: bold;
+     }
+</style>
 <!-- Include Editor style. -->
            <!-- Container fluid  -->
 <?php 
@@ -15,8 +28,9 @@ foreach ($Guia->result() as $guia) {
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h1 class="card-title">Insertar Nueva Publicacion</h1>
-                                <h6 class="card-subtitle">Guias y Multimedia</h6>
+                                <div class="card TituloUser">
+                                    <h3 class="responsive" style="color:white; font-weight:bold;">Editar Guias Multimedia</h3>  
+                                </div>
                                 <form method="post"  action="<?= base_url() ?>Guias/Editar" enctype="multipart/form-data" form="formAnuncio" id="formAnuncio">
                                     <div class="form-group">
                                     <div class="form-body">
@@ -29,7 +43,7 @@ foreach ($Guia->result() as $guia) {
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group ">
-                                                <label class="control-label">Editar el titulo de la publicacion</label>
+                                                <label class="control-label" style="color: #000000">Editar el titulo de la publicacion</label>
                                                     <input type="text" name="Titulo" class="form-control" required="true" value="<?= $guia->Titulo_Guia?>">
                                                 </div>
                                             </div>   
@@ -44,7 +58,7 @@ foreach ($Guia->result() as $guia) {
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group ">
-                                                <label class="control-label"> Editar la descripcion de la publicacion</label>
+                                                <label class="control-label" style="color: #000000"> Editar la descripcion de la publicacion</label>
                                                     <input type="text" name="Descripcion" class="form-control" required="true" value="<?= $guia->Descripcion_Guia?>">
                                                 </div>
                                             </div>   
@@ -52,7 +66,7 @@ foreach ($Guia->result() as $guia) {
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group ">
-                                                <label class="control-label">Editar fecha de publicacion</label>
+                                                <label class="control-label" style="color: #000000">Editar fecha de publicacion</label>
                                                     <input type="text" id="fecha1" name="Fecha1" class="form-control" required="true" value="<?= $guia->Fecha_Publicacion?>">
                                                 </div>
                                             </div>   
@@ -67,10 +81,10 @@ foreach ($Guia->result() as $guia) {
                                         <div class="row" id="DivVideo">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                <label class="control-label ">Cambiar video</label>
+                                                <label class="control-label " style="color: #000000">Cambiar video</label>
                                                     <input type="text" id="txtVideo" name="Video" class="form-control" placeholder="Ej: https://www.youtube.com/watch?v=mfJhMfOPWdE">
                                                 </div>
-                                                <label class="alert alert-primary">Video cargado</label>
+                                                <label class="alert alert-primary" style="color: #000000">Video cargado</label>
                                                 <div class="row" style="margin:10px;">
                                                 <iframe width='500' height='400' src='https://www.youtube.com/embed/<?= $GuiaU->Video_Multimedia?>rel=0' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
                                                 </div>
@@ -90,7 +104,7 @@ foreach ($Guia->result() as $guia) {
                                                     </div>
                                                 </div>
                                                 <div class="alert alert-success">
-                                                <label class="alert alert-info">Nombre del docuemento: <?= $guia->Documento_Guia?><label>
+                                                <label class="alert alert-info" >Nombre del docuemento: <?= $guia->Documento_Guia?><label>
                                                 </div>
                                                 
                                             </div>   
@@ -125,14 +139,14 @@ foreach ($Guia->result() as $guia) {
 
                                         </script>
                                         <?php }?>
-                                        <label class="alert alert-primary">Imagen cargada</label>
+                                        <label class="alert alert-primary" style="color: #000000">Imagen cargada</label>
                                         <div class="row" style="margin:10px;">
                                         
                                         <img class="radius" src="<?= base_url()?>plantilla/Documentos/<?= $guia->Imagen?>"/>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label>Cambiar imagen(opcional)</label>
+                                                <label style="color: #000000">Cambiar imagen(opcional)</label>
                                             </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
@@ -148,7 +162,7 @@ foreach ($Guia->result() as $guia) {
                                         </div>
                                          <div class="row">
                                             <div class="col-md-12">
-                                        <label class="control-label">A continuacion se muestra una area para editar el contenido que acompañe la publicacion</label>
+                                        <label class="control-label" style="color: #000000">A continuacion se muestra una area para editar el contenido que acompañe la publicacion</label>
                                          <textarea id="Contenido" name='Contenido' class=" form-control textarea_editor form-control" rows="15" placeholder="Enter text ..." style="height:450px">
                                          <?= $guia->Contenido?>
                                          </textarea>

@@ -1,4 +1,17 @@
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
+<style type="text/css">
+         .TituloUser{
+        display: block;
+        margin: 0 auto;
+        background-color: #0489B1;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        border-radius: 98;
+        width: 100%;
+        font-weight: bold;
+     }
+</style>
 <?php 
 foreach ($Anuncios->result() as $noti) {
 }
@@ -22,9 +35,11 @@ foreach ($Anuncios->result() as $noti) {
                         
                     <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Gestion de noticias</h4>
-                                <h6 class="card-subtitle">Usted puede descargar los datos en los siguientes formatos copiar, CSV, Excel, PDF & Print</h6>
-                                <div class="table-responsive m-t-40">
+                                  <div class="card TituloUser">
+                                    <h3 class="responsive" style="color:white; font-weight:bold;">Gestión de Noticias</h3>  
+                                </div>
+                                
+                                <div class="table-responsive m-t-40"><h6 class="card-subtitle" style="color: #000000">Usted puede descargar los datos en los siguientes formatos copiar, CSV, Excel, PDF & Print</h6>
                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead >
                                             <tr>
@@ -40,7 +55,7 @@ foreach ($Anuncios->result() as $noti) {
                                                 <th>Id noticia</th>
                                                 <th>Titulo</th>
                                                 <th>Publicada por</th>
-                                                <th>Fecha de publicacion</th>
+                                                <th>Fecha de publicación</th>
                                                 <th>Operacion</th>
                                             </tr>
                                         </tfoot>
@@ -48,10 +63,10 @@ foreach ($Anuncios->result() as $noti) {
                                         <?php
                                                 foreach ($Anuncios->result() as $info){ 
                                                     echo "<tr>";  
-                                                    echo "<td id='ni'>".$info->pk_Id_Anuncio."</td>";  
-                                                    echo "<td id='nom'>".$info->Titulo."</td>";
-                                                    echo "<td id='cat'>".$info->Nombre."</td>";
-                                                    echo "<td id='cat'>".$info->Fecha."</td>";
+                                                    echo "<td id='ni' style='color: #000000'>".$info->pk_Id_Anuncio."</td>";  
+                                                    echo "<td id='nom' style='color: #000000'>".$info->Titulo."</td>";
+                                                    echo "<td id='cat' style='color: #000000'>".$info->Nombre."</td>";
+                                                    echo "<td id='cat' style='color: #000000'>".$info->Fecha."</td>";
                                                     $id=$info->pk_Id_Anuncio;
                                                     //INformacion para editar Noticia
                                                     $idUser1=$info->FK_Id_Usuaria;

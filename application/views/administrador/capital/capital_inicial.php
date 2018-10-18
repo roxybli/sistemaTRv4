@@ -25,7 +25,7 @@
                     <form method="" action="">
                         <div class="row">
                             <div class="col-md-10">
-                            <label for="">Selecciona una opción</label>
+                            <label for="" style="color: #000000">Selecciona una opción</label>
                                 <select name="" class="form-control" id="idRubro" required>
 
                                     <option value="">Elija uno de los siguientes rubros </option>
@@ -51,7 +51,7 @@
                         <div class="row ">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                <label for="">Nombre del negocio</label>
+                                <label for="" style="color: #000000">Nombre del negocio</label>
                                     <div class="input-group">
                                         <input type="text" list="negocios" class="form-control" id="nombreSubrubro" name="" placeholder="Nombre de la actividad" required>
                                         <datalist id="negocios">
@@ -66,7 +66,7 @@
                         <div class="row ">
                             <div class="col-md-5">
                                 <div class="form-group">
-                                    <label for="">Cantidad de materia comestible</label>
+                                    <label for="" style="color: #000000">Cantidad de Insumos</label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="materiaComestible" min="0" name="" placeholder="Número de materia comestible" onkeypress="return numeros(event, 'num')" required>
                                     </div>
@@ -75,7 +75,7 @@
 
                             <div class="col-md-5">
                                 <div class="form-group">
-                                <label for="">Cantidad de materia no comestible</label>
+                                <label for="" style="color: #000000">Cantidad de Maquinaria</label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="maquinaria" name="" min="0" placeholder="Número de no materia comestible" onkeypress="return numeros(event, 'num')" required>
                                         
@@ -107,7 +107,7 @@
                          </div> 
                          <div class="row" id="pm" style="display:none">
                              <div class="col-md-12 text-right">
-                             <label>Producción mensual</label>
+                             <label style="color: #000000">Producción estimada </label>
                             <input type="text" value="" id="" name="produccionMensual" onkeypress="return numeros(event, 'num')" required>
                             <hr>
                          </div>

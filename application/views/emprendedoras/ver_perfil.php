@@ -65,7 +65,7 @@
     }
     #Negocio{
         font-family: 'Rubik', sans-serif;
-        font-size: 50px;
+        font-size: 35px;
     }
     </style>
     <?php
@@ -85,11 +85,11 @@
             </header>
             <h3 id="Negocio"><?php echo $Perfil->Nombre_Negocio?></h3>
                 <div class="desc">
-                   <p style="font-family: 'Rubik', sans-serif;"> <?php echo $Perfil->Descripcion_Negocio?></p>
+                   <p style="font-family: 'Rubik', sans-serif; , color: #000000" > <?php echo $Perfil->Descripcion_Negocio?></p>
                 </div>
                  <div class="contacts">
                     <a onclick="MostrarC(<?php echo $Perfil->Correo?>)"><i class="fa fa-plus"></i></a>
-                    <a onmouseover="MostrarW(<?php echo $Perfil->Telefono?>)"><i class="fa fa-whatsapp"></i></a>
+                    <a onclick="MostrarW(<?php echo $Perfil->Telefono?>)"><i class="fa fa-whatsapp"></i></a>
                     <a data-toggle="modal" data-target="#ModalMensaje" title="Iniciar chat en la plataforma"><i class="fa fa-envelope" ></i></a>
                     <div  class="clrear">
                     </div>

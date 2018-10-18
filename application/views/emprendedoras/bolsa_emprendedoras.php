@@ -25,7 +25,7 @@
         display: block;
         margin: 0 auto;
         width: 90%;
-        height: 400px;
+        height: 200px;
     }
     .bordes{
         display: block;
@@ -184,7 +184,7 @@ Filtrar</a>
                           <img class="img-responsive radius" style="height:250px;" src="<?= base_url()?>plantilla/img_perfil/<?= $perfil->Foto_Perfil?>">
 						  </div>
 						  <div class="mdl-card__supporting-text">
-						  	<h2 class="mdl-card__title-text" style=""><?php echo $perfil->Nombre_Negocio?></h2>
+						  	<h2 class="mdl-card__title-text" style="color: #000000"><?php echo $perfil->Nombre_Negocio?></h2>
 						  </div>
 						  <div class="mdl-card__actions mdl-card--border">
                           <span><i class="fa fa-eye" aria-hidden="true"></i>

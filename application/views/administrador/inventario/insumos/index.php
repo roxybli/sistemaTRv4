@@ -10,7 +10,7 @@
     <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Recetas de productos</a></li>
-            <li class="breadcrumb-item active">home</li>
+            <li class="breadcrumb-item active">Home</li>
         </ol>
     </div>
 </div>
@@ -29,7 +29,7 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for=""><h4>Cantidad de insumos </h4></label>
+                                    <label for="" ><h4 style="color: #000000">Cantidad de insumos </h4></label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" min="1" id="cantidadInsumos" onkeypress="return numeros(event, 'num')" name="" placeholder="Cantidad de insumos" required>
                                     </div>

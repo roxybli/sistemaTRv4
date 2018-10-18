@@ -10,7 +10,7 @@
         text-align: center;
         color: white;
         border-radius: 98;
-        width: 60%;
+        width: 100%;
      }
      .etiqueta{
         color: black;
@@ -37,9 +37,10 @@
                         <div class="card">
                                 <div class="card TituloUser">
                                     <h3 class="responsive" style="color:white; font-weight:bold;">Nueva Usuaria</h3>
-                                    <p style="color:white;"><b>Indicaciones</b><br>Todos los campos son requeridos</p>
+   
                                 </div>
                                 <div class="form-validation" style="margin:15px;">
+                                    <p style="color:#000000;"><b>Indicaciones</b><br>Todos los campos son requeridos</p>
                                         <!-- Bread crumb -->
 					                                <form  action="<?=base_url()?>Emprendedoras/registro_usuaria" method="post" id="FormUsuarias" class="FormUsuarias">
 
@@ -62,7 +63,7 @@
                                                           </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                <label class="etiqueta">Inserte el nombre de la usuaria</label>
+                                                                <label class="etiqueta">Nombre de la usuaria</label>
                                                                     <div class="input-group">
                                                                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                                                                     </div>
@@ -71,7 +72,7 @@
                                                             <!--/span-->
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                <label class="etiqueta">Seleccione el tipo de usuaria de la usuaria</label>
+                                                                <label class="etiqueta">Seleccione el tipo de usuaria</label>
                                                                     <div class="input-group">
                                                                         <select class="form-control" id="tipo" name="tipo">
                                                                             <?php
@@ -91,7 +92,7 @@
                                                         <div class="row ">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                <label class="etiqueta">Inserte el apellido de la usuaria</label>
+                                                                <label class="etiqueta">Apellido de la usuaria</label>
                                                                     <div class="input-group">
                                                                         <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
                                                                     </div>
@@ -100,7 +101,7 @@
                                                             <!--/span-->
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                <label class="etiqueta">Inserte el nombre de usuaria para la usuaria</label>
+                                                                <label class="etiqueta">Nombre de Usuaria para iniciar en la Plataforma</label>
                                                                     <div class="input-group">
                                                                         <input type="text" class="form-control" id="nomuser" name="nomuser" placeholder="Nombre de usuario">
                                                                     </div>
@@ -112,7 +113,7 @@
                                                         <div class="row ">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                <label class="etiqueta">Inserte la contraseña para la usuaria</label>
+                                                                <label class="etiqueta">Contraseña para la usuaria</label>
                                                                     <div class="input-group">
                                                                         <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña">
                                                                     </div>
@@ -121,7 +122,7 @@
                                                             <!--/span-->
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                <label class="etiqueta">Inserte la direccion de la usuaria</label>
+                                                                <label class="etiqueta">Dirección de la usuaria</label>
                                                                     <div class="input-group">
                                                                         <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección">
                                                                     </div>
@@ -133,7 +134,7 @@
                                                         <div class="row ">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                <label class="etiqueta">Inserte el numero de telefono de la usuaria</label>
+                                                                <label class="etiqueta">Número de teléfono de la usuaria</label>
                                                                     <div class="input-group">
                                                                         <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
                                                                     </div>
@@ -142,7 +143,7 @@
                                                             <!--/span-->
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                <label class="etiqueta">Inserte el numero de DUI de la usuaria</label>
+                                                                <label class="etiqueta">Número de DUI de la usuaria</label>
                                                                     <div class="input-group">
                                                                         <input type="text" class="form-control" id="dui" name="dui" placeholder="# DUI">
                                                                     </div>

@@ -28,7 +28,7 @@
                         <div class="row ">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Nombre del Producto</label>
+                                    <label style="color: #000000">Nombre del Producto</label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="nombreProducto" name="nombreProducto" placeholder="" required>
                                     </div>
@@ -37,7 +37,7 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                <label>Precio del producto</label>
+                                <label style="color: #000000">Precio del producto</label>
                                     <div class="input-group">
                                         <input type="text" min="0" class="form-control" id="precioProducto" name="precioProducto" onkeypress="return numeros(event, 'num')" placeholder="" required>
                                     </div>
@@ -47,7 +47,7 @@
                             <!--/span-->
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Tipo de materia</label>
+                                    <label style="color: #000000">Tipo de materia</label>
                                     <div class="input-group">
                                         <select name="" id="categoriaInsumos" class="form-control" required>
                                             <option value="#">Ver materia prima por</option>
@@ -119,12 +119,12 @@
                                         
                                     </td>
                         
-                                    <td class="text-primary"><input type="text" name="nombreInsumo[]" value="<?= $filaInsumos->Nombre_Insumo ?>" required>
+                                    <td class="text-primary"><input type="text" name="nombreInsumo[]" value="<?= $filaInsumos->Nombre_Insumo ?>" disabled required >
                                                             <input type="hidden" name="idInsumos[]" value="<?= $filaInsumos->PK_Id_Insumo ?>"  required></td>
                                     <td class="text-primary"><input type="number" min="0" name="cantidadInsumo[]" onkeypress="return numeros(event, 'num')"></td>
-                                    <td class="text-primary"><input type="text" name="precioInsumo[]" value="<?= $filaInsumos->Precio_Insumo ?>"  required></td>
-                                    <td class="text-primary"><input type="text" name="medidaInsumo[]" value="<?= $filaInsumos->Medida_Insumo ?>"  required></td>
-                                    <td class="text-primary"><input type="hidden" name="tipoInsumo[]" value="<?= $filaInsumos->FK_Id_Tipo_Insumo ?>"  required></td>
+                                    <td class="text-primary"><input type="text" name="precioInsumo[]" value="<?= $filaInsumos->Precio_Insumo ?>" disabled required></td>
+                                    <td class="text-primary"><input type="text" name="medidaInsumo[]" value="<?= $filaInsumos->Medida_Insumo ?>" disabled required></td>
+                                    <td class="text-primary"><input type="hidden" name="tipoInsumo[]" value="<?= $filaInsumos->FK_Id_Tipo_Insumo ?>" disabled required></td>
                                     <td>                                
                                         <input type="checkbox" class="form-control" name="materiaPrimaSeleccionada[]" value="<?= $filaInsumos->PK_Id_Insumo ?>" >
                                         <?php 

@@ -31,7 +31,7 @@
                         <div class="row ">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                <label>Fecha</label>
+                                <label style="color: #000000">Fecha</label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="fechaIE" name="fechaIE" placeholder="Fecha" required>
                                     </div>
@@ -40,7 +40,7 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                <label>Acción</label>
+                                <label  style="color: #000000">Acción</label>
                                     <div class="input-group">
                                         <button type="button" id="procesarIE" class="btn btn-primary btn-flat "><i class="fa fa-share-square-o f-s-20"></i> Empezar</button>
                                          <p> &nbsp; </p><button type="button" id="agregarIE" class="btn btn-primary btn-flat "><i class="fa fa-plus f-s-20"></i> Agregar Nuevos</button>
@@ -87,15 +87,15 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input type="text" value="<?= $ingresosF->Nombre_Ingreso ?>" class="form-control" id="" name=""  placeholder="" readonly>
-                                            <input type="hidden" value="<?= $ingresosF->Nombre_Ingreso ?>" class="form-control" id="" name="ingresosN[]"  placeholder="" required>
+                                            <input type="text" value="<?= $ingresosF->Nombre_Ingreso ?>" class="form-control" id="" name=""  readonly style="color: #000000">
+                                            <input type="hidden" value="<?= $ingresosF->Nombre_Ingreso ?>" class="form-control" id="" name="ingresosN[]"   required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="" name="ingresosD[]" value=""  onkeypress="return numeros(event, 'num')" required>
+                                            <input type="text" class="form-control" id="" name="ingresosD[]" value=""  onkeypress="return numeros(event, 'num')"  required>
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="input-group">';
-                     echo  '               <input type="text" value="'.$egresosF->Nombre_Egreso.'" class="form-control" id="" name="" readonly>';
+                     echo  '               <input type="text" value="'.$egresosF->Nombre_Egreso.'" class="form-control" id="" name="" style="color:#000000" readonly>';
                      echo  '               <input type="hidden" value="'.$egresosF->Nombre_Egreso.'" class="form-control" id="" name="egresosN[]" placeholder="">';
 
                      echo '             </div>

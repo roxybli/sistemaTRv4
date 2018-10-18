@@ -1,7 +1,19 @@
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
-
+<style type="text/css">
+         .TituloUser{
+        display: block;
+        margin: 0 auto;
+        background-color: #0489B1;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        border-radius: 98;
+        width: 100%;
+        font-weight: bold;
+     }
+</style>
 <?php
 /*
 if(isset($_POST['btn'])){
@@ -41,14 +53,16 @@ if(isset($_POST['btn'])){
             </div>
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
+
             <div class="container-fluid">
                 <!-- Start Page Content -->
                 <div class="row ">
                     <div class="col-sm-12">
-                        <div class="card">
-                                <div class="card-title">
-                                    <h4>Publicar Anuncio</h4>
+                           <div class="card TituloUser">
+                                <h3 class="responsive" style="color:white; font-weight:bold;">Publicar Noticias</h3>
+                                <p style="color:white;"><b>Indicaciones</b><br>Todos los campos son requeridos</p>
                                 </div>
+                        <div class="card">
                                 <div class="form-validation">
                                         <!-- Bread crumb -->
                                                     <form class="form-valide" method="POST" action="<?= base_url() ?>Anuncios/guardar" enctype="multipart/form-data" form="formAnuncio" id="formAnuncio">                                    
@@ -56,8 +70,9 @@ if(isset($_POST['btn'])){
 
                                                          <div class="col-md-12">
                                                                 <div class="form-group"  id='datetimepicker9' >
-                                                                   <div class='input-group' >
-                                                                        <input type='date' class="form-control" id="fecha" name="fecha" placeholder="Seleccione una fecha" />
+                                                                    <label style="color: #000000"> Fecha de publicación:</label>
+                                                                   <div class='input-group' >                    
+                                                                    <input type='date' class="form-control" id="fecha" name="fecha" placeholder="Seleccione una fecha" />
                                                                         <span class="input-group-addon">
                                                                             <span class="glyphicon glyphicon-calendar">
                                                                             </span>
@@ -67,6 +82,7 @@ if(isset($_POST['btn'])){
                                                             </div>
                                                          <div class="col-md-12">
                                                                 <div class="form-group">
+                                                                     <label style="color: #000000">Titulo de la Noticia:</label>
                                                                     <div class="input-group">
                                                                         <textarea type="text" class="form-control" id="val-name " name="titulo" placeholder="Titulo de la Noticia" pattern="[A-Z-0-9]+" required></textarea> 
                                                                     </div>
@@ -74,6 +90,7 @@ if(isset($_POST['btn'])){
                                                             </div>
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
+                                                                     <label style="color: #000000"> Descripción de la Noticia:</label>
                                                                     <div class="input-group">
                                                                         <textarea type="text" class="form-control" id="val-name " name="Descripcion_Noticia" placeholder="Descripcion de la Noticia" pattern="[A-Z-0-9]+" required></textarea> 
                                                                     </div>
@@ -81,15 +98,16 @@ if(isset($_POST['btn'])){
                                                             </div>
                                                              <div class="col-md-12">
                                                                 <div class="form-group">
+                                                                     <label style="color: #000000">Contenido de la Noticia:</label>
                                                                     <div class="input-group">
-                                                                        <textarea rows="8" cols="80" class=" form-control textarea_editor form-control" rows="15" style="height:300px" type="text" class="form-control" id="val-name " name="contenido" placeholder="Descripción o contenido" required></textarea> 
+                                                                        <textarea rows="8" cols="80" class=" form-control textarea_editor form-control" rows="15" style="height:300px" type="text" class="form-control" id="val-name " name="contenido" placeholder="Contenido" required></textarea> 
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             </div>
                                                             <div class="row">
                                                               <div class="col-md-4">
-                                                                   <label>Seleccionar una imagen(opcional)</label>
+                                                                   <label style="color: #000000">Seleccionar una imagen(opcional)</label>
                                                               </div>
                                                               <div class="col-md-4">
                                                                 <div class="form-group">

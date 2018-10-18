@@ -47,12 +47,12 @@
                     <table class="table negociosD text-cell" id="inventarioInsumos">
                         <thead>
                             <tr>
-                                <th>Nombre del insumo</th>
-                                <th>Cantidad</th>
-                                <th>Precio</th>
-                                <th>Medida</th>
-                                <th>Tipo</th>
-                                <th>Operación</th>
+                                <th style="color: #000000">Nombre del insumo</th>
+                                <th style="color: #000000">Cantidad</th>
+                                <th style="color: #000000">Precio</th>
+                                <th style="color: #000000">Medida</th>
+                                <th style="color: #000000">Tipo</th>
+                                <th style="color: #000000">Operación</th>
                                 
                             </tr>
                         </thead>

@@ -1,4 +1,17 @@
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
+<style type="text/css">
+         .TituloUser{
+        display: block;
+        margin: 0 auto;
+        background-color: #7401DF;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        border-radius: 98;
+        width: 100%;
+        font-weight: bold;
+     }
+</style>
  <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
                     <h3 class="text-primary">Inicio</h3> </div>
@@ -59,7 +72,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Editar Informacion de los rubros</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Editar Información de los rubros</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -90,30 +103,27 @@
 </div>
 
 
-                            <div class="card-title">
-                                <h3>Gestion de rubros</h3>
-                            </div>
+                            <div class="card TituloUser">
+                                    <h3 class="responsive" style="color:white; font-weight:bold;">Gestión de Rubros</h3>  
+                                </div>
                             <div class="card-body">
-                                <h6 class="card-subtitle">Usted puede descargar los datos en los siguientes formatos copiar, CSV, Excel, PDF & Print</h6>
-                            <a class="btn btn-success" style="color:white; padding:10px; margin: 20px;  background-color:#512da8" data-toggle="modal" data-target="#ModalInsert"><i class="fa fa-plus-circle" style="margin:10px;" aria-hidden="true"></i>Crear nuevo rubro</a>
                                 <div class="table-responsive m-t-40">
-                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                    <a class="btn btn-success" style="color:white; padding:10px; margin: 20px;  background-color:#512da8" data-toggle="modal" data-target="#ModalInsert"><i class="fa fa-plus-circle" style="margin:10px;" aria-hidden="true"></i>Crear nuevo rubro</a>
+                                     <h6 class="card-subtitle" style="color: #000000">Usted puede descargar los datos en los siguientes formatos copiar, CSV, Excel, PDF & Print</h6>
+                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="90%">
                                         <thead>
                                             <tr>
-                                                <th>Id Rubro</th>
-                                                <th>Nombre del Rubro</th>
-
-                                                <th>Accion</th>
-                                                
-                                               
+                                                <th width="10%">Id Rubro</th>
+                                                <th width="40%">Nombre del Rubro</th>
+                                                <th width="20%">Accion</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                            <?php
                                                 foreach ($Rubro->result() as $Rubros) { 
                                                     echo "<tr>";  
-                                                    echo "<td id='ni'>".$Rubros->PK_Id_Rubro."</td>";  
-                                                    echo "<td id='nom'>".$Rubros->Nombre_Rubro."</td>";
+                                                    echo "<td id='ni' style='color: #000000'>".$Rubros->PK_Id_Rubro."</td>";  
+                                                    echo "<td id='nom' style='color: #000000'>".$Rubros->Nombre_Rubro."</td>";
                                                     $nombre = "'".$Rubros->Nombre_Rubro."'";
 
                                                     //echo "<td><a onclick='Eliminar($Rubros->PK_Id_Rubro)' class='btn btn-danger m-b-10 m-l-5'><i style='color:white;' class='fa fa-trash-o' aria-hidden='true'></i></a></td>";

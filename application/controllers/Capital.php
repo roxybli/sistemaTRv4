@@ -115,8 +115,6 @@ class Capital extends CI_Controller {
 			    padding:10px;
 			    text-align:center;  
 			}
-
-
 			p {
 			    text-align:center;
 			}
@@ -148,7 +146,6 @@ class Capital extends CI_Controller {
 				text-align: center;
 				line-height:: 50;
 				width: 475px;
-
 				line-height: 26px;
 			}
 			.totalCapital{
@@ -157,8 +154,6 @@ class Capital extends CI_Controller {
 				.inversionTotal{
 					background-color: rgba(0, 13, 90, 1);
 				}
-
-
 			 </style>
 			 <div class='container'>
 
@@ -185,7 +180,7 @@ class Capital extends CI_Controller {
 			        <thead class='active' >
 			        <tr>
 				        <th colspan='2' style='color:#fff'> Rubro: <strong> $fila->Nombre_Rubro </strong></th>
-				        <th colspan='2' style='color:#fff'> Producción mensual: <strong>$fila->Produccion_Mensual</strong></th>
+				        <th colspan='2' style='color:#fff'> Producción estimada: <strong>$fila->Produccion_Mensual</strong></th>
 				    </tr>
 			        </thead>
 			        <tbody>

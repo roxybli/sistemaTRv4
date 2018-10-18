@@ -29,7 +29,7 @@
                         <div class="row ">
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <strong><label>Seleccione un mes</label></strong>
+                                    <strong><label  style="color: #000000">Seleccione un mes</label></strong>
                                 </div>
                             </div>
                             <div class="col-md-8">

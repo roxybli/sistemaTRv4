@@ -25,7 +25,7 @@
     </tr>
     <tr>
         <th colspan="2" class="text-center" style="color:#fff"> Rubro: <strong><?= $filaCabecera->Nombre_Rubro ?></strong></th>
-        <th colspan="2" class="text-center" style="color:#fff"> Producción mensual: <strong><?= $filaCabecera->Produccion_Mensual  ?></strong></th>
+        <th colspan="2" class="text-center" style="color:#fff"> Producción estimada: <strong><?= $filaCabecera->Produccion_Mensual  ?></strong></th>
     </tr>
     <tr>
         <td class="text-center"><strong>Nombre</strong></td>
@@ -34,7 +34,7 @@
         <td class="text-center"><strong>Costo</strong></td>
     </tr>
     <tr>
-        <td colspan="4  " class="text-center"><h4>Equipamiento</h4></td>
+        <td colspan="4  " class="text-center"><h4 style="color: #000000">Equipamiento</h4></td>
     </tr>
     <tr>
 
@@ -55,12 +55,12 @@
 
     <?php }} ?>
      <tr  class="totalCapital">
-        <td colspan="3" class="text-center"><h6><strong>Total inversión en equipamiento</strong> </h6></td>
-        <td class="text-center"><h6><strong>$<?= $totalE; ?> </strong></h6></td>
+        <td colspan="3" class="text-center"><h6 style="color: #000000"><strong>Total inversión en equipamiento</strong> </h6></td>
+        <td class="text-center"><h6 style="color: #000000"><strong>$<?= $totalE; ?> </strong></h6></td>
     </tr>
 
     <tr>
-        <td colspan="4" class="text-center"><h4>Insumos</h4></td>
+        <td colspan="4" class="text-center"><h4 style="color: #000000">Insumos</h4></td>
     </tr>
     <tr>
 
@@ -81,13 +81,13 @@
 
     <?php }} ?>
     <tr class="totalCapital">
-        <td colspan="3" class="text-center"><h6><strong>Total inversión en insumos </strong></h6></td>
-        <td class="text-center"><h6><strong>$<?= $totalI ; ?> </strong></h6></td>
+        <td colspan="3" class="text-center"><h6 style="color: #000000"><strong>Total inversión en insumos </strong></h6></td>
+        <td class="text-center"><h6 style="color: #000000"><strong>$<?= $totalI ; ?> </strong></h6></td>
     </tr>
 
     <tr class="alert-primary">
-        <td colspan="3" class="text-center"><h6><strong>Inversión Total</strong></h6></td>
-        <td class="text-center"><h6><strong>$<?= $totalE + $totalI ; ?> </strong></h6></td>
+        <td colspan="3" class="text-center"><h6 style="color: #000000"><strong>Inversión Total</strong></h6></td>
+        <td class="text-center"><h6 style="color: #000000"><strong>$<?= $totalE + $totalI ; ?> </strong></h6></td>
     </tr>
 
 </table>

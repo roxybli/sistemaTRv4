@@ -8,7 +8,7 @@
         text-align: center;
         color: white;
         border-radius: 98;
-        width: 60%;
+        width: 100%;
         font-weight: bold;
      }
 </style>
@@ -39,16 +39,16 @@ foreach ($registro->result() as $info2) {
                                 <h5 style="margin:10px;"><?php echo $info2->Nombre_Sede?></h5>
                                 <h6 class="card-subtitle">Usted puede descargar los datos en los siguientes formatos copiar, CSV, Excel, PDF & Print</h6>
                                 <div class="table-responsive m-t-40">
-                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%" >
                                         <thead >
-                                            <tr style="background'color:#0005da; color:white;">
-                                                <th style="background'color:#0005da; color:white;"> Id usuario</th>
+                                            <tr style="background'color:#000d5a; color:white;">
+                                                <th style="background'color:#000d5a; color:white;"> Id usuario</th>
                                                 <th>Nombre completo</th>
-                                                <th>Direccion</th>
+                                                <th>Dirección</th>
                                                 <th>Tipo de usuaria</th>
-                                                <th>Telefono</th>
+                                                <th>Teléfono</th>
                                                 <th>Periodo de inactividad</th>
-                                                <th>Operacion</th>
+                                                <th>Operación</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -57,20 +57,20 @@ foreach ($registro->result() as $info2) {
                                                 <th>Nombre completo</th>
                                                 <th>Direccion</th>
                                                 <th>Tipo de usuaria</th>
-                                                <th>Telefono</th>
+                                                <th>Teléfono</th>
                                                 <th>Periodo de inactividad</th>
-                                                <th>Oeracion</th>
+                                                <th>Operación</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
                                         <?php
                                                 foreach ($registro->result() as $info) { 
                                                     echo "<tr>";  
-                                                    echo "<td id='ni'>".$info->pk_Id_Usuaria."</td>";  
-                                                    echo "<td id='nom'>".$info->Nombre." ".$info->Apellido."</td>";
-                                                    echo "<td id='cat'>".$info->Direccion."</td>";
-                                                    echo "<td id='cat'>".$info->Tipo."</td>";
-                                                    echo "<td id='cat'>".$info->Telefono."</td>";
+                                                    echo "<td  id='ni'style='color: #000000' >".$info->pk_Id_Usuaria."</td>";  
+                                                    echo "<td id='nom' style='color: #000000' >".$info->Nombre." ".$info->Apellido."</td>";
+                                                    echo "<td id='cat' style='color: #000000' >".$info->Direccion."</td>";
+                                                    echo "<td id='cat' style='color: #000000' >".$info->Tipo."</td>";
+                                                    echo "<td id='cat'style='color: #000000' >".$info->Telefono."</td>";
                                                     
                                                     $fechaActual = date("Y/m/d");
                                                     $fecha2=$info->Fecha_Actividad;
@@ -84,7 +84,7 @@ foreach ($registro->result() as $info2) {
                                                      //printf("el numero de dias que imprime es %d", $diasFalt);
                                                      if($fecha2==null)
                                                      {
-                                                        echo "<td id='cat'><span style='display:block;' class='alert alert-warning'>Nueva usuaria</span></td>";
+                                                        echo "<td id='cat' style='color: #000000' ><span style='display:block;' class='alert alert-warning'>Nueva usuaria</span></td>";
                                                         echo '<td><div class="dropdown" align="center">
                                                                 <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown"><i class="fa fa-cogs fa-lg"></i><span class="caret"></span></button>
                                                                 <ul class="dropdown-menu">

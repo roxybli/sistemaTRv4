@@ -4,6 +4,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+<style type="text/css">
+         .TituloUser{
+        display: block;
+        margin: 0 auto;
+        background-color: #04B486;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        border-radius: 98;
+        width: 100%;
+        font-weight: bold;
+     }
+</style>
 <!-- Include Editor style. -->
            <!-- Container fluid  -->
             <div class="container-fluid">
@@ -11,14 +24,15 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h1 class="card-title">Insertar Nueva Publicacion</h1>
-                                <h6 class="card-subtitle">Guias y Multimedia</h6>
+                                <div class="card TituloUser">
+                                    <h3 class="responsive" style="color:white; font-weight:bold;">Publicación de Guias Multimedia</h3>  
+                                </div>
                                 <form method="post"  action="<?= base_url() ?>Guias/guardar_multimedia" enctype="multipart/form-data" form="formAnuncio" id="formAnuncio">
                                     <div class="form-group">
                                     <div class="form-body">
                                         <div class="card">
                                             <div class="card-title">
-                                                Selecione una opcion
+                                                Selecione una opción
                                             </div>
                                             <div class="card-body">
                                             <div class="row">
@@ -39,14 +53,14 @@
                                         </div>
                                         <div class="card"  id="DivForm" style="display:none;">
                                             <div class="card-title">
-                                                <h4 class="card-title">Inserte los siguientes campos</h4>
+                                                <h4 class="card-title" style="color: #000000">Inserte todos los campos</h4>
                                                 <hr>
                                             </div>
                                             <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group ">
-                                                <label class="control-label">Inserte el titulo de la publicacion</label>
+                                                <label class="control-label" style="color: #000000">Titulo de la publicación</label>
                                                     <input type="text" name="Titulo" class="form-control" required="true">
                                                 </div>
                                             </div>   
@@ -54,7 +68,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group ">
-                                                <label class="control-label">Inserte una descripcion para la publicacion</label>
+                                                <label class="control-label" style="color: #000000">Descripción para la publicacion</label>
                                                     <input type="text" name="Descripcion" class="form-control" required="true">
                                                 </div>
                                             </div>   
@@ -62,7 +76,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group ">
-                                                <label class="control-label">Seleccione una fecha de publicacion</label>
+                                                <label class="control-label" style="color: #000000">Seleccione una fecha de publicación</label>
                                                     <input type="text" id="fecha1" name="Fecha1" class="form-control" required="true">
                                                 </div>
                                             </div>   
@@ -70,7 +84,7 @@
                                         <div class="row" id="DivVideo">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                <label class="control-label ">Inserte el enlace del video</label>
+                                                <label class="control-label " style="color: #000000">Inserte el enlace del video</label>
                                                     <input type="text" id="txtVideo" name="Video" class="form-control" placeholder="Ej: https://www.youtube.com/watch?v=mfJhMfOPWdE">
                                                 </div>
                                             </div>   
@@ -87,7 +101,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label>Seleccionar una imagen(opcional)</label>
+                                                <label style="color: #000000">Seleccionar una imagen(opcional)</label>
                                             </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
@@ -103,7 +117,7 @@
                                         </div>
                                          <div class="row">
                                             <div class="col-md-12">
-                                        <label class="control-label">A continuacion se muestra una area para digitar el contenido que acompañe la publicacion</label>
+                                        <label class="control-label" style="color: #000000">A continuacion se muestra una area para digitar el contenido la publicacion</label>
                                          <textarea id="Contenido" name='Contenido' class=" form-control textarea_editor form-control" rows="15" placeholder="Enter text ..." style="height:450px">
                                          </textarea>
                                          </div>

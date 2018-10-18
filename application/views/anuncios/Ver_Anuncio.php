@@ -17,6 +17,7 @@ background: linear-gradient(to right, #004d40 , #80cbc4); /* Standard syntax */
 text-align: center;
 color: #fff;
 padding: 25px;
+height: 190px
 }
 .contenido{
     text-align: justify;
@@ -35,8 +36,8 @@ padding: 25px;
 }
 .DivDescarga a:hover{
     background-color: #00bcd4;
-    width: 300px;
-    height: 100px;
+    width: 100px;
+    height: 50px;
     text-align: center;
 }
 </style>
@@ -44,8 +45,6 @@ padding: 25px;
     #div12{
         margin: 12px;
         /*background-color: #acc90d;*/
-
-        
             }
     #Titulo{
         display: block;
@@ -64,8 +63,8 @@ padding: 25px;
     #baner{
         display: block;
         margin: 0 auto;
-        width: 90%;
-        height: 400px;
+        width: 70%;
+        height: 300px;
     }
     .bordes{
         display: block;
@@ -83,14 +82,13 @@ padding: 25px;
         background-color: #000d5a;
     }
     .images{
-        height: 200px;
-        width: 100%;
+        height: 100px;
+        width: 50%;
     }
     #perfil:hover{
         background-color: #0C853A;
     }
     .letra-menu{
-
         color: white;
         font-size: 18px;
         margin: 10;
@@ -111,7 +109,7 @@ padding: 25px;
                         <div class="row card-title degradado_lineal ">
                             <h1  class="encabezado">
                                 <?php echo $noti->Titulo;?></h1><hr>
-                                <span ><p style="color:white;"><i class="fa fa-check" style="margin:10px;"></i>Publicado por <?= $noti->Nombre?><span><p style="color:white;"><i class="fa fa-calendar" style="margin:10px;"></i>Fecha de publicacion <?= $noti->Fecha?></p><br></span></p><br></span>   
+                                <span ><p style="color:white;"><i class="fa fa-check" style="margin:10px;"></i>Publicado por <?= $noti->Nombre?><span><p style="color:white;"><i class="fa fa-calendar" style="margin:10px;"></i>Fecha de publicación <?= $noti->Fecha?></p><br></span></p><br></span>   
                         </div>
                         
                         <div class="card-body">

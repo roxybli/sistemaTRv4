@@ -33,11 +33,11 @@
                     <table class="table negociosD cell-border" id="inventarioRecetas">
                         <thead>
                             <tr>
-                                <th class="text-center">Producto</th>
-                                <th class="text-center">Precio</th>
-                                <th class="text-center">Lugar</th>
-                                <th class="text-center">Creado Por</th>
-                                <th class="text-center">Opcion</th>
+                                <th class="text-center" style="color: #000000">Producto</th>
+                                <th class="text-center" style="color: #000000">Precio</th>
+                                <th class="text-center" style="color: #000000">Lugar</th>
+                                <th class="text-center" style="color: #000000">Creado Por</th>
+                                <th class="text-center" style="color: #000000">Opcion</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,7 +50,7 @@
                                 <td class="text-center"><span>$<?= $filaProcedimientos->Precio_Producto ?></span></td>
                                 <td class="text-center"><span><?= $filaProcedimientos->Direccion ?></span></td>
                                 <td class="text-center"><span><?= $filaProcedimientos->Nombre ?></span></td>
-                                <td class="text-center"><a href="<?= base_url() ?>inventario/detalleProcedimiento?e=<?= $filaProcedimientos->PK_Id_Producto ?>">Ver detalles</a></td>
+                                <td class="text-center" ><a href="<?= base_url() ?>inventario/detalleProcedimiento?e=<?= $filaProcedimientos->PK_Id_Producto ?>" >Ver detalles</a></td>
                             </tr>
                         
                         <?php       

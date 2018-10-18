@@ -42,7 +42,9 @@
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                 <div class="chat_ib">
                   <h5><?php echo $msj->Emisor_Mensaje?> <span class="chat_date">Dec 25</span></h5>
+                  <p><?php echo $msj->Contenido_Mensaje?></p>
                   <p><?php echo $msj->Contacto_Mensaje?></p>
+
                 </div>
               </div>
             </div>
@@ -94,7 +96,7 @@
           </div>
         </div>
       </div>
-      <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p>
+      <p class="text-center top_spac"> <a target="_blank" href="#"></a></p>
     </div>
 <script type="text/javascript">
     function ms(con, id, tipo, emisor, contacto) {

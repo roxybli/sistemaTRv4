@@ -1,4 +1,17 @@
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
+<style type="text/css">
+         .TituloUser{
+        display: block;
+        margin: 0 auto;
+        background-color: #04B486;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        border-radius: 98;
+        width: 100%;
+        font-weight: bold;
+     }
+</style>
 <?php 
 foreach ($Guia->result() as $guia) {
 }
@@ -21,10 +34,11 @@ foreach ($Guia->result() as $guia) {
                     <div class="col-lg-12">
                         
                     <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Gestion de guias multimedia</h4>
-                                <h6 class="card-subtitle">Usted puede descargar los datos en los siguientes formatos copiar, CSV, Excel, PDF & Print</h6>
+                            <div class="card-body"><div class="card TituloUser">
+                                    <h3 class="responsive" style="color:white; font-weight:bold;">Gestión de Guias Multimedia</h3>  
+                                </div>
                                 <div class="table-responsive m-t-40">
+                                    <h6 class="card-subtitle" style="color: #000000">Usted puede descargar los datos en los siguientes formatos copiar, CSV, Excel, PDF & Print</h6>
                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead >
                                             <tr>
@@ -50,11 +64,11 @@ foreach ($Guia->result() as $guia) {
                                         <?php
                                                 foreach ($Guia->result() as $guia){ 
                                                     echo "<tr>";  
-                                                    echo "<td id='ni'>".$guia->pk_Id_Guia."</td>";  
-                                                    echo "<td id='nom'>".$guia->Titulo_Guia."</td>";
-                                                    echo "<td id='cat'>".$guia->Nombre."</td>";
-                                                    echo "<td id='cat'>".$guia->Fecha_Publicacion."</td>";
-                                                    echo "<td id='cat'>".$guia->Tipo_publicacion."</td>";
+                                                    echo "<td id='ni' style='color: #000000'>".$guia->pk_Id_Guia."</td>";  
+                                                    echo "<td id='nom' style='color: #000000'>".$guia->Titulo_Guia."</td>";
+                                                    echo "<td id='cat' style='color: #000000'>".$guia->Nombre."</td>";
+                                                    echo "<td id='cat' style='color: #000000'>".$guia->Fecha_Publicacion."</td>";
+                                                    echo "<td id='cat' style='color: #000000'>".$guia->Tipo_publicacion."</td>";
                                                     $id=$guia->pk_Id_Guia;
                                                     //INformacion para editar Noticia
                                                     $idUser1=$guia->FK_Id_Usuaria;
@@ -67,7 +81,7 @@ foreach ($Guia->result() as $guia) {
                                                                 <ul class="dropdown-menu">
                                                                     <li><a onclick="Eliminar('.$idUser1.', '.$idUser2.','.$idTipo.','.$idEdit.')"><i class="fa fa-trash-o"></i> Eliminar</a> </li>
                                                                      <li><a  onclick="Editar('.$idUser1.', '.$idUser2.','.$idTipo.','.$idEdit.')" ><i class="fa fa-pencil-square-o"></i> Editar</a> </li> 
-                                                                      <li><a href="'.base_url().'Guias/VerGuia?id='.$id.'"><i class="fa fa-eye"></i> Ver Noticia </a> </li>                                 </ul>
+                                                                      <li><a href="'.base_url().'Guias/VerGuia?id='.$id.'"><i class="fa fa-eye"></i> Ver Publicación</a> </li>                                 </ul>
                                                                 </div></td>';
                                                      } 
                                             ?>  
