@@ -60,10 +60,10 @@ if(isset($_POST['btn'])){
                     <div class="col-sm-12">
                            <div class="card TituloUser">
                                 <h3 class="responsive" style="color:white; font-weight:bold;">Publicar Noticias</h3>
-                                <p style="color:white;"><b>Indicaciones</b><br>Todos los campos son requeridos</p>
                                 </div>
                         <div class="card">
                                 <div class="form-validation">
+                                     <p style="color:#000000;"><b>Indicaciones</b><br>Todos los campos son requeridos</p>
                                         <!-- Bread crumb -->
                                                     <form class="form-valide" method="POST" action="<?= base_url() ?>Anuncios/guardar" enctype="multipart/form-data" form="formAnuncio" id="formAnuncio">                                    
                                                         <div class="row ">

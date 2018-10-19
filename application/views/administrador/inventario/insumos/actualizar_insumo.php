@@ -51,17 +51,16 @@
                                             <!--/row-->
                                             <div class="row ">
                                                 <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <div class="input-group">
+                                                    <div class="form-group"><label style="color: #000000"> Nombre del Insumo:</label>
+                                                        <div class="input-group"> 
                                                             <input type="text" class="form-control" value="<?= $filaDato->Nombre_Insumo?>" name="nombreInsumo" >
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!--/span-->
                                                 <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" value="<?= $filaDato->Precio_Insumo?>" name="precioInsumo" >
+                                                    <div class="form-group"><label style="color: #000000"> Precio del Insumo:</label>
+                                                        <div class="input-group">                                                           <input type="text" class="form-control" value="<?= $filaDato->Precio_Insumo?>" name="precioInsumo" >
                                                         </div>
                                                     </div>
                                                 </div>
@@ -70,7 +69,8 @@
                                             <!--/row-->
                                             <div class="row ">
                                                 <div class="col-md-6">
-                                                    <div class="form-group">
+                                                    <div class="form-group"><label style="color: #000000"> Existencia del Insumo:</label>
+
                                                         <div class="input-group">
                                                             <input type="text" class="form-control" value="<?= $filaDato->Existencia_Insumo?>" name="existenciaInsumo" >
                                                         </div>
@@ -78,7 +78,8 @@
                                                 </div>
                                                 <!--/span-->
                                                 <div class="col-md-6">
-                                                    <div class="form-group">
+                                                    <div class="form-group"><label style="color: #000000"> Medida del Insumo:</label>
+
                                                         <div class="input-group">
                                                             <input type="text" class="form-control" value="<?= $filaDato->Medida_Insumo?>" name="" readonly>
                                                             <input type="hidden" class="form-control" value="<?= $filaDato->PK_Id_Insumo ?>" name="idInsumo">

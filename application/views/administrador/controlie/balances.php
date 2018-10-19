@@ -52,9 +52,9 @@
                                     <td>
                                         
                                     </td>
-                                    <td><span><?= $filaDatos->Fecha_Balance ?></span></td>
-                                    <td>Balance correspondiene a esta fecha</td>
-                                    <td><a href="<?= base_url() ?>controlie/detalleBalance?f=<?= $filaDatos->Fecha_Balance ?>">Ver detalles</a></td>
+                                    <td class="text-primary"><span><?= $filaDatos->Fecha_Balance ?></span></td>
+                                    <td class="text-primary">Balance correspondiene a esta fecha</td>
+                                    <td ><a href="<?= base_url() ?>controlie/detalleBalance?f=<?= $filaDatos->Fecha_Balance ?>" style="color: #000000">Ver detalles</a></td>
                                     <td><span></span></td>
                                     
                                 </tr>

@@ -37,13 +37,13 @@
                     <table class="table negociosD cell-border" id="inventarioProductos">
                         <thead>
                             <tr>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
-                                <th>Precio</th>
-                                <th>Lugar</th>
-                                <th>Estado</th>
-                                <th>Creado Por</th>
-                                <th>Opción</th>
+                                <th style="color: #000000">Producto</th>
+                                <th style="color: #000000">Cantidad</th>
+                                <th style="color: #000000">Precio</th>
+                                <th style="color: #000000">Lugar</th>
+                                <th style="color: #000000">Estado</th>
+                                <th style="color: #000000">Creado Por</th>
+                                <th style="color: #000000">Opción</th>
                             </tr>
                         </thead>
                         <tbody>

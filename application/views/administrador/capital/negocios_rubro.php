@@ -31,8 +31,8 @@
             <table class="table table-bordered negociosD" id="resumenSubrubros">
                 <thead>
                     <tr>
-                        <th  class="text-center">Nombre del negocio</th>
-                        <th  class="text-center">Acción</th>
+                        <th  class="text-center" style="color: #000000" >Nombre del negocio</th>
+                        <th  class="text-center" style="color: #000000">Acción</th>
                     </tr>
                 </thead>
                 <tbody>

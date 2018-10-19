@@ -33,11 +33,11 @@
                     <table class="table negociosD" id="ventasRealizadas">
                         <thead>
                             <tr>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
-                                <th>Precio</th>
-                                <th>Total</th>
-                                <th>Fecha</th>
+                                <th style="color: #000000">Producto</th>
+                                <th style="color: #000000">Cantidad</th>
+                                <th style="color: #000000">Precio</th>
+                                <th style="color: #000000">Total</th>
+                                <th style="color: #000000">Fecha</th>
                             </tr>
                         </thead>
                         <tbody>

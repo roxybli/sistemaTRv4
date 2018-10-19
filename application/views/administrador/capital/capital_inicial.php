@@ -68,7 +68,7 @@
                                 <div class="form-group">
                                     <label for="" style="color: #000000">Cantidad de Insumos</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="materiaComestible" min="0" name="" placeholder="Número de materia comestible" onkeypress="return numeros(event, 'num')" required>
+                                        <input type="text" class="form-control" id="materiaComestible" min="0" name="" placeholder="Número de Insumos" onkeypress="return numeros(event, 'num')" required>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                                 <div class="form-group">
                                 <label for="" style="color: #000000">Cantidad de Maquinaria</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="maquinaria" name="" min="0" placeholder="Número de no materia comestible" onkeypress="return numeros(event, 'num')" required>
+                                        <input type="text" class="form-control" id="maquinaria" name="" min="0" placeholder="Número de maquinaria" onkeypress="return numeros(event, 'num')" required>
                                         
                                     </div>
                                 </div>

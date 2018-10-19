@@ -26,13 +26,13 @@
      ?>
         <div class="form-row">
             <div class="col-md-6">
-                <label>Producto</label>
+                <label style="color: #000000">Producto</label>
                 <input type="text" class="form-control" name=""  value="<?= $producto->Nombre_Producto ?>" disabled>
                 <input type="hidden" class="form-control" name="idActualizar"  value="<?= $producto->PK_Id_Inventario ?>">
            </div>
 
            <div class="col-md-6">
-                <label>Existencia</label>
+                <label style="color: #000000">Existencia</label>
                 <input type="text" class="form-control" id="txtExistencia" name="" value="<?= $producto->Existencia_Producto ?>" disabled>
                 <input type="hidden" class="form-control" id="txtExistencia" name="existenciaProducto" value="<?= $producto->Existencia_Producto ?>" >
            </div>
@@ -40,12 +40,12 @@
 
         <div class="form-row">
             <div class="col-md-6">
-                <label>Precio</label>
+                <label style="color: #000000">Precio</label>
                 <input type="text" class="form-control" name="" value="$<?= $producto->Precio_Producto ?>" disabled>
            </div>
 
            <div class="col-md-6">
-                <label>Fecha</label>
+                <label style="color: #000000">Fecha de venta</label>
                 <input type="text" class="form-control" name="fechaVenta" value="" id="fechaVenta"  required>
            </div>
         </div>
@@ -53,7 +53,7 @@
       <div class="form-row">
 
            <div class="col-md-12">
-                <label>Cantidad a vender</label>
+                <label style="color: #000000">Cantidad a vender</label>
                 <input type="text" class="form-control" name="cantidadVender" value="" id="cantidadVender" required>
            </div>
         </div>

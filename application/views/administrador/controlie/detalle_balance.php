@@ -6,7 +6,6 @@
     <div class="col-md-6 align-center">
         <h3 style="color: #fff">Detalle del balance correspondiente a la fecha <?= $fecha ?></h3>
      </div>
-
     <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Balance</a></li>
@@ -43,8 +42,7 @@
                             <th>Egreso de dinero</th>
                             <th>Ingreso</th>
                             <th>Balance</th>
-                            <th></th>
-                            
+                            <th></th>   
                         </tr>
                         </thead>
                         <tbody>
@@ -56,9 +54,6 @@
                                 
                            ?> 
                                <tr>
-                                    <td>
-                                        
-                                    </td>
                                     <td class="text-primary"><span><?= $filaDatos->Fecha_Balance ?></span></td>
                                     <td class="text-primary"><span><?= $filaDatos->Nombre_Operacion ?> -<?= $filaDatos->Nombre_Egreso ?></span></td>
                                     <td class="text-primary"><span>$<?= $filaDatos->Cantidad_Egreso ?></span></td>
@@ -74,7 +69,7 @@
                                 }
                                 $ime = $ime - $filaDatos->Cantidad_Egreso;
                             ?>
-                                    
+         
                                     <td class="text-primary"><span>$<?= $ime ?></span></td>
                                     <td class="text-primary"><span></span></td>
                                     
@@ -83,7 +78,6 @@
                                   $contador++;
                             }
                     }
-
                          ?>
                         <tr>
                             <td colspan="4" class="text-center"><h3>Total despues de gastos</h3></td>

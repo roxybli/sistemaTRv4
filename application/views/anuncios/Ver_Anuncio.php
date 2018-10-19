@@ -17,7 +17,7 @@ background: linear-gradient(to right, #004d40 , #80cbc4); /* Standard syntax */
 text-align: center;
 color: #fff;
 padding: 25px;
-height: 190px
+height: 200px
 }
 .contenido{
     text-align: justify;
@@ -33,10 +33,11 @@ height: 190px
     margin: 0 auto;
     color: white;
     font-family: 'Oswald', sans-serif;
+    font-size:'Medium';
 }
 .DivDescarga a:hover{
     background-color: #00bcd4;
-    width: 100px;
+    width: 90px;
     height: 50px;
     text-align: center;
 }
@@ -82,8 +83,8 @@ height: 190px
         background-color: #000d5a;
     }
     .images{
-        height: 100px;
-        width: 50%;
+        height: 50px;
+        width: 30%;
     }
     #perfil:hover{
         background-color: #0C853A;
@@ -107,9 +108,10 @@ height: 190px
                 <div class="tab-content">
                     <div class="tab-pane active" id="home" role="tabpanel">
                         <div class="row card-title degradado_lineal ">
-                            <h1  class="encabezado">
+                            <h3  class="encabezado">
                                 <?php echo $noti->Titulo;?></h1><hr>
-                                <span ><p style="color:white;"><i class="fa fa-check" style="margin:10px;"></i>Publicado por <?= $noti->Nombre?><span><p style="color:white;"><i class="fa fa-calendar" style="margin:10px;"></i>Fecha de publicación <?= $noti->Fecha?></p><br></span></p><br></span>   
+                                <span ><p style="color:white;" align="right"><i class="fa fa-check" style="margin-right:10px;"></i>Publicado por <?= $noti->Nombre?></p>
+                                <span><p style="color:white;" align="right"><i class="fa fa-calendar" style="margin-right:10px;"></i> Fecha de publicación <?= $noti->Fecha?></p><br></span></p><br></span>   
                         </div>
                         
                         <div class="card-body">
