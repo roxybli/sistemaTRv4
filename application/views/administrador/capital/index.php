@@ -16,7 +16,7 @@
 <div class="container-fluid bg" style="height:615px">
     <!-- Start Page Content -->
     <div class="row divCentrado">
-        <div class="col-md-5 contenedorInventario" style="margin-top:50px">
+        <div class="col-md-4 contenedorInventario" style="margin-top:50px">
                 <a href="<?= base_url() ?>capital/negocios">
                     <div class="divColorVerde">
                     <div class="inventarioIMG">
@@ -30,7 +30,7 @@
             </div>
         
 
-        <div class="col-md-5 " style="margin-top:50px">
+        <div class="col-md-4 " style="margin-top:50px">
             <a href="<?=base_url() ?>capital/ingresarNegocio">
                 <div class="divColorVerde">
                     <div class="inventarioIMG">
@@ -38,6 +38,19 @@
                     </div>
                     <div class="inventarioTitle">
                         <p><h3  class="text-center blanco"> Ingresar nuevo negocio </h3></p>
+                    </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-4" style="margin-top:50px">
+            <a href="<?=base_url() ?>capital/gestionarNegocio">
+                <div class="divColorVerde">
+                    <div class="inventarioIMG">
+                        <img  src="<?= base_url()  ?>plantilla/images/card/Inventario.png" class="img img-rounded" height="140">
+                    </div>
+                    <div class="inventarioTitle">
+                        <p><h3  class="text-center blanco"> Gestionar negocios </h3></p>
                     </div>
             </div>
             </a>

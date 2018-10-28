@@ -40,7 +40,10 @@
                                 
                             </div>
                             <div class="col-md-2">
-                                <button type="button" id="btnCapitalRubros" class="btn btn-primary">Siguiente <i class="fa fa-angle-double-right f-s-20"></i></button>
+                            <label for=""></label>
+                                <div class="form-group">
+                                    <button type="button" id="btnCapitalRubros" class="btn btn-primary">Siguiente <i class="fa fa-angle-double-right f-s-20"></i></button>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -84,6 +87,7 @@
                             </div>
 
                             <div class="col-md-2">
+                            <label for=""></label>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input type="button" class="btn btn-primary" id="btnProcesarElemntosSubrubro" name="" value="Aceptar">

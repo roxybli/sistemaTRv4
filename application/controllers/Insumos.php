@@ -192,7 +192,7 @@ class Insumos extends CI_Controller {
 		#img{
 			float:left;
 			margin-left: 30px;
-			width: 125px;
+			width: 150px;
 
 		}
 		.textoCentral{
@@ -213,10 +213,10 @@ class Insumos extends CI_Controller {
 
 		    <div id='cabecera'>
 			<div id='img'>
-				<img src='".base_url()."plantilla/images/LogoCM.jpg'>
+				<img src='".base_url()."plantilla/img_perfil/".$this->session->userdata('fotoUsuaria')."'>
 		    </div>
 		    <div class='textoCentral'>
-			    <p>CIUDAD MUJER, EL SALVADOR <br>
+			    ".strtoupper($this->session->userdata('nombreNegocio'))."<br>
 			    REPORTE DE INSUMOS</p>   
 		    </div>
 		    </div>";

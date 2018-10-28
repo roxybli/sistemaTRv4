@@ -111,5 +111,16 @@ class Usuarias_model extends CI_Model{
 		$ns=$this->db->query($sql);
 		return $ns;
 	}
+
+	public function fotoUsuaria($id)
+	{
+		$sql = "SELECT Foto_Perfil, Nombre_Negocio FROM tbl_Perfiles_Empresariales WHERE FK_Usuaria='$id'";
+		$foto=$this->db->query($sql);
+		if ($foto->num_rows() > 0)
+		 {
+			return $foto->row();
+		 }
+		return null;
+	}
 }
 ?>

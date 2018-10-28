@@ -92,6 +92,8 @@ class Capital extends CI_Controller {
 	        $data = [];
 
 	        $hoy = date("dmyhis");
+	        foreach ($datos->result() as $fila)
+		        {}
 			$html="
 
 			 <style>
@@ -124,7 +126,7 @@ class Capital extends CI_Controller {
 			    text-align:left;
 			    float:left;
 			    width: 100px;
-			    height: 110px;
+			    height: 100px;
 
 			}
 
@@ -159,16 +161,15 @@ class Capital extends CI_Controller {
 
 			    <div id='cabecera'>
 				<div id='img'>
-					<img src='".base_url()."plantilla/images/LogoCM.jpg'>
+					<img src='".base_url()."plantilla/images/card/Reporte.png'>
 			    </div>
 			    <div class='textoCentral'>
-				    <p>CIUDAD MUJER, EL SALVADOR <br>
+				    ".strtoupper($fila->Nombre_Rubro)." <br>
 				    REPORTE DE INGRESOS Y EGRESOS</p>   
 			    </div>
 			    </div>";
 
-			     foreach ($datos->result() as $fila)
-		        {}
+			     
 
 			$html .= "<br>
 			</div>
@@ -282,6 +283,134 @@ class Capital extends CI_Controller {
 					window.close();
 					self.location ="'.base_url().'capital/negocios"
 					</script>';
+			}
+	}
+
+	public function gestionarNegocio()
+	{
+		$this->load->model("Capital_Model");
+		$datos = $this->Capital_Model->obtenerTodosNegocios();
+		$data = array('datos' => $datos );
+		$this->load->view('administrador/base/header');
+		$this->load->view('administrador/capital/gestionar_negocios', $data);
+		$this->load->view('administrador/base/footer2');
+	}
+
+	public function actualizarNegocio($id)
+	{
+		$this->load->model("Capital_Model");
+		$datos = $this->Capital_Model->detalleNegocio($id);
+		$data = array('datos' => $datos );
+
+		$this->load->view('administrador/base/header');
+		$this->load->view('administrador/capital/actualizar_negocio', $data);
+		$this->load->view('administrador/base/footer2');
+	}
+
+	public function actualizarDatosNegocio()
+	{
+		$datos = $this->input->post();
+		//var_dump($datos['cantidadElemento'])."<br>";
+		//var_dump($datos['precioEquipamiento'])."<br>";
+		//var_dump($datos['idEquipamiento'])."<br>";
+		$idSubrubro = $datos['idSubrubro'];
+		$d=0; $p=0; $c=0;
+		for ($i=0; $i < sizeof($datos['idEquipamiento']); $i++)
+		{
+			if ($datos['cantidadElemento'][$i] == "")
+			{
+				$c++;
+			}
+			if ($datos['precioEquipamiento'][$i] == "")
+			{
+				$p++;
+			}
+			if ($datos['idEquipamiento'][$i] == "")
+			{
+				$d++;
+			} 
+		}
+
+		if ($c == $p && $c == $d && $p == $d) {
+			$this->load->model("Capital_Model");
+			$bool = $this->Capital_Model->actualizarNegocio($datos);
+			if($bool== false)
+				{
+					echo '<script type="text/javascript">
+						alert("Error al guardar los datos !!!");
+						self.location ="'.base_url().'actualizarNegocio/'.$idSubrubro.'"
+						</script>';
+
+				}
+				else
+				{
+					if ($bool)
+					{
+						//$fecha = $datos['fechaIE'];
+						echo '<script type="text/javascript">
+						alert("Insumos guardados correctamente !!!");
+						self.location ="'.base_url().'capital/gestionarNegocio"
+						</script>';
+
+					}
+				}
+		}
+		else
+		{
+			echo "Mal";
+		}
+	}
+
+	public function eliminarElementoSubrubro($id, $n)
+	{
+		$this->load->model("Capital_Model");
+		$bool = $this->Capital_Model->eliminarElementoSubrubro($id);
+		if($bool== false)
+			{
+				echo '<script type="text/javascript">
+					alert("Error al eliminar el elemento !!!");
+					self.location ="'.base_url().'capital/actualizarNegocio/'.$n.'"
+					</script>';
+
+			}
+			else
+			{
+				if ($bool)
+				{
+					//$fecha = $datos['fechaIE'];
+					echo '<script type="text/javascript">
+					alert("Elemento eliminado correctamente !!!");
+					self.location ="'.base_url().'capital/actualizarNegocio/'.$n.'"
+					</script>';
+
+				}
+			}
+	}
+
+
+	public function eliminarNegocio($id)
+	{
+		$this->load->model("Capital_Model");
+		$bool = $this->Capital_Model->eliminarNegocio($id);
+		if($bool== false)
+			{
+				echo '<script type="text/javascript">
+					alert("Error al eliminar el elemento !!!");
+					self.location ="'.base_url().'capital/gestionarNegocio"
+					</script>';
+
+			}
+			else
+			{
+				if ($bool)
+				{
+					//$fecha = $datos['fechaIE'];
+					echo '<script type="text/javascript">
+					alert("Elemento eliminado correctamente !!!");
+					self.location ="'.base_url().'capital/gestionarNegocio"
+					</script>';
+
+				}
 			}
 	}
 

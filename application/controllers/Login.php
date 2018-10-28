@@ -84,16 +84,16 @@ class Login extends CI_Controller {
 		{
 			if ($fila->Pass == $password)
 			{
+				$foto = $this->Usuarias_Model->fotoUsuaria($fila->pk_Id_Usuaria);
 				$data = array(
 					'usuario'=> $nombre,
 					'id'=> $fila->pk_Id_Usuaria,
 					'login'=> TRUE,
 					);
-				/*$data2 = array(
-					'departamento'=> $fila->depa,
-					'tipoUsuario'=> $fila->tipoU,
-					'nombre'=> $fila->nombre,
-					);*/
+				$data2 = array(
+					'fotoUsuaria'=> $foto->Foto_Perfil,
+					'nombreNegocio'=> $foto->Nombre_Negocio,
+					);
 				$data3 = array(
 					'nombre'=> $fila->Nombre." ".$fila->Apellido,
 					'id_tipo'=>$fila->fk_Tipo_Usuaria,
@@ -102,6 +102,7 @@ class Login extends CI_Controller {
 
 
 				$this->session->set_userdata($data);
+				$this->session->set_userdata($data2);
 				$this->session->set_userdata($data3);
 				//$this->session->set_userdata($data3);
 				//header("Location:".base_url()."home/inicio");

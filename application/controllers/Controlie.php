@@ -321,13 +321,13 @@ class Controlie extends CI_Controller {
 			 <div class='container'>
 
 			    <div id='cabecera'>
-				<div id='img'>
-					<img src='".base_url()."plantilla/images/LogoCM.jpg'>
-			    </div>
-			    <div class='textoCentral'>
-				    <p>CIUDAD MUJER, EL SALVADOR <br>
-				    BALANCE DE INGRESOS Y EGRESOS</p>   
-			    </div>
+					<div id='img'>
+						<img src='".base_url()."plantilla/img_perfil/".$this->session->userdata('fotoUsuaria')."'>
+				    </div>
+				    <div class='textoCentral'>
+					    ".strtoupper($this->session->userdata('nombreNegocio'))."<br>
+					    BALANCE DE INGRESOS Y EGRESOS</p>   
+				    </div>
 			    </div>";
 
 			     foreach ($datos->result() as $user)
@@ -520,13 +520,13 @@ class Controlie extends CI_Controller {
 				 <div class='container'>
 
 				    <div id='cabecera'>
-					<div id='img'>
-						<img src='".base_url()."plantilla/images/LogoCM.jpg'>
-				    </div>
-				    <div class='textoCentral'>
-					    <p>CIUDAD MUJER, EL SALVADOR <br>
-					    REPORTE DE INGRESOS Y EGRESOS</p>   
-				    </div>
+						<div id='img'>
+							<img src='".base_url()."plantilla/img_perfil/".$this->session->userdata('fotoUsuaria')."'>
+					    </div>
+					    <div class='textoCentral'>
+						    ".strtoupper($this->session->userdata('nombreNegocio'))."<br>
+						    REPORTE DE INGRESOS Y EGRESOS</p>   
+					    </div>
 				    </div>";
 				    $meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre',];
 				    foreach ($ingresos->result() as $user) 

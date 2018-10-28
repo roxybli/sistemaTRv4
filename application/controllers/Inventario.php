@@ -324,13 +324,13 @@ class Inventario extends CI_Controller {
 			 <div class='container'>
 
 			    <div id='cabecera'>
-				<div id='img'>
-					<img src='".base_url()."plantilla/images/LogoCM.jpg'>
-			    </div>
-			    <div class='textoCentral'>
-				    <p>CIUDAD MUJER, EL SALVADOR <br>
-				    REPORTE DE INSUMOS</p>   
-			    </div>
+					<div id='img'>
+						<img src='".base_url()."plantilla/img_perfil/".$this->session->userdata('fotoUsuaria')."'>
+				    </div>
+				    <div class='textoCentral'>
+					    ".strtoupper($this->session->userdata('nombreNegocio'))."<br>
+					    REPORTE DE INVENTARIO</p>   
+				    </div>
 			    </div>";
 
 			     foreach ($datos->result() as $user)
@@ -493,13 +493,13 @@ class Inventario extends CI_Controller {
 			 <div class='container'>
 
 			    <div id='cabecera'>
-				<div id='img'>
-					<img src='".base_url()."plantilla/images/LogoCM.jpg'>
-			    </div>
-			    <div class='textoCentral'>
-				    <p>CIUDAD MUJER, EL SALVADOR <br>
-				    REPORTE DE INSUMOS</p>   
-			    </div>
+					<div id='img'>
+						<img src='".base_url()."plantilla/img_perfil/".$this->session->userdata('fotoUsuaria')."'>
+				    </div>
+				    <div class='textoCentral'>
+					    ".strtoupper($this->session->userdata('nombreNegocio'))."<br>
+					    REPORTE DE VENTAS</p>   
+				    </div>
 			    </div>";
 			      foreach ($datos->result() as $user)
 		        {}
@@ -659,13 +659,13 @@ class Inventario extends CI_Controller {
 			 <div class='container'>
 
 			    <div id='cabecera'>
-				<div id='img'>
-					<img src='".base_url()."plantilla/images/LogoCM.jpg'>
-			    </div>
-			    <div class='textoCentral'>
-				    <p>CIUDAD MUJER, EL SALVADOR <br>
-				    REPORTE DE INSUMOS</p>   
-			    </div>
+					<div id='img'>
+						<img src='".base_url()."plantilla/img_perfil/".$this->session->userdata('fotoUsuaria')."'>
+				    </div>
+				    <div class='textoCentral'>
+					    ".strtoupper($this->session->userdata('nombreNegocio'))."<br>
+				    	REPORTE DE PRODUCTOS EN PROCESO</p>   
+			   		</div>
 			    </div>";
 
 			    foreach ($datos->result() as $user)
