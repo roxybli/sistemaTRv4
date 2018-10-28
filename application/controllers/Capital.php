@@ -357,7 +357,10 @@ class Capital extends CI_Controller {
 		}
 		else
 		{
-			echo "Mal";
+			echo '<script type="text/javascript">
+					alert("Error al guardar los datos !!!");
+					self.location ="'.base_url().'actualizarNegocio/'.$idSubrubro.'"
+				</script>';
 		}
 	}
 
