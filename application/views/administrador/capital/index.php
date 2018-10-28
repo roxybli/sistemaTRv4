@@ -42,7 +42,10 @@
             </div>
             </a>
         </div>
-
+    
+    <?php 
+        if ($this->session->userdata('id_tipo') == 1 || $this->session->userdata('id_tipo') == 2) {
+    ?>
         <div class="col-md-4" style="margin-top:50px">
             <a href="<?=base_url() ?>capital/gestionarNegocio">
                 <div class="divColorVerde">
@@ -55,6 +58,8 @@
             </div>
             </a>
         </div>
+
+        <?php } ?>
 
     </div>
   
