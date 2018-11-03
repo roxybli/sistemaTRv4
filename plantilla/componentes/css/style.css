@@ -158,6 +158,9 @@ h6 {
   font-size: 14px;
   font-weight: 400;
 }
+label {
+   color: #000000;
+}
 .display-5 {
   font-size: 3rem;
 }

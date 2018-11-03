@@ -174,7 +174,7 @@ class Insumos extends CI_Controller {
 
 
 		p {
-		    text-align:center;
+		    text-align:left;
 		}
 
 
@@ -215,20 +215,17 @@ class Insumos extends CI_Controller {
 			<div id='img'>
 				<img src='".base_url()."plantilla/img_perfil/".$this->session->userdata('fotoUsuaria')."'>
 		    </div>
-		    <div class='textoCentral'>
+		    <div class='textoCentral'>REPORTE DE INSUMOS <br>
 			    ".strtoupper($this->session->userdata('nombreNegocio'))."<br>
-			    REPORTE DE INSUMOS</p>   
-		    </div>
+			    </p>   
 		    </div>";
 		foreach ($datos->result() as $user)
 	        {}
 
-		$html .="<br>
-		    <strong style='font-weight: bold;'>Descripción de insumos de $user->Nombre $user->Apellido hasta $fecha</strong>
-
-		</div>
-		<br>
-		        
+		$html .="
+		   <p><strong style='font-weight: bold;'>Propietaria: $user->Nombre $user->Apellido Fecha $fecha</strong></p>
+		</div></div>
+		<br>    
 		<div class='table-responsive container'>
 		      
 		        <table class='table table table-bordered'>

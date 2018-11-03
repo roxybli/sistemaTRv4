@@ -1,7 +1,7 @@
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
 <style type="text/css">
          .TituloUser{
-        display: block;
+         display: block;
         margin: 0 auto;
         background-color: #8e24aa;
         padding: 20px;
@@ -36,13 +36,14 @@ foreach ($registro->result() as $info2) {
                     <div class="card">
                             <div class="card-body">
                                 <h4 class="card TituloUser">Usuarias registradas</h4>
-                                <h5 style="margin:10px;"><?php echo $info2->Nombre_Sede?></h5>
-                                <h6 class="card-subtitle">Usted puede descargar los datos en los siguientes formatos copiar, CSV, Excel, PDF & Print</h6>
+                                <h1 style="margin:10px;"><?php echo $info2->Nombre_Sede?></h5>
+                                
                                 <div class="table-responsive m-t-40">
-                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%" >
+                                    <h2 class="card-subtitle" style="color: #000000">Usted puede descargar los datos en los siguientes formatos copiar, CSV, Excel, PDF & Print</h6>
+                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead >
-                                            <tr style="background'color:#000d5a; color:white;">
-                                                <th style="background'color:#000d5a; color:white;"> Id usuario</th>
+                                            <tr style="background'color:#0005da; color:white;">
+                                                <th style="background'color:#0005da; color:white;"> Id usuario</th>
                                                 <th>Nombre completo</th>
                                                 <th>Dirección</th>
                                                 <th>Tipo de usuaria</th>
@@ -55,7 +56,7 @@ foreach ($registro->result() as $info2) {
                                             <tr>
                                                 <th>Id usuario</th>
                                                 <th>Nombre completo</th>
-                                                <th>Direccion</th>
+                                                <th>Dirección</th>
                                                 <th>Tipo de usuaria</th>
                                                 <th>Teléfono</th>
                                                 <th>Periodo de inactividad</th>
@@ -66,11 +67,11 @@ foreach ($registro->result() as $info2) {
                                         <?php
                                                 foreach ($registro->result() as $info) { 
                                                     echo "<tr>";  
-                                                    echo "<td  id='ni'style='color: #000000' >".$info->pk_Id_Usuaria."</td>";  
-                                                    echo "<td id='nom' style='color: #000000' >".$info->Nombre." ".$info->Apellido."</td>";
-                                                    echo "<td id='cat' style='color: #000000' >".$info->Direccion."</td>";
-                                                    echo "<td id='cat' style='color: #000000' >".$info->Tipo."</td>";
-                                                    echo "<td id='cat'style='color: #000000' >".$info->Telefono."</td>";
+                                                    echo "<td id='ni' style='color: #000000'>".$info->pk_Id_Usuaria."</td>";  
+                                                    echo "<td id='nom' style='color: #000000'>".$info->Nombre." ".$info->Apellido."</td>";
+                                                    echo "<td id='cat' style='color: #000000'>".$info->Direccion."</td>";
+                                                    echo "<td id='cat' style='color: #000000'>".$info->Tipo."</td>";
+                                                    echo "<td id='cat' style='color: #000000'>".$info->Telefono."</td>";
                                                     
                                                     $fechaActual = date("Y/m/d");
                                                     $fecha2=$info->Fecha_Actividad;
@@ -84,21 +85,22 @@ foreach ($registro->result() as $info2) {
                                                      //printf("el numero de dias que imprime es %d", $diasFalt);
                                                      if($fecha2==null)
                                                      {
-                                                        echo "<td id='cat' style='color: #000000' ><span style='display:block;' class='alert alert-warning'>Nueva usuaria</span></td>";
+                                                        echo "<td id='cat' ><span style='display:block;' class='alert alert-warning'>Nueva usuaria</span></td>";
                                                         echo '<td><div class="dropdown" align="center">
                                                                 <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown"><i class="fa fa-cogs fa-lg"></i><span class="caret"></span></button>
                                                                 <ul class="dropdown-menu">
                                                                     <li onclick="NoDelete()"><a title="Este usuario esta activo no se puede eliminar" ><i  class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a> </li>
-                                                                    <li><a ><i  class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></li>                                </ul>
+                                                                    <li><a href="'.base_url().'/Emprendedoras/editar?id='.$id.'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></li></ul>
                                                                 </div></td>';
                                                      }
                                                      else{
                                                      if($diasFalt>60){
-                                                        echo "<td id='cat'><span style='display:block;' class='alert alert-danger'>Dias inactivo: ".$diasFalt."</span></td>";
+                                                        echo "<td id='cat' ><span style='display:block;' class='alert alert-danger'>Dias inactivo: ".$diasFalt."</span></td>";
                                                         echo '<td><div class="dropdown" align="center">
                                                                 <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown"><i class="fa fa-cogs fa-lg"></i><span class="caret"></span></button>
                                                                 <ul class="dropdown-menu">
-                                                                    <li><a onclick="Eliminar($id)" class="btn btn-danger m-b-10 m-l-5"><i class="fa fa-trash-o" aria-hidden="true"></i>Eliminar</a></li>                                </ul>
+                                                                    <li><a onclick="Eliminar($id)" class="btn btn-danger m-b-10 m-l-5"><i class="fa fa-trash-o" aria-hidden="true"></i>Eliminar</a></li>
+                                                                    <li><a href="'.base_url().'/Emprendedoras/editar?id='.$id.'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></li></ul>
                                                                 </div></td>';
                                                         /*echo "<td><a class='btn btn-warning m-b-10 m-l-5'><i style='color:white;' class='fa fa-pencil-square-o' aria-hidden='true'></i></a></td>";*/
                                                      }
@@ -106,12 +108,12 @@ foreach ($registro->result() as $info2) {
                                                        /* <td><a onclick='Eliminar($id)' class='btn btn-danger m-b-10 m-l-5'><i style='color:white;' class='fa fa-trash-o' aria-hidden='true'></i></a></td>*/
 
 
-                                                        echo "<td id='cat'><span style='display:block; color:white;' class='alert alert-success'>Dias inactivo: ".$diasFalt."</span></td>";
+                                                        echo "<td id='cat' ><span style='display:block; color:#000000;' class='alert alert-success'>Dias inactivo: ".$diasFalt."</span></td>";
                                                         echo '<td><div class="dropdown" align="center">
                                                                 <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown"><i class="fa fa-cogs fa-lg"></i><span class="caret"></span></button>
                                                                 <ul class="dropdown-menu">
                                                                     <li onclick="NoDelete()"><a  title="Este usuario esta activo no se puede eliminar"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a> </li>
-                                                                    <li><a ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a> Editar</li>                                </ul>
+                                                                    <li><a href="'.base_url().'/Emprendedoras/editar?id='.$id.'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a></li></ul>
                                                                 </div></td>';
                                                        /*echo "<td><a class='disabled btn btn-danger m-b-10 m-l-5'><i style='color:white;' class='fa fa-trash-o' aria-hidden='true'></i></a></td>";
                                                         */

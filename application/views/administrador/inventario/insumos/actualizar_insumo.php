@@ -60,7 +60,7 @@
                                                 <!--/span-->
                                                 <div class="col-md-6">
                                                     <div class="form-group"><label style="color: #000000"> Precio del Insumo:</label>
-                                                        <div class="input-group">                                                           <input type="text" class="form-control" value="<?= $filaDato->Precio_Insumo?>" name="precioInsumo" >
+                                                        <div class="input-group">                                                           <input type="text" class="form-control"   onkeypress="return numeros(event, 'num')" value="<?= $filaDato->Precio_Insumo?>" name="precioInsumo" >
                                                         </div>
                                                     </div>
                                                 </div>
@@ -72,7 +72,7 @@
                                                     <div class="form-group"><label style="color: #000000"> Existencia del Insumo:</label>
 
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" value="<?= $filaDato->Existencia_Insumo?>" name="existenciaInsumo" >
+                                                            <input type="text"  onkeypress="return numeros(event, 'num')" class="form-control" value="<?= $filaDato->Existencia_Insumo?>" name="existenciaInsumo" >
                                                         </div>
                                                     </div>
                                                 </div>
@@ -81,7 +81,7 @@
                                                     <div class="form-group"><label style="color: #000000"> Medida del Insumo:</label>
 
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" value="<?= $filaDato->Medida_Insumo?>" name="" readonly>
+                                                            <input type="text"  onkeypress="return numeros(event, 'num')" class="form-control" value="<?= $filaDato->Medida_Insumo?>" name="" readonly>
                                                             <input type="hidden" class="form-control" value="<?= $filaDato->PK_Id_Insumo ?>" name="idInsumo">
                                                         </div>
                                                     </div>

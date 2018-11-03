@@ -54,7 +54,7 @@
 
            <div class="col-md-12">
                 <label style="color: #000000">Cantidad a vender</label>
-                <input type="text" class="form-control" name="cantidadVender" value="" id="cantidadVender" required>
+                <input type="text"  onkeypress="return numeros(event, 'num')" class="form-control" name="cantidadVender" value="" id="cantidadVender" required>
            </div>
         </div>
 

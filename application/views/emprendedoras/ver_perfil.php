@@ -65,7 +65,7 @@
     }
     #Negocio{
         font-family: 'Rubik', sans-serif;
-        font-size: 35px;
+        
     }
     </style>
     <?php
@@ -83,12 +83,34 @@
                     <img src="<?php echo base_url().'plantilla/img_perfil/'.$Perfil->Foto_Perfil;?>"style="height:100px;" />
                  </div>
             </header>
-            <h3 id="Negocio"><?php echo $Perfil->Nombre_Negocio?></h3>
                 <div class="desc">
-                   <p style="font-family: 'Rubik', sans-serif; , color: #000000" > <?php echo $Perfil->Descripcion_Negocio?></p>
+                    <h3 id="Negocio"><?php echo $Perfil->Nombre_Negocio?></h3>
+                   <p style="font-family: 'Rubik', sans-serif;"> <?php echo $Perfil->Descripcion_Negocio?></p>
                 </div>
                  <div class="contacts">
-                    <a onclick="MostrarC(<?php echo $Perfil->Correo?>)"><i class="fa fa-plus"></i></a>
+                 <?php
+                 if($tipo=$this->session->userdata('login')){
+                    if (sizeof($verC->result())!=0) {
+                            echo '<a title="Ya me agregaste a tus contactos :)"><i class="fa fa-user"></i></a>';
+                    }
+                    else{
+                        if (sizeof($Ver->result())!=0) {
+                            echo '<a title="Ya me agregaste a tus contactos :)"><i class="fa fa-user"></i></a>';
+                        }
+                        else{
+                            $IdContacto=$Perfil->FK_Usuaria;
+                            $Nombre ="'".$Perfil->Nombre.$Perfil->Apellido."'";
+                            $foto="'".$Perfil->Foto_Perfil."'";
+                    ?>
+                    <div id="add">
+                    <a onclick="Agregar(<?php echo $IdContacto;?>, <?php echo $Nombre;?>, <?php echo $foto;?>)" title="Agregar a mis contactos"><i class="fa fa-user-plus"></i></a>
+                        
+                    </div>
+                    <?php
+                     } 
+                    }
+                    }
+                    ?>
                     <a onclick="MostrarW(<?php echo $Perfil->Telefono?>)"><i class="fa fa-whatsapp"></i></a>
                     <a data-toggle="modal" data-target="#ModalMensaje" title="Iniciar chat en la plataforma"><i class="fa fa-envelope" ></i></a>
                     <div  class="clrear">
@@ -122,6 +144,7 @@
                 <a href="<?php echo base_url().'plantilla/img_perfil/'.$Perfil->Foto1;?>" data-lightbox="example-set" data-title="Nuestro trabajo">
                 <img src="<?php echo base_url().'plantilla/img_perfil/'.$Perfil->Foto1;?>" alt="" class="img-thumbnail"></a>
                 <p></p>
+                
             </article>
             <article class="col-md-3">
                 <a href="<?php echo base_url().'plantilla/img_perfil/'.$Perfil->Foto2;?>" data-lightbox="example-set" data-title="Nuestro trabajo">
@@ -163,7 +186,7 @@
                         <div class="form-group">
                             <div class="input-group">
                             <input type="text" hidden >   
-                                <input type="text" class="form-control"  id="Emisor_Mensaje" name="Emisor_Mensaje" placeholder="Nombre">
+                                <input type="text" class="form-control"  id="Emisor_Mensaje" name="Emisor_Mensaje" placeholder="Nombre" required>
                                 <input type="text" hidden name="ID" id="ID" value="<?php echo $Perfil->FK_Usuaria;?>">
                             </div>
                          
@@ -172,7 +195,7 @@
                         <div class="col-md-12">
                         <div class="form-group">
                             <div class="input-group">  
-                                <input type="text" class="form-control"  id="Contacto_Mensaje" name="Contacto_Mensaje" placeholder="Numero de contacto">
+                                <input type="text" class="form-control"  id="Contacto_Mensaje" name="Contacto_Mensaje" placeholder="Numero de contacto" required>
                             </div>
                             
                         </div>
@@ -181,7 +204,7 @@
                         <div class="form-group">
                             <div class="input-group"> 
                                 
-                                <textarea type="text" class="form-control"  id="Contenido_Mensaje" name="Contenido_Mensaje" placeholder="Contenido">
+                                <textarea type="text" class="form-control"  id="Contenido_Mensaje" name="Contenido_Mensaje" placeholder="Contenido" required >
                                     
                                 </textarea>
                             </div>
@@ -220,6 +243,29 @@ $(document).on("submit", "#mensaje", function(e){
         }
     });*/
 });
+
+function Agregar(id, nombre, foto){
+    //alert(id+nombre+foto);
+    $.ajax({
+        url: '<?php echo base_url()?>Contactos/Guardar_Contacto',
+        type: "POST",
+        data: {Id:id, Nombre:nombre, Foto:foto},
+        success:function(data){
+            if(data==""){
+               swal("Contacto agregado", "Usted a gredado a este usuario a sus contactos", "success");
+               document.getElementById("Emisor_Mensaje").value="";
+               //$("#Contacto_Mensaje").val("");
+               //$("#Contenido_Mensaje").val("");
+               document.getElementById('add').innerHTML='<a title="Ya me agregaste a tus contactos :)"><i class="fa fa-user"></i></a>'
+            }
+            else
+            {
+                alert('error');
+            }
+        }
+    });
+
+}
     function guardar(id, emisor, contacto, contenido){
         //alert(contacto);
         $.ajax({
@@ -228,7 +274,7 @@ $(document).on("submit", "#mensaje", function(e){
         data: {Emisor_Mensaje:emisor, Contacto_Mensaje:contacto, Contenido_Mensaje:contenido, ID:id},
         success:function(data){
             if(data==""){
-               swal("Mensaje enviado con exito", "Me comunicare contigo a tu numero de contacto!!", "success");
+               swal("Mensaje enviado con exito", "Me comunicare contigo a tu número de contacto!!", "success");
                document.getElementById("Emisor_Mensaje").value="";
                $("#Contacto_Mensaje").val("");
                $("#Contenido_Mensaje").val("");
@@ -241,7 +287,7 @@ $(document).on("submit", "#mensaje", function(e){
     });
     }
 	function MostrarW(valor){
-    swal("Contactanos en WhatsApp envia un mensaje al: "+valor)
+    swal("Contactanos en WhatsApp envia un mensaje al: ",valor)
 	}
 	function MostrarC(val){
 		swal("Envianos un correo", val ,"success")

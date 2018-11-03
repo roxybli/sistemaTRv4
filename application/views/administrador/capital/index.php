@@ -3,7 +3,7 @@
     <a href="<?=base_url() ?>capital/"><h3 class="text-primary"><i class="fa fa-home"></i></h3></a>
     </div>
      <div class="col-md-5 align-center">
-        <h3 style="color: #fff">Elije una de las siguientes opciones</h3>
+        <h3 style="color: #fff">Capital Inicial</h3>
      </div>
 
     <div class="col-md-3 align-self-center">

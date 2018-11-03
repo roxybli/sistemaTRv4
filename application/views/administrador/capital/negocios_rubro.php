@@ -4,7 +4,7 @@
     </div>
 
      <div class="col-md-5 align-center">
-        <h3 style="color: #fff">Elije uno de los rubros disponibles !!!</h3>
+        <h3 style="color: #fff">Negocios Disponibles</h3>
      </div>
 
     <div class="col-md-3 align-self-center">

@@ -48,10 +48,13 @@ class Login extends CI_Controller {
 		else{
 			$ver=$this->Perfiles_Model->verificarPerfil($id);
 			$users=$this->Perfiles_Model->cargarUsuaria($id);
+			$ingreso = $this->Perfiles_Model->cargarIngresos();
+			$Nmens = $this->Perfiles_Model->cargarComentarios();
+			$NumC = $this->Perfiles_Model->cargarContactos();
 			//$info1 = array('info' => $ver);
 
 			if($ver){
-				$info1 = array('info' => $ver, 'user'=>$users);
+				$info1 = array('info' => $ver, 'user'=>$users, 'ingreso'=>$ingreso, 'N_mens'=>$Nmens, 'NumC'=>$NumC);
 				$this->load->view('administrador/base/header');
 				$this->load->view('administrador/plugin/app-profile', $info1);
 				$this->load->view('administrador/base/footer');
@@ -84,16 +87,16 @@ class Login extends CI_Controller {
 		{
 			if ($fila->Pass == $password)
 			{
-				$foto = $this->Usuarias_Model->fotoUsuaria($fila->pk_Id_Usuaria);
 				$data = array(
 					'usuario'=> $nombre,
 					'id'=> $fila->pk_Id_Usuaria,
 					'login'=> TRUE,
 					);
-				$data2 = array(
-					'fotoUsuaria'=> $foto->Foto_Perfil,
-					'nombreNegocio'=> $foto->Nombre_Negocio,
-					);
+				/*$data2 = array(
+					'departamento'=> $fila->depa,
+					'tipoUsuario'=> $fila->tipoU,
+					'nombre'=> $fila->nombre,
+					);*/
 				$data3 = array(
 					'nombre'=> $fila->Nombre." ".$fila->Apellido,
 					'id_tipo'=>$fila->fk_Tipo_Usuaria,
@@ -102,7 +105,6 @@ class Login extends CI_Controller {
 
 
 				$this->session->set_userdata($data);
-				$this->session->set_userdata($data2);
 				$this->session->set_userdata($data3);
 				//$this->session->set_userdata($data3);
 				//header("Location:".base_url()."home/inicio");

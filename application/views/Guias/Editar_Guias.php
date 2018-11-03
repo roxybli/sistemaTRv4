@@ -1,9 +1,12 @@
-<!--<script type="text/javascript" src="<?=base_url() ?>plantilla/componentes/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="<?=base_url() ?>plantilla/componentes/css/datepicker.css"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript"></script>
+
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js" ></script>
+<script type="text/javascript" src="<?= base_url()?>plantilla/componentes/js/tinymce/js/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+    tinymce.init({ selector:'textarea' });
+</script>
 <style type="text/css">
          .TituloUser{
         display: block;
@@ -163,7 +166,7 @@ foreach ($Guia->result() as $guia) {
                                          <div class="row">
                                             <div class="col-md-12">
                                         <label class="control-label" style="color: #000000">A continuacion se muestra una area para editar el contenido que acompañe la publicacion</label>
-                                         <textarea id="Contenido" name='Contenido' class=" form-control textarea_editor form-control" rows="15" placeholder="Enter text ..." style="height:450px">
+                                         <textarea id="Contenido" name='Contenido' class=" form-control  form-control" rows="15" placeholder="Enter text ..." style="height:450px">
                                          <?= $guia->Contenido?>
                                          </textarea>
                                          </div>

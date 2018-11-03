@@ -98,13 +98,10 @@ class Inventario extends CI_Controller {
 			}
 
 			$datoss = array();
-
 			sort($datos['idInsumos']);
 			//var_dump($datos['idInsumos']);
-
 			sort($datos['medidaInsumo']);
 			//var_dump($datos['nombreInsumo']);
-
 			//var_dump($cantidadI);
 
 			$datoss['materiaPrimaSeleccionada' ] = $datos['materiaPrimaSeleccionada'];
@@ -123,25 +120,23 @@ class Inventario extends CI_Controller {
 				self.location ="'.base_url().'inventario/producto_receta"
 				</script>';
 			}
+			
 			else
 			{
 				$this->load->model('Inventario_Model');
 				$this->Inventario_Model->guardarProcedimiento($datoss);
 			}
-
 			//var_dump($datoss);
 
 			//var_dump($datos['cantidadInsumo']);
 		}
 	}
-
 	public function detalleProcedimiento()
 	{
 		$id =$_GET['e'];
 		$this->load->model('Inventario_Model');
 		$datos = $this->Inventario_Model->detalleProcedimiento($id);
 		$data = array('datos' => $datos);
-
 		$this->load->view('administrador/base/header');
 		$this->load->view('administrador/inventario/detalle_procedimiento', $data);
 		$this->load->view('administrador/base/footer2');
@@ -160,21 +155,19 @@ class Inventario extends CI_Controller {
 
 		if ($bool== false)
 		{
-			echo '<script type="text/javascript">alert("Error al guardar los insumos")</script>';
+			echo '<script type="text/javascript">alert("Error al guardar el producto en proceso")</script>';
 
 		}
 		else
 		{
-			if ($bool)
+			if ($bool==TRUE)
 			{
 				echo '<script type="text/javascript">
-				alert("Su producto esta en proceso !!!");
-				self.location ="'.base_url().'inventario/productos_proceso"
+				alert("Su producto esta en proceso");
+				self.location ="'.base_url().'//inventario/productosProceso"
 				</script>';
 			}
 		}
-
-
 	}
 
 	public function productosProceso()
@@ -327,19 +320,20 @@ class Inventario extends CI_Controller {
 					<div id='img'>
 						<img src='".base_url()."plantilla/img_perfil/".$this->session->userdata('fotoUsuaria')."'>
 				    </div>
-				    <div class='textoCentral'>
+				    <div class='textoCentral'>REPORTE DE INVENTARIO <br>
 					    ".strtoupper($this->session->userdata('nombreNegocio'))."<br>
-					    REPORTE DE INVENTARIO</p>   
-				    </div>
-			    </div>";
+					    </p>   
+				    
+			    ";
 
 			     foreach ($datos->result() as $user)
 		        {}
 
-			$html .= "<br>
-			    <strong style='font-weight: bold;'>Resumen de inventario de $user->Nombre $user->Apellido hasta la fecha  $fecha</strong>
+			$html .= "<br><br> <br>
 
-			</div>
+			    <strong style='font-weight: bold;'>Propietaria:  $user->Nombre $user->Apellido Fecha  $fecha</strong></p>
+
+			</div></div></div>
 			<br>
 			        
 			<div class='table-responsive container'>
@@ -354,8 +348,6 @@ class Inventario extends CI_Controller {
 			        </tr>
 			        </thead>
 			        <tbody>";
-
-
 
 		          $totalVendido = 0;
 		          $dinero =0; 
@@ -496,17 +488,17 @@ class Inventario extends CI_Controller {
 					<div id='img'>
 						<img src='".base_url()."plantilla/img_perfil/".$this->session->userdata('fotoUsuaria')."'>
 				    </div>
-				    <div class='textoCentral'>
+				    <div class='textoCentral'> REPORTE DE VENTAS</p> <br>
 					    ".strtoupper($this->session->userdata('nombreNegocio'))."<br>
-					    REPORTE DE VENTAS</p>   
-				    </div>
-			    </div>";
+					    </p>   
+				   ";
 			      foreach ($datos->result() as $user)
 		        {}
 
-			$html .= "<br>
-			    <strong style='font-weight: bold;'>Resumen de ventas  de $user->Nombre $user->Apellido hasta la fecha  $fecha</strong>
-
+			$html .= "<br><br><br>
+			    <strong style='font-weight: bold;'>Propietaria $user->Nombre $user->Apellido Fecha  $fecha</strong>
+ </div>
+			    </div>
 			</div>
 			<br>
 			        
@@ -662,18 +654,18 @@ class Inventario extends CI_Controller {
 					<div id='img'>
 						<img src='".base_url()."plantilla/img_perfil/".$this->session->userdata('fotoUsuaria')."'>
 				    </div>
-				    <div class='textoCentral'>
+				    <div class='textoCentral'>REPORTE DE PRODUCTOS EN PROCESO <br>
 					    ".strtoupper($this->session->userdata('nombreNegocio'))."<br>
-				    	REPORTE DE PRODUCTOS EN PROCESO</p>   
-			   		</div>
-			    </div>";
+				    	  
+			   		";
 
 			    foreach ($datos->result() as $user)
 		        {}
 
 			$html .="<br>
-			    <strong style='font-weight: bold;'>Resumen de productos en proceso de $user->Nombre $user->Apellido hasta la fecha  $fecha</strong>
-
+			    <strong style='font-weight: bold;'>Propietaria: $user->Nombre $user->Apellido Fecha  $fecha</strong>
+</div>
+			    </div>
 			</div>
 			<br>
 			        

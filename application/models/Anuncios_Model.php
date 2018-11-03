@@ -46,7 +46,7 @@ class Anuncios_model extends CI_Model{
 		}
 	}
 	public function listarAnuncios(){
-		$sql= "SELECT A.*, U.Nombre, U.fk_tipo_usuaria FROM tbl_Anuncios  AS A INNER JOIN tbl_Usuarias AS U ON A.FK_Id_Usuaria=U.pk_Id_Usuaria";
+		$sql= "SELECT A.*, U.Nombre, U.fk_tipo_usuaria FROM tbl_Anuncios  AS A INNER JOIN tbl_Usuarias AS U ON A.FK_Id_Usuaria=U.pk_Id_Usuaria ORDER BY pk_Id_Anuncio DESC";
 		$anuncios = $this->db->query($sql);
 		return $anuncios;
 	}

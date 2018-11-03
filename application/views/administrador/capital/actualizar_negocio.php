@@ -42,8 +42,8 @@
     ?>
     <tr>
         <td class="text-center"><?= $filaCuerpoE->Nombre_Elemento  ?></td>
-        <td class="text-center"><input type="text" value="<?= $filaCuerpoE->Cantidad_Elemento  ?>" class="form-control text-center" name="cantidadElemento[]"></td>
-        <td class="text-center"><input type="text" value="<?= $filaCuerpoE->Precio_Elemento ?>" class="form-control text-center" name="precioEquipamiento[]">
+        <td class="text-center"><input type="text"  onkeypress="return numeros(event, 'num')" value="<?= $filaCuerpoE->Cantidad_Elemento  ?>" class="form-control text-center" name="cantidadElemento[]"></td>
+        <td class="text-center"><input type="text"  onkeypress="return numeros(event, 'num')" value="<?= $filaCuerpoE->Precio_Elemento ?>" class="form-control text-center" name="precioEquipamiento[]">
         <input type="hidden" value="<?= $filaCuerpoE->Pk_Id_Elemento_Subrubro ?>" class="form-control text-center" name="idEquipamiento[]">
         </td>
         <td class="text-center"><a onclick="alerta()" title="Eliminar" href="<?= base_url() ?>capital/eliminarElementoSubrubro/<?= $filaCuerpoE->Pk_Id_Elemento_Subrubro ?>/<?= $filaCuerpoE->Fk_Id_Subrubro ?>"><i class="fa fa-trash fa-lg"></i></a>

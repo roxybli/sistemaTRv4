@@ -28,7 +28,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label style="color: #000000">Cuantos Productos creará  </label>
-                        <input type="number" min="1" onkeypress="return numeros(event, 'num')" class="form-control" name="cantidadProducto" placeholder="Cuantos Productos creara ?" value="1" id="cantidadProducto">
+                        <input type="number" min="1" onkeypress="return numeros(event, 'num')" class="form-control" name="cantidadProducto" placeholder="Cuantos Productos creara ?"  value="1" id="cantidadProducto" required>
                     </div>
                     <div class="col-md-6">
                         <label style="color: #000000">fecha de creación  </label>
@@ -40,7 +40,7 @@
 
             <form id="detalleProcedimiento" method="post" action="<?= base_url() ?>inventario/guardarProducto">               
             
-            <input type="hidden" value="" id="CP" name="cantidadProducto">
+            <input type="hidden" value="" id="CP" name="cantidadProducto" >
             <input value="" type="hidden" id="FP" name="fechaProducto">
             <?php 
                 foreach ($datos->result() as $fila)
@@ -84,7 +84,6 @@
                         ?>
                         </tbody>
                     </table>
-
                     <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Crear Producto nuevo</button>
                 </div>
                 </form>

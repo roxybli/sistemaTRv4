@@ -4,13 +4,13 @@
     </div>
 
      <div class="col-md-5 align-center">
-        <h3 style="color: #fff">Elije uno de los rubros disponibles !!!</h3>
+        <h3 style="color: #fff">Elije uno de los Rubros disponibles </h3>
      </div>
 
     <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Capital inicial</a></li>
-            <li class="breadcrumb-item active">negocios</li>
+            <li class="breadcrumb-item active">Negocios</li>
         </ol>
     </div>
 </div>

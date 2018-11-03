@@ -4,13 +4,13 @@
     </div>
 
      <div class="col-md-5 align-center">
-        <h3 style="color: #fff">Elije uno de los negocios disponibles !!!</h3>
+        <h2 style="color: #fff">Negocios disponibles</h2>
      </div>
 
     <div class="col-md-3 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Capital inicial</a></li>
-            <li class="breadcrumb-item active">gestionar negocios</li>
+            <li class="breadcrumb-item active">Gestionar negocios</li>
         </ol>
     </div>
 </div>

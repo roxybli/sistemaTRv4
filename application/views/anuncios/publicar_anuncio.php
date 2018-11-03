@@ -1,6 +1,11 @@
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript"></script>
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js" ></script>
+<script type="text/javascript" src="<?= base_url()?>plantilla/componentes/js/tinymce/js/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+    tinymce.init({ selector:'textarea' });
+</script>
 <style type="text/css">
          .TituloUser{
         display: block;
@@ -100,7 +105,7 @@ if(isset($_POST['btn'])){
                                                                 <div class="form-group">
                                                                      <label style="color: #000000">Contenido de la Noticia:</label>
                                                                     <div class="input-group">
-                                                                        <textarea rows="8" cols="80" class=" form-control textarea_editor form-control" rows="15" style="height:300px" type="text" class="form-control" id="val-name " name="contenido" placeholder="Contenido" required></textarea> 
+                                                                        <textarea rows="8" cols="80" class=" form-control  form-control" rows="15" style="height:300px" type="text" class="form-control" id="val-name " name="contenido" placeholder="Contenido" required></textarea> 
                                                                     </div>
                                                                 </div>
                                                             </div>

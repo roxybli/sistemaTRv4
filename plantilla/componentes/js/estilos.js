@@ -228,6 +228,13 @@ $(function(){
 				datos +=                 	'<option value="Litros">Litros</option>';
 				datos +=                 	'<option value="Mililitro">Mililitro</option>';
 				datos +=                 '</optgroup>';
+				datos +=                 '<optgroup label="Unidades de medida de longitud">';
+				datos +=                 	'<option value="Metros">Metros</option>';
+				datos +=                 	'<option value="Yardas">Yardas</option>';
+				datos +=                 	'<option value="Centimetros">Centimetros</option>';
+				datos +=                 '</optgroup>';
+				datos +=                 '<optgroup label="Otros tipos">';
+				datos +=                 	'<option value="Unidad">Unidad</option>';				
 				datos +=             '</select>';
 		        datos +=        '</div>';
 		        datos +=    '</div>';
@@ -411,7 +418,7 @@ $("#btnCapitalRubros").click(function() {
 
 				materiaPrimaC="";
 				materiaPrimaC += '<div class="col-md-12">';
-				materiaPrimaC += '<h2 class="text-success text-center"> Materia Comestible </h2>';
+				materiaPrimaC += '<h2 class="text-success text-center"> Insumos </h2>';
 				materiaPrimaC += '</div>';
 
 				$("#elementoSR").append(materiaPrimaC);
@@ -452,8 +459,13 @@ $("#btnCapitalRubros").click(function() {
 				datos +=                 	'<option value="Litros">Litros</option>';
 				datos +=                 	'<option value="Mililitro">Mililitro</option>';
 				datos +=                 '</optgroup>';
+				datos +=                 '<optgroup label="Unidades de medida de longitud">';
+				datos +=                 	'<option value="Metros">Metros</option>';
+				datos +=                 	'<option value="Yardas">Yardas</option>';
+				datos +=                 	'<option value="Centimetros">Centimetros</option>';
+				datos +=                 '</optgroup>';
 				datos +=                 '<optgroup label="Otros tipos">';
-				datos +=                 	'<option value="Litros">Unidad</option>';
+				datos +=                 	'<option value="Unidad">Unidad</option>';
 				datos +=                 '</optgroup>';
 				datos +=             '</select>';
 		        datos +=        '</div>';

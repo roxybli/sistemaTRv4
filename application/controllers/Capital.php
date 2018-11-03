@@ -119,9 +119,8 @@ class Capital extends CI_Controller {
 			}
 			p {
 			    text-align:center;
+			    padding:10px;
 			}
-
-
 			img {
 			    text-align:left;
 			    float:left;
@@ -131,7 +130,7 @@ class Capital extends CI_Controller {
 			}
 
 			#cabecera{
-				width: 1000px;
+				width: 900px;
 			}
 			#img{
 				float:left;
@@ -143,12 +142,12 @@ class Capital extends CI_Controller {
 				color: #000;
 				font-weight: bold;
 				float:right;
-				padding-left: 20px;
+				padding-left: 10px;
 				margin: 0 auto;
 				text-align: center;
 				line-height:: 50;
-				width: 475px;
-				line-height: 26px;
+				width: 250px;
+				line-height: 18px;
 			}
 			.totalCapital{
 					background-color: rgba(0, 13, 90, 0.10);
@@ -158,23 +157,20 @@ class Capital extends CI_Controller {
 				}
 			 </style>
 			 <div class='container'>
-
 			    <div id='cabecera'>
 				<div id='img'>
 					<img src='".base_url()."plantilla/images/card/Reporte.png'>
 			    </div>
 			    <div class='textoCentral'>
-				    ".strtoupper($fila->Nombre_Rubro)." <br>
-				    REPORTE DE INGRESOS Y EGRESOS</p>   
-			    </div>
+			         REPORTE DE CAPITAL INICIAL</p> <br>
+				    RUBRO: ".strtoupper($fila->Nombre_Rubro)." <br>
+				    
+				    <p>Detalles del negocio: <strong style='font-weight: bold;'><br>$fila->Nombre_Subrubro</strong></p>  
 			    </div>";
-
-			     
-
-			$html .= "<br>
+			$html .= "
 			</div>
-			<br>
-			  <p>Detalles del negocio: <strong>$fila->Nombre_Subrubro</strong></p>
+		
+			  </div>
 			<div class='table-responsive container'>
 			      
 			        <table class='table table table-bordered'>
@@ -195,10 +191,6 @@ class Capital extends CI_Controller {
 					        <td colspan='4' class='text-center'><h4>Equipamiento</h4></td>
 					    </tr>
 			        ";
-
-
-
-
 				$totalE=0;
 		        foreach ($datos->result() as $filaCuerpoE)
 		        {
@@ -314,9 +306,10 @@ class Capital extends CI_Controller {
 		//var_dump($datos['precioEquipamiento'])."<br>";
 		//var_dump($datos['idEquipamiento'])."<br>";
 		$idSubrubro = $datos['idSubrubro'];
-		$d=0; $p=0; $c=0;
+		 $d=0; $p=0; $c=0; 
 		for ($i=0; $i < sizeof($datos['idEquipamiento']); $i++)
 		{
+			
 			if ($datos['cantidadElemento'][$i] == "")
 			{
 				$c++;

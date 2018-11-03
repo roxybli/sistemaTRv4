@@ -36,8 +36,8 @@ $(document).ready(function(){
 					nomuser: "Asigne un nombre de usuaria para el sistema",
 					pass: "No puede crear un usuario si no ha insertado una contraseña",
 					direccion: "Ingrese la direccion de la usuaria",
-					telefono: "Ingrese el numero de contacto de la usuaria",
-					dui: "Igrese el numero de Dui de la usuaria"
+					telefono: "Ingrese el número de contacto de la usuaria",
+					dui: "Igrese el número de Dui de la usuaria"
 		
 				}
 			});
