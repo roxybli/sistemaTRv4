@@ -52,8 +52,9 @@ class Usuarias_model extends CI_Model{
 			$dui=$data['dui'];
 			$tipo=$data['tipo'];
 			$sede=$data['sede'];
+			$Año_Ingreso=$data['Año_Ingreso'];
 			$fechaActual = date("Y/m/d");
-			$sql="INSERT INTO tbl_Usuarias(FK_Sede, Nombre,Apellido,Nom_User,Pass,Direccion,fk_Tipo_Usuaria,Telefono,Dui,Fecha_Registro) VALUES('$sede','$nombre','$apellido','$nomuser','$pass','$direccion','$tipo','$telefono','$dui','$fechaActual')";
+			$sql="INSERT INTO tbl_Usuarias(FK_Sede, Nombre,Apellido,Nom_User,Pass,Direccion,fk_Tipo_Usuaria,Telefono,Dui,Año_Ingreso,Fecha_Registro) VALUES('$sede','$nombre','$apellido','$nomuser','$pass','$direccion','$tipo','$telefono','$dui','$Año_Ingreso','$fechaActual')";
 			//$this->db->bind_param('sss', $contenido, $video, $img);
 			if($this->db->query($sql)){
 				return true;
@@ -100,7 +101,20 @@ class Usuarias_model extends CI_Model{
 	}
 
 	public function CargarSede(){
-		$sql = "SELECT * FROM tbl_Sedes";
+		$tipo=$this->session->userdata('id_tipo');
+		if($tipo==1){
+				$sql=("SELECT * FROM tbl_Sedes");
+			}
+
+			else if($tipo==2){
+				$sede=$this->session->userdata('id_sede');
+				$sql=("SELECT * FROM tbl_Sedes WHERE pk_Id_Sede=$sede");
+			}
+			else if($tipo==""  || $tipo ==3){
+				$sql=("SELECT * FROM tbl_Sedes");
+
+			}
+		//$sql = "SELECT * FROM tbl_Sedes";
 		$res =$this->db->query($sql);
 		return $res;
 	}

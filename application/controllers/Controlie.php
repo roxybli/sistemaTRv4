@@ -244,7 +244,7 @@ class Controlie extends CI_Controller {
 	}
 
 	public function detalleBalancePDF($fecha)
-	{
+	{ 
 		$this->load->model('Controlie_Model');
 		$datos = $this->Controlie_Model->detalleBalance($fecha);
 
@@ -411,7 +411,7 @@ class Controlie extends CI_Controller {
 				echo '<script type="text/javascript">
 					alert("No hay datos que mostrar !!!");
 					window.close();
-					self.location ="'.base_url().'reportes/trabajosRealizados"
+					self.location ="'.base_url().'Reportes/trabajosRealizados"
 					</script>';
 			}
 

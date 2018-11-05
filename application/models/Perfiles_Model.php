@@ -120,11 +120,28 @@ class Perfiles_Model extends CI_Model
 		//CREATE OR REPLACE VIEW  VW_Perfiles AS SELECT p.*, r.*, u.Nombre, u.Apellido, s.* FROM tbl_Perfiles_Empresariales AS p INNER JOIN tbl_Rubros AS r ON p.FK_Rubro = r.PK_Id_Rubro INNER JOIN tbl_Usuarias AS u ON p.FK_Usuaria =u.pk_Id_Usuaria INNER JOIN tbl_Sedes as s ON u.FK_Sede = s.pk_Id_Sede 
 		
 		//OJO NO BORRAR 
-
 	}
 	public function NumRubro(){
 		$sql="SELECT COUNT(*) AS Num, r.Nombre_Rubro FROM tbl_Perfiles_Empresariales AS P INNER JOIN tbl_Rubros AS r ON P.FK_Rubro = r.PK_Id_Rubro GROUP BY FK_Rubro ORDER BY Num DESC LIMIT 1";
 		$r=$this->db->query($sql);
 		return $r;
+	}
+	public function cargarIngresos(){
+		$id= $this->session->userdata('id');
+		$sql = "SELECT Total_Ingreso, MAX(PK_Id_Balance) AS id FROM tbl_Balance WHERE FK_Id_Usuario=$id ";
+		$ingreso = $this->db->query($sql);
+		return $ingreso;
+	}
+	public function cargarContactos(){
+		$sql= "SELECT COUNT(*) AS N_Cont FROM tbl_Contactos WHERE FK_Id_Usuaria = 1 OR Id_user_contacto=1";
+		$numC = $this->db->query($sql);
+		return $numC;
+	}
+	public function cargarComentarios(){
+		$id= $this->session->userdata('id');
+		$sql = "SELECT COUNT(*) AS N_Mens FROM tbl_Mensajes WHERE FK_Id_Usuaria = $id";
+		$num_mensajes = $this->db->query($sql);
+		return $num_mensajes;
+
 	}
 }

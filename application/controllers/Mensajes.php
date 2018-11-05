@@ -13,7 +13,6 @@ class Mensajes extends CI_Controller {
 				$id =$datos['ID'];
 				$this->load->model('Mensajes_Model');
 				$bool=$this->Mensajes_Model->guardarMensaje($emisor, $contacto, $contenido, $id);
-	
 	}
 	public function VerMensajes(){
 		$this->load->model('Mensajes_Model');

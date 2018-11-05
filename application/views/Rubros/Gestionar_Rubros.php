@@ -129,11 +129,11 @@
                                                     //echo "<td><a onclick='Eliminar($Rubros->PK_Id_Rubro)' class='btn btn-danger m-b-10 m-l-5'><i style='color:white;' class='fa fa-trash-o' aria-hidden='true'></i></a></td>";
                                                    // echo '<td><a onclick="editar('.$Rubros->PK_Id_Rubro.','.$nombre.')" class="btn btn-warning m-b-10 m-l-5" style="color:white;" data-toggle="modal" data-target="#ModalEdit"><i style="color:white;" class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>';
 
-                                                     echo '<td><div class="dropdown" align="center">
+                                                      echo '<td><div class="dropdown" align="center">
                                                                 <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown"><i class="fa fa-cogs fa-lg"></i><span class="caret"></span></button>
                                                                 <ul class="dropdown-menu">
-                                                                    <li><a onclick="Eliminar('.$Rubros->PK_Id_Rubro.')" ><i class="fa fa-trash fa-lg"></i></a>Eliminar</li>
-                                                                     <li><a onclick="editar('.$Rubros->PK_Id_Rubro.','.$nombre.')" ;" data-toggle="modal" data-target="#ModalEdit"><i class="fa fa-edit fa-lg"></i></a> Editar</li> 
+                                                                    <li><a onclick="Eliminar('.$Rubros->PK_Id_Rubro.')" ><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a></li>
+                                                                     <li><a onclick="editar('.$Rubros->PK_Id_Rubro.','.$nombre.')"  data-toggle="modal" data-target="#ModalEdit"><i  class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a> </li>
                                                                         </ul>
                                                                 </div></td>';
                                                 }
@@ -148,6 +148,9 @@
                 <!-- End PAge Content -->
 </div>
 <script type="text/javascript">
+ $(document).on("ready", function(){
+        $('#Nombre_Rubro').on("change", verificar);
+    });
     function Eliminar(id){
         var idU =id;
          swal({
@@ -178,6 +181,32 @@
         //document.getElementById('Nombre_Rubro').value=nombre;
 
 
+
+    }
+    function verificar(){
+
+       nombre = $('#Nombre_Rubro').val();
+       //alert('Hola'+nombre);
+       $.ajax({
+            url:"VerificarNomRubro",
+            type:"POST",
+            data:{buscar:nombre},
+            success:function(respuesta){
+                var registro = eval(respuesta);
+                if(registro.length>0){
+                    //$('#pass').val('');
+                    swal("Error","El nombre del rubro  ya existe","error");
+                    //alert("El nombre de usuario ya existe");
+                    document.getElementById('btnGuardar').disabled=true;
+                     $('#Nombre_Rubro').addClass('caja');
+                }
+                else{
+                    document.getElementById('btnGuardar').disabled=false;
+                    $('#Nombre_Rubro').removeClass('caja');
+                }
+
+            }
+        });
 
     }
 </script>

@@ -18,6 +18,7 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="<?=base_url()?>Emprendedoras/InsertarUsuaria">Nuevo usuario</a></li>
                                 <li><a href="<?=base_url()?>Emprendedoras/verUsuarias">Usuarios registrados</a></li>
+                                <li><a href="<?=base_url()?>Reportes">Reportes de usuarios registrados</a></li>
                             </ul>
                         </li>
                         <li> <a class="has-arrow  " href="<?=base_url() ?>Rubros/" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Gestionar Rubros</span></a>

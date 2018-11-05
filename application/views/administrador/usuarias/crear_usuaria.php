@@ -51,10 +51,9 @@
                                                                     <div class="input-group">
                                                                         <select class="form-control" id="sede" name="sede">
                                                                             <?php
-                                                                                echo "<option value=''>Seleccione la sede a la que pertenece</option>";
                                                                                 foreach ($con2->result() as $fila) {
 
-                                                                                  echo "<option value=".$fila->pk_Id_Sede.">".$fila->Nombre_Sede."</option>";
+                                                                                  echo "<option value='".$fila->Pk_Id_Sede."'>".$fila->Nombre_Sede."</option>";
                                                                                 }
                                                                             ?>
                                                                         </select>
@@ -152,6 +151,27 @@
                                                             <!--/span-->
                                                         </div>
                                                         <!--/row-->
+                                                         <!--/row-->
+                                                        <div class="row ">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                <label class="etiqueta">Seleccione el año de ingreso a la institución de la usuaria</label>
+                                                                    <div class="input-group">
+                                                                    <select id="Año_Ingreso" name="Año_Ingreso" class="form-control">
+                                                                        <?php
+                                                                        for ($i=2011; $i < 2071 ; $i++) { 
+                                                                        ?>
+                                                                        <option><?= $i?></option>
+                                                                        <?php   
+                                                                        }
+
+                                                                        ?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--/row-->
                                                         </div>
                                                         <div class="row">
                                                         <div class="col-md-6">
@@ -170,3 +190,32 @@
                         </div>
                     </div>
                 </div>
+<script type="text/javascript">
+    $(document).on("ready", function(){
+        $('#nomuser').on("change", verificar);
+    });
+    function verificar(){
+       nombre = $('#nomuser').val();
+       $.ajax({
+            url:"VerificarNomUser",
+            type:"POST",
+            data:{buscar:nombre},
+            success:function(respuesta){
+                var registro = eval(respuesta);
+                if(registro.length>0){
+                    $('#pass').val('');
+                    swal("Error","El nombre de usuario ya existe","error");
+                    //alert("El nombre de usuario ya existe");
+                    document.getElementById('btnGuardar').disabled=true;
+                     $('#nomuser').addClass('caja');
+                }
+                else{
+                    document.getElementById('btnGuardar').disabled=false;
+                    $('#nomuser').removeClass('caja');
+                }
+
+            }
+        });
+
+    }
+</script>
