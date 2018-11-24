@@ -66,8 +66,10 @@
                                 <li><a href="<?=base_url() ?>inventario/">Inventario</a></li>
                                  <li><a href="<?=base_url() ?>controlie/">Control Ingresos y Egresos</a></li>
                             </ul>
-                            </li>
-                            </ul>
+                        </li>
+                        <li> <a class="has-arrow" href="<?=base_url() ?>Eventos/" aria-expanded="false"><i class="fa fa-calendar"></i><span class="hide-menu">Eventos</span></a>
+                        
+                      </ul>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

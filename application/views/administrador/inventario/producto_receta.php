@@ -123,7 +123,7 @@
                                                             <input type="hidden" name="idInsumos[]" value="<?= $filaInsumos->PK_Id_Insumo ?>"  required></td>
                                     <td class="text-primary"><input type="text" min="0" name="cantidadInsumo[]" onkeypress="return numeros(event, 'num')"></td>
                                     <td class="text-primary"><input type="text" name="precioInsumo[]" value="<?= $filaInsumos->Precio_Insumo ?>" disabled required></td>
-                                    <td class="text-primary"><input type="text" name="medidaInsumo[]" value="<?= $filaInsumos->Medida_Insumo ?>" disabled required></td>
+                                    <td class="text-primary"><input id="medida_insumo" type="text" name="medidaInsumo[]" value="<?= $filaInsumos->Medida_Insumo ?>" required></td>
                                     <td class="text-primary"><input type="hidden" name="tipoInsumo[]" value="<?= $filaInsumos->FK_Id_Tipo_Insumo ?>" disabled required></td>
                                     <td>                                
                                         <input type="checkbox" class="form-control" name="materiaPrimaSeleccionada[]" value="<?= $filaInsumos->PK_Id_Insumo ?>" >
@@ -165,21 +165,10 @@
 
 </div>
 <script>
-   /* function agregar(n, p, m, iI, iT)
-    {
-        html = '';
-        html += '<tr>';
-        html +=             '<td><label>' + n + '</label></td>';
-        html +=             '<td><label>' + p + '</label></td>';
-        html +=             '<td><label>' + m + '</label></td>';
-        html +=             '<td><input type="text" value=""></td>';
-        html +=             '<td><label>' + iI + '</label></td>';
-        html +=             '<td><label>' + iT + '</label></td>';
-        html +=        '</tr>';
-
-        $("#datosReceta").append(html);
-        $(this).css("display","none");
-        //alert(n + p + m + iI + iT);
-    }*/
+$(document).on("ready", main);
+function main()
+  {
+    $("#medida_insumo").prop('readonly', true);
+  }
 </script>
 
